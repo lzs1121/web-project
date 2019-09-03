@@ -1,0 +1,353 @@
+@mixin translate($x,$y) {
+	-webkit-transform: translate($x, $y);
+	-ms-transform: translate($x, $y); // IE9 only
+	-o-transform: translate($x, $y);
+	transform: translate($x, $y);
+}
+
+@mixin flap_animate {
+	-webkit-transition: background 0.5s;
+	/* Safari */
+	transition: background 0.5s;
+	-webkit-transition: transform $flap-animation;
+	/* Safari */
+	transition: transform $flap-animation;
+	-webkit-transform: rotateY(360deg);
+	/* Safari */
+	transform: rotateY(360deg);
+	/* Standard syntax */
+}
+
+@mixin fadein {
+	-webkit-animation: fadein 0.5s;
+	/* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 0.5s;
+	/* Firefox < 16 */
+	-ms-animation: fadein 0.5s;
+	/* Internet Explorer */
+	-o-animation: fadein 0.5s;
+	/* Opera < 12.1 */
+	animation: fadein 0.5s;
+}
+
+// Button Hover Shadow
+@mixin lift_animate {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+	border-color: transparent;
+}
+
+// Shadow
+
+@mixin shadow {
+	-webkit-box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.4);
+	box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.4);
+}
+
+@mixin shadow__card{
+	box-shadow: 0 8px 16px rgba(black, .1);
+}
+
+@mixin shadow-long {
+	-webkit-box-shadow: 0px 2px 26px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 2px 26px rgba(0, 0, 0, 0.6);
+}
+
+@mixin shadow-right {
+	-webkit-box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.26);
+	box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.26);
+}
+
+@mixin shadow-bottom {
+	-webkit-box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.75);
+}
+
+@mixin shadow__search-result-dropdown {
+	-webkit-box-shadow: 0 3px 4px 0 rgba(228,228,228,0.50);
+	box-shadow: 0 3px 4px 0 rgba(228,228,228,0.50);
+}
+
+@mixin square_button_background($suqare-nav-size, $square-icon-size) {
+	padding: 0px;
+	border-radius: 0;
+	height: $suqare-nav-size;
+	min-width: $suqare-nav-size;
+	color: white;
+	/*padding: 5px;*/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	img {
+		width: $square-icon-size;
+		height: $square-icon-size;
+	}
+	object {
+		width: $square-icon-size;
+		height: $square-icon-size;
+	}
+	span.nav-icon {
+		width: $square-icon-size;
+		height: $square-icon-size;
+	}
+}
+
+// media queries
+@mixin MQ($canvas) {
+	@if $canvas==XS {
+		@media only screen and (max-width: $XS) {
+			@content;
+		}
+	}
+	@if $canvas==S {
+		@media only screen and (max-width: $S) {
+			@content;
+		}
+	}
+	@else if $canvas==M {
+		@media only screen and (max-width: $M) {
+			@content;
+		}
+	}
+	@else if $canvas==ML {
+		@media only screen and (max-width: $ML) {
+			@content;
+		}
+	}
+	@else if $canvas==L {
+		@media only screen and (max-width: $L) {
+			@content;
+		}
+	}
+	@else if $canvas==maxL {
+		@media only screen and (min-width: $maxL) {
+			@content;
+		}
+	}
+}
+
+// Box Sizing
+@mixin box-sizing($args) {
+	-webkit-box-sizing: $args;
+	-moz-box-sizing: $args;
+	box-sizing: $args;
+}
+
+@mixin border-box() {
+	@include box-sizing(border-box);
+}
+
+@mixin content-box() {
+	@include box-sizing(content-box);
+}
+
+// Columns
+@mixin columns($args) {
+	-webkit-columns: $args;
+	-moz-columns: $args;
+	columns: $args;
+}
+
+@mixin column-count($count) {
+	-webkit-column-count: $count;
+	-moz-column-count: $count;
+	column-count: $count;
+}
+
+@mixin column-gap($gap) {
+	-webkit-column-gap: $gap;
+	-moz-column-gap: $gap;
+	column-gap: $gap;
+}
+
+@mixin column-width($width) {
+	-webkit-column-width: $width;
+	-moz-column-width: $width;
+	column-width: $width;
+}
+
+@mixin column-rule($args) {
+	-webkit-column-rule: $args;
+	-moz-column-rule: $args;
+	column-rule: $args;
+}
+
+// Text Shadow
+@mixin text-shadow($args) {
+	text-shadow: $args;
+}
+
+// Draw Circle
+@mixin circle($width, $color) {
+	width: $width;
+	height: $width;
+	background: $color;
+	-webkit-border-radius: $width/2;
+	-moz-border-radius: $width/2;
+	border-radius: $width/2;
+}
+
+@mixin placeholder {
+	$placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+	@each $placeholder in $placeholders {
+		&:#{$placeholder}-placeholder {
+			@content;
+		}
+	}
+}
+
+// gradient background
+@mixin two-whites-background {
+	background: rgb(255, 255, 255);
+	/* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(50%, rgba(241, 241, 241, 1)), color-stop(51%, rgba(225, 225, 225, 1)), color-stop(100%, rgba(246, 246, 246, 1)));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%);
+	/* W3C */
+	/* IE6-9 */
+}
+
+// keep the element in the center
+@mixin horizontal-center {
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+}
+
+@mixin vertical-center {
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+}
+
+@mixin action-btn($url) {
+	background: url($url) no-repeat;
+	background-size: $action-bg-size $action-bg-size;
+	background-position: center;
+}
+
+@mixin border-radius($radius, $important: '') {
+	-webkit-border-radius: $radius#{$important};
+	-moz-border-radius: $radius#{$important};
+	-ms-border-radius: $radius#{$important};
+	-o-border-radius: $radius#{$important};
+	border-radius: $radius#{$important};
+}
+@mixin opacity($value, $important: '') {
+	opacity: $value #{$important};
+	filter: alpha(opacity=#{$value * 100}) #{$important};
+}
+
+
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($color, $background, $border) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+
+	&:focus,
+	&.focus {
+		color: $color;
+		background-color: darken($background, 10%);
+		border-color: darken($border, 25%);
+	}
+	&:hover {
+		color: $color;
+		background-color: darken($background, 10%);
+		border-color: darken($border, 12%);
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: $color;
+		background-color: darken($background, 10%);
+		border-color: darken($border, 12%);
+
+		&:hover,
+		&:focus,
+		&.focus {
+			color: $color;
+			background-color: darken($background, 17%);
+			border-color: darken($border, 25%);
+		}
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus,
+		&.focus {
+			background-color: $background;
+			border-color: $border;
+		}
+	}
+
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+	padding: $padding-vertical $padding-horizontal;
+	font-size: $font-size;
+	line-height: $line-height;
+	border-radius: $border-radius;
+}
+
+
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+@mixin square($size) {
+	@include size($size, $size);
+}
+@mixin tile-base() {
+	background-color: white;
+	border-radius: $border-radius-small;
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 2px 0 rgba(0,0,0,0.04);
+}
+
+// Layers
+// -----------------------------------------------------------
+@mixin float {position: absolute;}
+@mixin floor { position: relative;}
+@mixin ground { z-index: -1; }
+@mixin floor-1 { z-index: 1; }
+@mixin floor-2 { z-index: 10; }
+@mixin floor-3 { z-index: 100; }
+@mixin floor-4 { z-index: 110; }
+@mixin floor-5 { z-index: 120; }
+@mixin floor-6 { z-index: 130; }
+@mixin floor-7 { z-index: 999; }
+@mixin ceiling { z-index: 1000; }
+
+@mixin fade() {
+	opacity: 0;
+	@include transition(opacity .15s linear);
+	&.in {
+		opacity: 1;
+	}
+}

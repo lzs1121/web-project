@@ -1,0 +1,33 @@
+mixin uni-post
+	.swiper-container
+		if posts.total
+			div.swiper-wrapper
+				each post in posts.results
+					div.swiper-slide(style="display: inline-flex;box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);border-radius: 20px 0px 20px 20px;")
+						div(style="background-image:url('../images/test.jpg');width:40%;border-radius: 20px 0px 0px 20px;" data-swiper-parallax="-100")
+							h2(style="position:absolute;margin-left:5px;top:65%;" data-swiper-parallax="-300" data-swiper-parallax-duration="500")=post.title
+							h4.white(style="position:absolute;margin:10px;top:75%;" data-swiper-parallax="-300" data-swiper-parallax-duration="600")="|  "+post.author.name.first
+						div(style="width:58%;margin-left:10px;height: 300px;padding: 10px;overflow-y: scroll;border-radius: 0px 20px 20px 0px;")
+							div(data-swiper-parallax="-300" data-swiper-parallax-duration="600")
+								h1=post.title
+							div(data-swiper-parallax-opacity="0.5" data-swiper-parallax="-300" data-swiper-parallax-duration="700") 
+								!=post.content.brief
+							if post.content.extended
+								a(href="/blog/"+post.slug)
+									h2 More..
+						
+		div.row(style="display: inline-flex;width:100%;")
+			button.btn.jr-btn-circle-arrow-left.swiper-button-prev(style="position:relative;left:5%")
+				img(src="/images/icons/arrow-left.svg" alt="arrow") 
+			button.btn.jr-btn-circle-arrow-right.swiper-button-next(style="position:relative;left:80%;")
+				img(src="/images/icons/arrow-right.svg" alt="arrow") 	
+	
+							
+					
+						
+		
+			
+	
+	
+
+		

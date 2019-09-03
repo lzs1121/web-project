@@ -1,0 +1,101 @@
+mixin university-tabs
+	if (universities.length)
+		section.jr-university
+			.jr-policy-nav
+				ul.nav.nav-pills#policy-list(role="tablist")
+					li.nav-item
+						a.active.nav-link(href="#brisbane" data-toggle="tab" role="tab"  aria-controls="Brisbane" aria-selected="true") Brisbane
+					li.nav-item
+						a.nav-link(href="#melbourne" data-toggle="tab" role="tab" aria-controls="Melbourne" aria-selected="true") Melbourne
+					li.nav-item
+						a.nav-link(href="#sydney" data-toggle="tab" role="tab" aria-controls="Sydney" aria-selected="true") Sydney
+					li.nav-item
+						a.nav-link(href="#adelaide" data-toggle="tab" role="tab" aria-controls="Sydney" aria-selected="true") Adelaide
+					li.nav-item
+						a.nav-link(href="#canberra" data-toggle="tab" role="tab" aria-controls="Sydney" aria-selected="true") Canberra
+			.jr-policy-content.tab-content
+				.tab-pane.margin-top-30.active#brisbane
+					.row
+						each university in universities
+							if(university.city.slug == 'brisbane')
+								.col-12.col-sm-3
+									.card.jr-card__university
+										.jr-card__university__body.row
+											.col.display-flex.flex-center
+												.icon-wrapper-cirlce
+													.unilogo
+														img.shadow-md.rounded-circle.lazyload(data-src=(university.logo.secure_url), alt=university.name)
+											.col.display-flex.flex-center
+												a(href="/university/"+university.slug)
+													h4.jr-card__university--title= university.chineseName
+										.jr-card__university__background
+											.jr-card__university__background--overlay
+											img.lazyload(data-src=(university.cardBackground.secure_url), alt=university.name)
+				.tab-pane.margin-top-30#melbourne
+					.row
+						each university in universities
+							if(university.city.slug == 'melbourne')
+								.col-12.col-sm-3
+									.card.jr-card__university
+										.jr-card__university__body.row
+											.col.display-flex.flex-center
+												.icon-wrapper-cirlce
+													.unilogo
+														img.shadow-md.rounded-circle.lazyload(data-src=(university.logo.secure_url), alt=university.name)
+											.col.display-flex.flex-center
+												a(href="/university/"+university.slug)
+													h4.jr-card__university--title= university.chineseName
+										.jr-card__university__background
+											.jr-card__university__background--overlay
+											img.lazyload(data-src=(university.cardBackground.secure_url), alt=university.name)
+				.tab-pane.margin-top-30#sydney
+					.row
+						each university in universities
+							if(university.city.slug == 'sydney')
+								.col-12.col-sm-3
+									.card.jr-card__university
+										.jr-card__university__body.row
+											.col.display-flex.flex-center
+												.icon-wrapper-cirlce
+													.unilogo
+														img.shadow-md.rounded-circle.lazyload(data-src=(university.logo.secure_url), alt=university.name)
+											.col.display-flex.flex-center
+												a(href="/university/"+university.slug)
+													h4.jr-card__university--title= university.chineseName
+										.jr-card__university__background
+											.jr-card__university__background--overlay
+											img.lazyload(data-src=(university.cardBackground.secure_url), alt=university.name)
+				.tab-pane.margin-top-30#adelaide
+					.row
+						each university in universities
+							if(university.city.slug == 'adelaide')
+								.col-12.col-sm-3
+									.card.jr-card__university
+										.jr-card__university__body.row
+											.col.display-flex.flex-center
+												.icon-wrapper-cirlce
+													.unilogo
+														img.shadow-md.rounded-circle.lazyload(data-src=(university.logo.secure_url), alt=university.name)
+											.col.display-flex.flex-center
+												a(href="/university/"+university.slug)
+													h4.jr-card__university--title= university.chineseName
+										.jr-card__university__background
+											.jr-card__university__background--overlay
+											img.lazyload(data-src=(university.cardBackground.secure_url), alt=university.name)
+				.tab-pane.margin-top-30#canberra
+					.row
+						each university in universities
+							if(university.city.slug == 'canberra')
+								.col-12.col-sm-3
+									.card.jr-card__university
+										.jr-card__university__body.row
+											.col.display-flex.flex-center
+												.icon-wrapper-cirlce
+													.unilogo
+														img.shadow-md.rounded-circle.lazyload(data-src=(university.logo.secure_url), alt=university.name)
+											.col.display-flex.flex-center
+												a(href="/university/"+university.slug)
+													h4.jr-card__university--title= university.chineseName
+										.jr-card__university__background
+											.jr-card__university__background--overlay
+											img.lazyload(data-src=(university.cardBackground.secure_url), alt=university.name)

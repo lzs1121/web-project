@@ -1,0 +1,22 @@
+mixin course-card(course, badge)
+	.col-sm-4.col-12.text-center.jr-card-wrapper
+		.card.card-profile.card-plain.card__course
+			h5.card__course--commence= badge
+			.card-img-top
+				if course.courseLink
+					a(href='/'+course.courseLink)
+						img.img.lazyload(data-src=(course.thumbnail.secure_url || "/images/courses/default.png" ), alt= course.title)
+				else
+					a(href='/program-course/'+course.slug)
+						img.img.lazyload(data-src=(course.thumbnail.secure_url || "/images/courses/default.png" ), alt= course.title)
+			.card-text-block
+				h5.card-category= course.promoDescription
+				h4.card-title
+					a(href='/'+course.courseLink target="_blank")= course.title
+				p.card-description= course.cardDescription
+				.card-footer
+					a.btn.btn-lg(href=course.enrollURL target="_blank") 参加报名
+					if course.courseLink
+						a.btn.btn-lg(href='/'+course.courseLink target="_blank") 了解更多
+					else
+						a.btn.btn-lg(href='/program-course/'+course.slug) 参加报名

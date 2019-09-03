@@ -1,0 +1,44 @@
+
+.jr-modal{
+	&__large{
+		.modal-dialog{
+			max-width: 800px;
+		}
+
+	}
+	&__consutling__content{
+		.modal-body{
+			padding-top: 4.5rem;
+			padding-bottom: 4.5rem;
+			padding-left: 3rem;
+			padding-right: 3rem;
+		}
+		h4{
+			padding-bottom: 2rem;
+			font-size: 1.5rem;
+		}
+		.consulting-qr-wrapper{
+			width: 128px;
+			height: auto;
+			margin: 0 auto;
+			img{
+				width: 100%;
+			}
+		}
+		ul.benefit-list{
+			li{
+				font-size: 1.125rem;
+				line-height: 2rem;
+				list-style: none;
+				color: #525c65;
+				&:before{
+					content:'*';
+					padding-right: .75rem;
+				}
+			}
+		}
+	}
+	.modal-header{
+		border: 0;
+	}
+}

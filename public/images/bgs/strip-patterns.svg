@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="916px" height="653px" viewBox="0 0 916 653" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Strip-Patterns</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-3.3%" y="-4.9%" width="107.4%" height="111.1%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="8" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.619607843   0 0 0 0 0.670588235   0 0 0 0 0.796078431  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="104.269461%" y1="-18.9022297%" x2="0%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FEE140" offset="0%"></stop>
+            <stop stop-color="#F4A772" offset="25.9031792%"></stop>
+            <stop stop-color="#FA709A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="HomePage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="JIANGREN-辅导" transform="translate(-197.000000, -59.000000)" fill="url(#linearGradient-2)">
+            <g id="Hero" filter="url(#filter-1)" transform="translate(208.000000, 75.000000)">
+                <g id="Bg">
+                    <g id="Group-7">
+                        <g id="Strip-Patterns" transform="translate(-91.000000, -154.000000)">
+                            <rect id="Rectangle-7" transform="translate(367.500000, 238.000000) scale(-1, 1) rotate(35.000000) translate(-367.500000, -238.000000) " x="364" y="132" width="7" height="212" rx="3.5"></rect>
+                            <rect id="Rectangle-7-Copy-11" transform="translate(678.500000, 200.500000) scale(-1, 1) rotate(35.000000) translate(-678.500000, -200.500000) " x="676" y="121" width="5" height="159" rx="2.5"></rect>
+                            <rect id="Rectangle-7-Copy-13" transform="translate(918.000000, 302.500000) scale(-1, 1) rotate(35.000000) translate(-918.000000, -302.500000) " x="914" y="272" width="8" height="61" rx="4"></rect>
+                            <rect id="Rectangle-7-Copy-8" transform="translate(430.000000, 283.500000) scale(-1, 1) rotate(35.000000) translate(-430.000000, -283.500000) " x="417" y="108" width="26" height="351" rx="13"></rect>
+                            <rect id="Rectangle-7-Copy-12" transform="translate(448.000000, 149.500000) scale(-1, 1) rotate(35.000000) translate(-448.000000, -149.500000) " x="438" y="18" width="20" height="263" rx="10"></rect>
+                            <rect id="Rectangle-7-Copy-10" transform="translate(864.500000, 149.500000) scale(-1, 1) rotate(35.000000) translate(-864.500000, -149.500000) " x="856" y="-26" width="17" height="351" rx="8.5"></rect>
+                            <rect id="Rectangle-7-Copy-4" opacity="0.312783062" transform="translate(658.000000, 720.000000) scale(-1, 1) rotate(36.000000) translate(-658.000000, -720.000000) " x="656" y="614" width="4" height="212" rx="2"></rect>
+                            <rect id="Rectangle-7-Copy-9" transform="translate(575.000000, 644.000000) scale(-1, 1) rotate(36.000000) translate(-575.000000, -644.000000) " x="573" y="600" width="4" height="88" rx="2"></rect>
+                            <rect id="Rectangle-7-Copy-14" opacity="0.169044384" transform="translate(140.000000, 310.000000) scale(-1, 1) rotate(36.000000) translate(-140.000000, -310.000000) " x="137" y="277" width="6" height="66" rx="3"></rect>
+                            <rect id="Rectangle-7-Copy-5" opacity="0.312783062" transform="translate(777.500000, 768.000000) scale(-1, 1) rotate(36.000000) translate(-777.500000, -768.000000) " x="774" y="662" width="7" height="212" rx="3.5"></rect>
+                            <rect id="Rectangle-7-Copy-6" transform="translate(98.000000, 539.000000) scale(-1, 1) rotate(36.000000) translate(-98.000000, -539.000000) " x="96" y="433" width="4" height="212" rx="2"></rect>
+                            <rect id="Rectangle-7-Copy-7" opacity="0.143965127" transform="translate(67.500000, 541.000000) scale(-1, 1) rotate(36.000000) translate(-67.500000, -541.000000) " x="62" y="435" width="11" height="212" rx="5.5"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

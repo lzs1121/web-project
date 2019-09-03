@@ -1,0 +1,28 @@
+mixin career-coaching-tab(courseTag,active)
+	.tab-pane.margin-top-30(id=(courseTag) class=(active))
+		.row
+			each teacher in teachers
+				if (teacher.careerPath && teacher.careerPath.slug === courseTag)
+					.col-12.col-sm-4
+						.card.jr-instructors__card
+							.card-avatar
+								img.lazyload(data-src=(teacher.avatar.secure_url), alt=teacher.name)
+							h5.jr-instructors__name= teacher.name
+							p.jr-instructors__title= teacher.title
+							p.jr-instructors__title= teacher.company
+							div.bio= teacher.introduction
+							if(teacher.displayCompany)
+								ul.jr-partners__list
+									each company in teacher.preCompany
+										li
+											img.jr-partners__list--icon.lazyload(data-src=company.logo.secure_url, alt=company.name)
+							if(teacher.displayUniversity)
+								ul.jr-partners__list
+									each university in teacher.university
+										li
+											img.jr-partners__list--icon.lazyload(data-src=university.logo.secure_url, alt=university.name)
+							.jr-instructors__card--tag
+								.tag-container
+									if teacher.highlights.length
+										each highlight in teacher.highlights
+											.tag= highlight

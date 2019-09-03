@@ -1,0 +1,54 @@
+extends ../../layouts/course-layout
+
+include ../../mixins/post-featured
+include ../../mixins/company/student-company
+
+block content
+	section.jr-hero
+		.contain
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				.video__featured--content
+					h6.white.mb-half 匠人课程
+					h1.white 匠人实习培养计划
+					p.legible.center.white 培训+实习 实习不仅仅是扫地 获取真实商业经验
+					p.legible.center.white 针对中国与澳洲的就业市场，面向留学生的实习项目，Mentor陪练
+					p.legible.center.white 简历修改 + 面试技巧 + 职场培训
+					p.legible.center.white 布里斯班 墨尔本 悉尼 塔斯马尼亚 阿德莱德 堪培拉 深圳
+					//- a.button--primary.lg.center.inline(href="/application/"+data.slug)
+						strong 报名
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 澳洲中国就业
+					h5 职业技能提升
+					p.x-small 实习生就业计划
+				li.col-md-3.col-sm-3.col-6
+					h6 城市
+					h5 布里斯班 悉尼、墨尔本
+					p.x-small 
+				li.col-md-3.col-sm-3.col-12
+					h6 价格
+					h5 $2750 $4125
+					p.x-small.x-mall *inc GST
+	section.jr-why
+		.contain.text-center.row
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 什么是实习生培养计划
+				p 鉴于我们多年的招聘经验和人才猎头经验发现，许许多多的在校生会在学习期间寻找实习生岗位，但是许多学生却掉入了一个关于实习生工作的误区。有些学生会认为，有了实习的工作经验就可以了，所以一直在寻找各种各样的实习工作；不需要技能或者知识准备好，直接去找实习。于是，很多学生在海外期间，一直在做各种各样的Internship，但就是没有真正的踏入job market。而且很多公司的实习生，并没有对应的培养计划，导致很多学生虽然参加了实习，但是并没有提高自己的employability。
+				p 实习生培养计划目的就是让你的实习生涯就此终结，通过匠人的mentor跟踪你的实习工作，达到提升自己的communication skills，team work skills，real project experiences，还有你的technical skills。实习生培养计划的制定就是为了提升实习生的各项能力，踏入job market，不再做实习，让你直接找到full time／ part time jobs。
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 哪些人适合来上匠人实习生培养计划?
+				p 面向已经快毕业与已经毕业的学习能力比较强的学生，和后全栈班与就业班的学生。学生通过尽早接触REAL PROJECT获得 REAL EXPERIENCES ，通过你的真的工作经验来申请澳洲和中国的相关公司获得REAL OFFER。并不推荐零基础的或知识点不做的学生来，因为很有可能代码或者项目无法理解和看懂
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 为什么选择匠人学院的实习生培养计划?
+				p 实习生培养计划与普通实习最大的不同是：我们会有专门的至少一位导师全程跟踪项目进度与学生能力情况，全程Support，通过每天的standup，sprint planning，retro，refinement，让更多的学生了解一家IT公司的日常状况，以及熟练使用公司的工具，达到商业级别的代码。
+				p 匠人Mentor老师均来自匠人导师，有多年的工作经验以及经过了匠人导师的培训。根据不同的学生会配有相应的老师作为指导。通过老师的工作经验以及踩过的坑的经验分享，学生可以快速提升自己的能力。目前项目实习就业率高达89%，效果非常明显
+			.jr-why__stat.col-12.col-sm-12.col-md-3
+				.card.card-border-top.hidden-md-down
+					h4.light 匠人学院已经与十几个公司合作推广实习生计划
+					p.text-left 90%的实习生顺利留在了公司，拿到了全职工作
+	section.jr-partners
+		.contain
+			+student-company

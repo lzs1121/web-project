@@ -1,0 +1,51 @@
+extends ../../layouts/course-layout
+
+//- INCLUDES
+include ../../mixins/post-featured
+include ../../mixins/teachers
+include ../../mixins/review
+include ../../mixins/partnership
+include ../../mixins/mentor-company
+include ../../mixins/breadcrumbs
+
+block content
+	section.jr-hero
+		.contain
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				+breadcrumbs([{link:'/', label:'首页'}, {link:'/career-coaching', label:'求职指导'},{link:'/career-coaching/'+career.slug, label:career.chName}])
+				.video__featured--content
+					h6.white.mb-half 匠人求职
+					h1.white= (career.chName)
+					div.html-wrapper__white
+						p!= (career.shortDescription)
+					a.button--primary.lg.center.inline(href="/application?type="+career.slug)
+						strong 报名
+	section.jr-why
+		.contain.text-center.row
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				div.jr-career-service!= career.serviceFeature
+			.jr-why__stat.col-12.col-sm-12.col-md-3
+				.card.card-border-top.hidden-md-down
+					h4.light 服务价格
+					p.text-left!= career.packageIntroduction
+	section
+		.contain
+			.jr-mentor
+				.section_statement
+					h2.intro-title 我们的专业导师
+			section
+				+teachers
+	+mentor-company
+	section.jr-why
+		.contain.text-center
+			.jr-why__description
+				h2 你的专属求职顾问
+				h4
+					strong 我们致力于帮助全球学生和在职精英，提供体系化的求职解决方案
+				p IT匠人率领百位导师解决澳洲求职，归国求职等问题。目前为澳洲最大的IT专业找工作平台。为了帮助留学生，新移民更清楚的了解澳洲就业情况，我们定期举办各种线下线上活动普及澳洲就业市场。
+				h4
+					strong 目标行业导师提升专项求职能力
+				p IT匠人通过对学生的需求进行匹配，挑选出学生的目标行业对应的导师，做到专项专人，更加专业有效。
+			
+	

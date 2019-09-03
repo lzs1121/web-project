@@ -1,0 +1,318 @@
+extends ../layouts/course-layout
+
+include ../mixins/post-featured
+include ../mixins/tutors
+include ../mixins/review
+include ../mixins/mentor-company
+include ../mixins/tutorial-skills
+include ../mixins/tutor-slider
+include ../mixins/workshops-list
+include ../mixins/tutorials-summary
+
+block content
+	section.jr-header
+		.jr-header__background--absolute
+			img.lazyload.jr-header__background--img(data-src="/images/icons/hero.png" alt="background")
+		.contain.jr-course
+			.row
+				.col-12.col-sm-7.jr-course-header__content
+					p.jr-course-header__content--badge 课程无忧 为你保驾护航
+					h1 澳洲大学专业课程辅导
+					h2.text-left 
+						span
+							a(href="/city/melbourne") 墨尔本
+						span
+							a(href="/city/sydney") 悉尼
+						span
+							a(href="/city/brisbane") 布里斯班
+					p 200+学霸老师 保你课程无忧
+					p 面向所有澳洲IT/IS/CS专业在校生
+					p 课程专人负责 深挖课程考点 难点
+					p 定制化辅导 名导师课堂精讲
+					div.row
+						ul.solo__social
+							li
+								a(href="https://www.facebook.com/jiangrenquan" target="_blank" title="Facebook")
+									img.lazyload(data-src="/images/icons/facebook-white.svg", alt="facebook")
+							li
+								a(href="https://www.linkedin.com/school/jr-academy" target="_blank" title="Linkedin")
+									img.lazyload(data-src="/images/icons/linkedin-white.svg", alt="linkedin")
+							li
+								a(href="https://www.weibo.com/ozitquan" target="_blank" title="Weibo")
+									img.lazyload(data-src="/images/icons/weibo-white.svg", alt="weibo")
+							li
+								a(href="https://plus.google.com/104735790585354331739" target="_blank" title="Google Plus")
+									img.lazyload(data-src="/images/icons/google_plus-white.svg", alt="google plus")
+							li
+								a(href="/images/xiaohua.jpeg" target="_blank" title="Wechat")
+									img.lazyload(data-src="/images/icons/wechat-white.svg", alt="wechat")
+		.contain
+			.row
+				if (universities.length)
+					section.jr-university
+						.jr-policy-nav
+							ul.nav.nav-pills#policy-list(role="tablist")
+								li.nav-item
+									a.active.nav-link(href="#brisbane" data-toggle="tab" role="tab"  aria-controls="Brisbane" aria-selected="true") Brisbane
+								li.nav-item
+									a.nav-link(href="#melbourne" data-toggle="tab" role="tab" aria-controls="Melbourne" aria-selected="true") Melbourne
+								li.nav-item
+									a.nav-link(href="#sydney" data-toggle="tab" role="tab" aria-controls="Sydney" aria-selected="true") Sydney
+								li.nav-item
+									a.nav-link(href="#adelaide" data-toggle="tab" role="tab" aria-controls="Sydney" aria-selected="true") Adelaide
+								li.nav-item
+									a.nav-link(href="#canberra" data-toggle="tab" role="tab" aria-controls="Sydney" aria-selected="true") Canberra
+						.jr-policy-content.tab-content
+							.tab-pane.margin-top-30.active#brisbane
+								.row
+									each university in universities
+										if(university.city.slug == 'brisbane')
+											.col-12.col-sm-4.col-md-3
+												.card.cursor-click.jr-card__university(onclick=`window.location.href='/university/${university.slug}'`)
+													.jr-card__university__body.row
+														.col.display-flex.flex-center
+															a.flex-1.text-center(href="/university/"+university.slug)
+																h4.jr-card__university--title= university.chineseName
+													.jr-card__university__background
+														.jr-card__university__background--overlay
+														img.jr-card__university__background--bg.lazyload(data-src=(university._.cardBackground.fill(272,150)), alt=university.name)
+							.tab-pane.margin-top-30#melbourne
+								.row
+									each university in universities
+										if(university.city.slug == 'melbourne')
+											.col-12.col-sm-4.col-md-3
+												.card.jr-card__university
+													.jr-card__university__body.row
+														.col.display-flex.flex-center
+															a.flex-1.text-center(href="/university/"+university.slug)
+																h4.jr-card__university--title= university.chineseName
+													.jr-card__university__background
+														.jr-card__university__background--overlay
+														img.lazyload(data-src=(university._.cardBackground.fill(272,150)), alt=university.name)
+							.tab-pane.margin-top-30#sydney
+								.row
+									each university in universities
+										if(university.city.slug == 'sydney')
+											.col-12.col-sm-4.col-md-3
+												.card.jr-card__university
+													.jr-card__university__body.row
+														.col.display-flex.flex-center
+															a.flex-1.text-center(href="/university/"+university.slug)
+																h4.jr-card__university--title= university.chineseName
+													.jr-card__university__background
+														.jr-card__university__background--overlay
+														img.lazyload(data-src=(university._.cardBackground.fill(272,150)), alt=university.name)
+							.tab-pane.margin-top-30#adelaide
+								.row
+									each university in universities
+										if(university.city.slug == 'adelaide')
+											.col-12.col-sm-4.col-md-3
+												.card.jr-card__university
+													.jr-card__university__body.row
+														.col.display-flex.flex-center
+															a.flex-1.text-center(href="/university/"+university.slug)
+																h4.jr-card__university--title= university.chineseName
+													.jr-card__university__background
+														.jr-card__university__background--overlay
+														img.lazyload(data-src=(university._.cardBackground.fill(272,150)), alt=university.name)
+							.tab-pane.margin-top-30#canberra
+								.row
+									each university in universities
+										if(university.city.slug == 'canberra')
+											.col-12.col-sm-4.col-md-3
+												.card.jr-card__university
+													.jr-card__university__body.row
+														.col.display-flex.flex-center
+															a.flex-1.text-center(href="/university/"+university.slug)
+																h4.jr-card__university--title= university.chineseName
+													.jr-card__university__background
+														.jr-card__university__background--overlay
+														img.lazyload(data-src=(university._.cardBackground.fill(272,150)), alt=university.name)
+	section.jr-tutorials-summary.jr-mission
+		.contain.jr-tutorials-summary__container
+			.row
+				.col-12.col-sm-6.jr-tutorials-summary__description
+					.row.jr-tutorials-summary__description-header
+						h2 匠人毕业的学员
+					.row.jr-tutorials-summary__description-figure
+						.col-4
+							h3 500+
+							h4 匠人学员
+						.col-4
+							h3 9200+
+							h4 辅导小时
+						.col-4
+							h3 260+
+							h4 HD高分
+					.row.jr-tutorials-summary__description-detail
+						p 匠人旨在帮助那些处在迷茫当中、对所修课程有所疑惑、甚至想冲击高分的学生，我们不会花言巧语，我们只用数据说话。
+					.row.jr-tutorials-summary__description-button.white
+						a.jr-btn(href="/application") 快速报名
+				.col-sm
+					.mission__photos.row.col-12
+						.mission__photos--col.col
+							img.lazyload(data-src="/images/bgs/bne-2.jpeg" alt="IT匠人圈")
+							img.lazyload(data-src="/images/bgs/mel-1.jpeg" alt="IT匠人圈")
+						.mission__photos--col.col
+							img.lazyload(data-src="/images/bgs/syd-1.jpeg" alt="IT匠人圈")
+							img.lazyload(data-src="/images/bgs/syd-2.jpeg" alt="IT匠人圈")
+	+workshops-list(workshopsList)
+	+tutorial-skills
+	section.jr-overview
+		.contain.d-none
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 澳洲IT大学课程辅导
+					p.x-small 拒绝挂科 高效周课
+				li.col-md-3.col-sm-3.col-6
+					h6 城市
+					p.x-small 布里斯班 悉尼 墨尔本
+				li.col-md-3.col-sm-3.col-12
+					h6 价格
+					p.x-small 多种选择 丰俭由人
+	section.jr-tutorials-summary
+		.contain.jr-tutorials-summary__container
+			.row
+				.col-12.col-sm-4.jr-tutorials-summary__picture
+					img(src="images/icons/undraw_fast_loading_0lbh.svg" alt="IT匠人")
+				.col-12.col-sm-8.jr-tutorials-summary__description
+					.row.jr-tutorials-summary__description-header
+						h2 留学生面临的3大难题
+					.row.jr-tutorials-summary__feature--description-figure
+						.col-12.col-sm-4
+							h3 考试挂科重修
+							p 学业压力大
+							p 复习时间紧迫
+							p 考试经常挂科重修,又增加额外的时间和金钱
+						.col-12.col-sm-4
+							h3 GPA分数不达标
+							p 不知道用什么复习方法
+							p 技巧来提升GPA分数
+							p 有被遣返风险
+						.col-12.col-sm-4
+							h3 语言环境焦虑
+							p 由于语言文化差异
+							p 难以融入当地环境
+							p 跟不上老师的课程
+		.contain.jr-tutorials-summary__container
+			.row
+				.col-12.col-sm-8.jr-tutorials-summary__description
+					.row.jr-tutorials-summary__description-header
+						h2 如何解决留学难题
+					.row.jr-tutorials-summary__feature--description-figure
+						.col-12.col-sm-4
+							h3 有效提分指导
+							p 2年留学生辅导经验
+							p 不受地域限制
+							p 专属老师 吃透学科
+						.col-12.col-sm-4
+							h3 个性化冲刺辅导
+							p 1对1定制课程
+							p 1对1答疑辅导
+							p 提供专属笔记解题思路
+						.col-12.col-sm-4
+							h3 重点难点补习
+							p
+								span.highlight-span 200+
+								| 常青藤华人硕博学霸
+							p
+								span.highlight-span 4重
+								| 考核严选老师
+							p 精准定位课程中遇到的难题，制定高效复习方案
+				.col-12.col-sm-4.jr-tutorials-summary__picture
+					img(src="images/icons/undraw_co-workers_ujs6.svg" alt="IT匠人")
+	section.jr-services
+		.contain
+			h2.text-center 制定你的服务
+			div.row.no-margin
+				if tutoringServiceList.length
+					each service in tutoringServiceList
+						.col-sm-4.jr-card-wrapper
+							.card.jr-service-card(class="jr")
+								.jr-service-card__header
+									.icon-wrapper-cirlce
+									.overlay
+									img.lazyload(data-src=(service._.cardBackground.fit(280,309)), alt=service.name)
+									//- img(src="/images/bgs/background-card.png", alt="")
+								.jr-service-card__body.row
+									.info-box.col-sm-10.col-10
+										.reviews
+											.jr-stars.jr-stars__sm
+												div(style="width:95%;")
+											span.grey= service.temparayRating
+										h4= service.name
+										p.grey= service.cities
+										p= service.slogan
+									.action-box.col-2.col-sm-2.no-padding.position-relative
+										a.btn.jr-btn-circle-arrow-right.position-absolute.bottom-0(href="/tutorials/"+service.slug)
+											img(src="/images/icons/arrow-right.svg", alt="arrow-right")
+	section.jr-why
+		.contain.text-center.row
+			//- img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/image-laptop@1x-e0453c763ea5449882c8db6988b1bec11edcc93cca14c1ccdba29eb425727dbd.png", alt="Front-End Developer")
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 为什么选择IT匠人大学辅导
+				p 大神的学习笔记，大神的考试秘笈，大神的独特学习方法，通通都拿去！
+				p 此外，匠人还发布了“大神奖学计划”，凡是你是均分HD（90%）IT大神，并且有激情去帮助更多的学生提高学业，IT匠人愿意提供这样一个平台，来帮助更多的同学提高学业。也希望自己是单科HD以上的同学，有想法做Tutor的朋友，加入匠人
+				p
+					strong 为什么选择匠人的IT辅导课程？
+				ul
+					li 匠人臻选多门课HD大神（成绩90%+）做tutor，同时又有专业职场老司机做顾问，无论问题深或浅，都有大神相助
+					li 任职tutor了解你的课程考试作业与项目全部，都是该课以及相关课7分大神
+					li 匠人多种优惠活动帮你节约成本，同时也为学习好的同学提供舞台
+					li 可以根据学生情况灵活制定课程内容与时间
+			.jr-why__stat.col-12.col-sm-12.col-md-3
+				.card.card-border-top.hidden-md-down.tut-why
+					h4.light 匠人严选HD大神
+					p.text-left 零基础转IT，课程跟不上怎么办？
+					p.text-left 英语不够好，上课听不懂怎么办？
+					p.text-left 代码不会写怎么办？
+					p.text-left 考试通不过怎么办？
+					p.text-left 技能不够，做项目没思路怎么办？
+	+mentor-company
+	section.jr-instructors
+		.contain
+			h2.text-center Learn with the Best
+			+tutors
+	section.jr-faq
+		.contain
+			.faq__content
+				h2 帮助与常见问题
+				.contain-center#accordion
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingOne(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="collapsed" role="tab")
+									h4 
+										strong 问：IT课程辅导适合什么程度的学生去学呢?
+									i.lnr.lnr-chevron-up
+							#collapseOne.collapse(role="tabpanel" aria-labelledby="headingTwo")
+								.card-body
+									p 希望在自己的澳洲IT学业里有提升的同学，对考试，作业，编程语言有困难的同学。我们会派出当地或者全澳最好的导师指导学生提升和解决问题。
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingThree(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed" role="tab")
+									h4
+										strong 问：线上如何参与到课程指导？
+									i.lnr.lnr-chevron-up
+							#collapseThree.collapse(role="tabpanel" aria-labelledby="headingT")
+								.card-body
+									p 我们有丰富的线上指导经验，通过我们推荐使用的软件Zoom.us获得近距离的课程指导。线上指导比线下有优惠哦
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingSeven(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" class="collapsed" role="tab")
+									h4
+										strong 问：IT课程指导的费用是什么呢？
+									i.lnr.lnr-chevron-up
+							#collapseSeven.collapse(role="tabpanel" aria-labelledby="headingT")
+								.card-body
+									p 因为服务种类多种多样，所以我们在价格上也根据不同的服务有所不同。例如个别的导师的费用也可能比其他导师要高一些
+	section.jr-overview
+		.contain
+			h2.section-title 匠人最新文章
+			if posts.total
+				each post in posts.results
+					a(href="/blog/"+post.slug)
+						p.text-center= post.title
+	block js

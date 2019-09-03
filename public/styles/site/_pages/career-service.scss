@@ -1,0 +1,20 @@
+.jr-career-service {
+	a {
+		color: #007bff;
+		text-decoration: none;
+		&:visited {
+			color: #551a8b;
+		}
+	}
+	h3 > a {
+		font-size: 24px;
+	}
+}
+
+.jr-mentor {
+	text-align: center;
+	padding-bottom: 0px;
+	.section_statement {
+		width: 100%;
+	}
+}

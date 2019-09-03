@@ -1,0 +1,273 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+include ../mixins/post-collection
+include ../mixins/teachers
+include ../mixins/review
+include ../mixins/mentor-company
+include ../mixins/company/student-company
+include ../mixins/program-card
+include ../mixins/company/student-company
+
+block content
+	section.jr-hero
+		.jr-course-wrapper
+			.jr-course-wrapper__content
+					h6.white.mb-half 匠人课程
+					h1.white Web开发入门班
+					p.legible.center.white 跟随大神，零编程经验入门PHP Wordpress开发，快速建站
+					p.legible.center.white 个人网站·官方网站·电子商务网站(eCommerce)
+					p.legible.center.white 布里斯班 + 墨尔本 + 悉尼 + 全程Recording
+					a.button--primary.lg.center.inline(href="/application?type="+data.slug)
+						strong 报名入门班
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 难度
+					h5 入门
+					p.x-small 零基础 转专业
+				li.col-md-3.col-sm-3.col-6
+					h6 学习时间
+					p.x-small 两个月（每周6个小时）
+				li.col-md-3.col-sm-3.col-12
+					h6 课程价格
+					h5 原价: $3300
+					h5 早鸟价: $3000
+					p.x-small.x-mall *include GST
+				li.col-md-3.col-sm-3.col-12
+					h6 先修知识
+					h5 零基础
+					p.x-small 基本的计算机操作技能
+	section
+		.contain
+			.row
+				if(programs)
+					each program in programs
+						.col-12.col-sm-4
+							+program-card(program)
+	+student-company
+	section.jr-why
+		.contain.text-center.row
+			//- img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/image-laptop@1x-e0453c763ea5449882c8db6988b1bec11edcc93cca14c1ccdba29eb425727dbd.png", alt="Front-End Developer")
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 为什么选择IT匠人的Web开发入门班?
+				p IT匠人圈十多位顶级IT导师根据商业开发中的实际案例结合澳洲人才市场中对兼职行业和入门方向打造。课程整体设计更偏向对IT领域有兴趣，但并没有基础的学生，UI设计师，小企业家，Network Engineer，Business Analyst。 如果你想转行到IT行业，想尝试IT行业却还犹豫不决，那这里确实很适合你。
+				p
+					strong 适合人群:
+				ul
+					li 零基础，对Web开发感兴趣的同学
+					li 转专业，希望了解初级IT知识的同学
+					li 创业者，希望快速制作自己的网站，如电商网站(eCommerce)
+					li Graphic Designer/UI Designer，需要了解简单的Web开发
+			.jr-why__stat.col-12.col-sm-12.col-md-3
+				.card.card-border-top.hidden-md-down
+					h4.light Wordpress占据整个CMS里59.2%的份额（来自w3techs.com数据）
+					p.small 澳洲更是一个重度使用wordpress的地方，小到创业公司达到几千人级别的公司，都会有wordpress的身影
+					p.small Wordpress也很适合去做兼职，在
+	+mentor-company
+	section.features
+		.contain
+			div.row.margin-bottom-lg
+				.features__col-short.col-sm.text-center
+					img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-01@1x-a6975a860f7ced563f475e3bb8801361b6c3f2abd7e85e2c89a7c761a3992197.png", alt="features__images")
+				.features__col-wide.col-sm.text-center
+					.features__content
+						ul.features__list
+							li.row.col-sm
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 零基础入门，快速建网站，拥有自己的网站
+									p 课程整体设计更加偏向对IT领域有兴趣，但并没有基础的学生，UI设计师，小企业家，Network Engineer，Business Anaylist，想转专业到IT行业，想尝试下IT行业并且还犹豫不决的同学
+							li.row.col-sm
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 庞大IT匠人社交网络
+									p 我们在全球也有了几千人的群体，并且有许许多多的IT匠人导师和高级工程师，分布在全澳各地，几乎所有公司都有我们的足迹。通过老人带新人，不断地工作内推，帮助了许许多多的小伙伴找到了工作。
+			div.row.margin-bottom-lg
+				.features__col-wide.col-sm.text-center
+					.features__content
+						ul.features__list
+							li.row.col-sm
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 实战项目+项目经验
+									p 真实实战模拟项目经验，整个培训会deliver三个Projects，价值 $10000
+									ul
+										li 个人网站(价值$1000)
+										li 公司官网 (价值$2500)
+										li 电子商务网站(价值$6500)
+							li.row.col-sm
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 细致的课程追踪
+									p 除了24节课程的系统训练，授课教师会在课程期间随时回答学生的问题，课程结束后仍能为学生进行技术答疑。对每个学生的基础能力做出评估并且针对职业规划提出针对性建议，并持续追踪学生的求职情况。
+				.features__col-short.col-sm.text-center
+					img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-02@1x-8e9d672908d063cc0513ef55ffd7519eef7f5b889325d89efd9cadeb202dfdc1.png", alt="features__images")
+	section.jr-projects
+		.contain
+			h2 你将挑战的项目
+		section.jr-projects__cards
+			.cards_contain
+				.jr-projects__card
+					.jr-projects__header.row.no-margin
+						.jr-projects__header__content.col-sm-7
+							h6 Project
+							h3 个人网站
+							p.hidden-md-down 学会和掌握使用HTML5, CSS3, Javascript。入门Project，帮助你尽快学习到Web编程的基础和能够熟练使用Web技术三驾马车
+						.jr-projects__header__image.jr-projects__project__one.col-12.col-sm-5
+				.jr-projects__card
+					.jr-projects__header.row.no-margin
+						.jr-projects__header__content.col-sm-7
+							h6 公司网站
+							h3 Company Official Website
+							p.hidden-md-down 使用Wordpress + MySQL 独立做出一个价值$3000澳币的企业官方网站。官方网站不求人，独立完成，独立接活
+						.jr-projects__header__image.jr-projects__project__data_three.col-12.col-sm-5
+				.jr-projects__card
+					.jr-projects__header.row.no-margin
+						.jr-projects__header__content.col-sm-7
+							h6 电商网站
+							h3 eCommerce Webiste
+							p.hidden-md-down 使用Wordpress + Woocommerce + MySQL独立完成价值$6000的电商网站，实现商品的购买和下单，快递追踪，客户管理，用户管理等
+						.jr-projects__header__image.jr-projects__project__data_four.col-12.col-sm-5
+	section.jr-syllabus-term
+		.contain
+			h2 你将学到什么
+		section.jr-syllabus-term__cards
+			.cards_contain
+				.jr-syllabus-term__card
+					.jr-syllabus-term__header.row.col-sm.no-margin.no-padding
+						.jr-syllabus-term__header__content.col-sm-7
+							h6 Syllabus
+							h3 Web开发入门班 Wordpress 方向
+							p.hidden-md-down 通过进入现代Web的世界，了解现代web技术，学习HTML CSS 和Javascript 网页三剑客，后面进行学习基础PHP和MYSQL，为后面的wordpress开展打下基础。通过制作个人网站，官方网站和电商网站，基本掌握Wordpress的搭建开发到部署
+							.jr-syllabus-term__header__content--details
+								span 显示全部课程表信息(点击展开)
+								p.gray-medium 2个月完成
+						.jr-syllabus-term__header__image.col-sm-5.hidden-xs-down
+					.jr-syllabus-term__main.row.no-margin
+						.jr-syllabus-term__main__content.col-sm-7
+							h6 先修知识
+							p.margin-bottom-3 这是一门入门级课程，你只需要拥有访问互联网、下载和安装程序、重命名文件等基本的计算机操作能力，即可加入我们！你还需要有学习的自主性和动力，每周要保证投入 6-10 小时学习此课程。
+							section.jr-syllabus-term__main__content--parts
+								ul
+									li
+										.part
+											h5 Web Introduction
+											p 介绍Web技术的基本概念，原理。What is the Internet?
+									li
+										.part
+											h5 HTML5 & CSS3
+											p 前端开发是为网站或Web应用程序生成HTML，CSS和JavaScript的做法，以便用户可以直接查看和交互。与前端开发相关的挑战是用于创建网站前端的工具和技术不断变化，因此开发人员需要不断了解该领域的发展。
+									li
+										.part
+											h5 Javascript & JQuery
+											p 这一阶段会学习PHP，了解什么是变量，什么是for 循环，什么是if语句，从最基础的知识点，去学习php，了解入门的编程语言
+									li
+										.part
+											h5 PHP & Mysql 
+											p 这一阶段会学习PHP，了解什么是变量，什么是for 循环，什么是if语句，从最基础的知识点，去学习php，了解入门的编程语言.作为承载全球28%网站的wordpress应用，特别适合初学者快速创建网站，也适合开发者和学生利用此技术去接项目和找兼职。
+									li
+										.part
+											h5 Wordpress course 1 - Introduction & Basics
+											p 学习使用Wordpress，了解如何引入Theme，如何安装plugin，如何做SEO（搜索引擎优化）等等。这一阶段会做两个项目，一个是官方网站，另一个是电子商务网站。这些网站都会放到云端，方便求职或者接外包项目。
+									li
+										.part
+											h5 Wordpress course 2 - Practical
+											p 这一阶段会学习PHP，了解什么是变量，什么是for 循环，什么是if语句，从最基础的知识点，去学习php，了解入门的编程语言
+									li
+										.part
+											h5 Wordpress course 3 - Theme Basic Development
+											p 这一阶段会学习PHP，了解什么是变量，什么是for 循环，什么是if语句，从最基础的知识点，去学习php，了解入门的编程语言
+						.jr-syllabus-term__main__content.col-sm-5
+	section.jr-instructors
+		.contain
+			h2.text-center Learn with the Best
+			+teachers
+	//- section.jr-reviews
+	//- 	.contain
+	//- 		header
+	//- 			h2.blue.inline Student Reviews
+	//- 
+	//- 		.jr-reviews__container.row
+	//- 			.col-sm-4
+	//- 				.jr-reviews__card.stats
+	//- 					.stats__average
+	//- 						span 4.6
+	//- 						.stats__container
+	//- 							.jr-stars
+	//- 								div(style="width:92%;")
+	//- 					.jr-reviews__overview
+	//- 						.wrapper
+	//- 							.h6.text-right 5 stars
+	//- 							.progress
+	//- 								div 1821
+	//- 						.wrapper
+	//- 							.h6.text-right 4 stars
+	//- 							.progress
+	//- 								div 1821
+	//- 						.wrapper
+	//- 							.h6.text-right 3 stars
+	//- 							.progress
+	//- 								div 1821
+	//- 						.wrapper
+	//- 							.h6.text-right 2 stars
+	//- 							.progress
+	//- 								div 1821
+	//- 						.wrapper
+	//- 							.h6.text-right 1 stars
+	//- 							.progress
+	//- 								div 1821
+	//- 			.col-sm-4
+	//- 				.jr-reviews__card.card
+	//- 					h5 Helen Y.
+	//- 					p.student__review 
+	//- 			.col-sm-4
+	//- 				.jr-reviews__card.card
+	//- 					h5 Helen Y.
+	//- 					p.student__review
+	//- 			.col-sm-4
+	//- 				.jr-reviews__card.card
+	//- 					h5 Helen Y.
+	//- 					p.student__review 
+	//- 			.col-sm-4
+	//- 				.jr-reviews__card.card
+	//- 					h5 Helen Y.
+	//- 					p.student__review 
+	//- 			.col-sm-4
+	//- 				.jr-reviews__card.card
+	//- 					h5 Helen Y.
+	//- 					p.student__review
+	section.jr-faq
+		.contain
+			.faq__content
+				h2 帮助与常见问题
+				.contain-center
+					h4
+						strong 问：本期课程适合什么程度的学生去学呢
+					p 我们的Web开发入门课程，是针对零基础的同学并且对做网站有兴趣 ，Graphic Designer/ UI Designer等需要了解简单的Web开发，希望转专业的同学，了解初级的IT知识，还有想学如何快速制作一个网站，比如电商网站(eCommerce)
+					h4
+						strong 问：培训的过程中是否有人指导，有没有一些项目可以参与？
+					p 在培训过程中，我们有多年经验的导师来做指导答疑，下课也有导师24/7在线回答同学问题，都是澳洲IT行业里的大牛。大牛求真，少走弯路
+					p 除了课程中需要完成的三个项目外，我们也会推荐真实的商业项目参与其中，获取更多的宝贵经验，让每个学员尽可能的做到，在培训过程中获得宝贵的商业经验，达到可以直接上手工作的目的
+					h4
+						strong 问：上课的课时有多少，一周的讲课时间多少，费用怎么样
+					p 此期培训的课时有60个小时（三个月），每周两次的课，每次课有3个小时，时间会暂定在周三晚上和周六下午。不过我们也会根绝学生的情况作出调整。
+					p 我们目前原价是$3300，现在有Early Bird 早鸟价$3000，绝对超值。三个项目个人网站价值$1000，官方网站价值$2500，电子商务网站价值$7500，三个项目价值$10000了，你还在等什么？
+	+post-collection
+	script(type="application/ld+json").
+		{
+			"@context": "http://schema.org",
+			"@type": "Course",
+			"name": "Web开发零基础入门班Wordpress",
+			"description": "特别适合没有基础的想转专业学习IT的朋友，通过Wordpress的学习，帮助你好找兼职工作",
+			"provider": {
+				"@type": "Organization",
+				"name": "澳洲IT匠人圈",
+				"sameAs": "https://jiangren.com.au"
+			}
+		}

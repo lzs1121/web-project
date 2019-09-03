@@ -1,0 +1,212 @@
+extends ../../layouts/course-layout
+
+include ../../mixins/post-featured
+include ../../mixins/teachers
+include ../../mixins/review
+include ../../mixins/partnership
+include ../../mixins/mentor-company
+
+block content
+	section.jr-hero
+		.contain
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				.video__featured--content
+					h6.white.mb-half 匠人课程
+					h1.white 数据分析·Business Intelligence
+					p.legible.center.white.hidden-xs-down Microsoft Power BI 
+					p.legible.center.white.hidden-xs-down 数据分析师入门班
+					p.legible.center.white.hidden-xs-down 针对会计 金融等转专业
+					p.legible.center.white.hidden-xs-down 理论基础 + 项目实战
+					p.legible.center.white 悉尼 + 墨尔本 + 布里斯班 + 线上直播
+					a.button--primary.lg.center.inline(href="/application?type="+data.slug)
+						strong 报名
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 难度
+					h5 入门
+				li.col-md-3.col-sm-3.col-6
+					h6 学习时间
+					h5 2019年1月初开班
+					p.x-small 24 hours
+				li.col-md-3.col-sm-3.col-12
+					h6 课程价格
+					h5 早鸟价：$1500（面授）$1000（远程） 
+					p.x-small 原价$1800  更多优惠联系客服
+	+partnership
+
+	section.jr-why
+		.contain.text-center.row
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 为什么选择IT匠人的数据分析班?
+				p 匠人推出的数据分析班旨在帮助学员在4天的时间内从理论到实践全面提升能力，从0到1的学会怎么用Microsoft Power BI的数据分析语言(DAX)来构建BI的业务报告然后在Power BI的Dashboard上发布结果.
+				h4 课程目标
+				ul
+					li 了解数据分析的行业背景，职业前景和职业发展方向 
+					li 了解Power BI基础知识，学会初步的分析知识 
+					li 根据本事用户案列，灵活运用Power BI进行深度解析 
+					li 跟着导师学习和实战，获得case经验和团队协作经验
+			.jr-why__stat.col-12.col-sm-12.col-md-3
+				.card.card-border-top.hidden-md-down
+					p 匠人推出的数据分析课程组由清华学霸导师设计教学，能够有效帮助学员在4天的时间内从理论到实践全面提升能力，为学员以后的自学提升及求职就业之路打下坚实基础。
+	section.jr-syllabus-term
+		.contain
+			h2 你将学到什么
+		section.jr-syllabus-term__cards
+			.cards_contain
+				.jr-syllabus-term__card
+					.jr-syllabus-term__header.row.no-margin
+						.jr-syllabus-term__header__content.col-sm-7
+							h6 Syllabus
+							h3 数据分析班
+							p.hidden-md-down 学习数据分析必备工具：Power BI 和 SQL
+							.jr-syllabus-term__header__content--details
+								p.jr-syllabus-term__toggle.collapsed(data-toggle="collapse" data-target="#course_detail" aria-expanded="false" aria-controls="course_detail")
+									span 显示全部课程表信息(点击展开)
+								p.gray-medium 24小时
+						.jr-syllabus-term__header__image.col-sm-5.hidden-xs-down
+					.jr-syllabus-term__main.row.no-margin
+						.jr-syllabus-term__main__content.col-sm-7.collapse#course_detail
+							h6 Course Summary
+							p.margin-bottom-3 This course provides comprehensive knowledge about Business Intelligence (BI) occupation, its related work flows, and Microsoft Power BI tutorials. 
+							section.jr-syllabus-term__main__content--parts
+								ul
+									li
+										.part
+											h5 Part 1 Business Intelligence Overview 
+											p 课程介绍
+											p
+												span.lnr.lnr-chevron-right What is Business Intelligence
+											p
+												span.lnr.lnr-chevron-right Big Data Ecosystem
+											p
+												span.lnr.lnr-chevron-right Business intelligence work flow overview 
+											p
+												span.lnr.lnr-chevron-right Major Business Intelligence Platform comparison 
+											p
+												span.lnr.lnr-chevron-right Essential Business Intelligence Skills
+										.part
+											h5 Part 2 Basic Kimball Dimensional Modelling Introduction  
+											p 课程介绍
+											p
+												span.lnr.lnr-chevron-right What is data modelling
+											p
+												span.lnr.lnr-chevron-right Conceptual, logical and physical schemas
+											p
+												span.lnr.lnr-chevron-right Entity relationship
+											p
+												span.lnr.lnr-chevron-right Star Schema 
+											p
+												span.lnr.lnr-chevron-right Dimension, Fact & Summary Table
+											p
+												span.lnr.lnr-chevron-right Cast Study: Star schema Sample
+										.part
+											h5 Part 3 Introduction to Microsoft Power BI
+											p 课程介绍
+											p
+												span.lnr.lnr-chevron-right History of Power BI
+											p
+												span.lnr.lnr-chevron-right Creating Datasets from Data Models and Data Files
+											p
+												span.lnr.lnr-chevron-right Using Quick Insights to Explore a Dataset
+											p
+												span.lnr.lnr-chevron-right View Reports
+											p
+												span.lnr.lnr-chevron-right Exploring a Dashboard
+										.part
+											h5 Part 4 Introduction to DAX 
+											p 课程介绍
+											p
+												span.lnr.lnr-chevron-right What is DAX
+											p
+												span.lnr.lnr-chevron-right Data types supported
+											p DAX calculation
+											p
+												span.lnr.lnr-chevron-right Calculated column 
+											p
+												span.lnr.lnr-chevron-right Calculated measures 
+											p DAX Functions
+											p
+												span.lnr.lnr-chevron-right Aggregation
+											p
+												span.lnr.lnr-chevron-right Filter
+											p
+												span.lnr.lnr-chevron-right Time Intelligence
+											p
+												span.lnr.lnr-chevron-right Date & Time
+											p
+												span.lnr.lnr-chevron-right Logical
+											p
+												span.lnr.lnr-chevron-right Math
+											p
+												span.lnr.lnr-chevron-right Parent & Child
+											p
+												span.lnr.lnr-chevron-right Statistical
+											p 
+												span.lnr.lnr-chevron-right Text
+										.part
+											h5 Part 5 Basic DAX Function Use Cases (Case Study)
+											p 课程介绍
+											p
+												span.lnr.lnr-chevron-right Cumulative Count
+											p
+												span.lnr.lnr-chevron-right Using variables in DAX expressions
+											p
+												span.lnr.lnr-chevron-right Obtain previous fact
+											p
+												span.lnr.lnr-chevron-right Compare different timeframe
+											p
+												span.lnr.lnr-chevron-right Certain period count
+											p
+												span.lnr.lnr-chevron-right Moving average
+											p
+												span.lnr.lnr-chevron-right Compare selected attributes
+										.part
+											h5 Part 6 Report Generation (Case Study)
+											p 课程介绍
+											p
+												span.lnr.lnr-chevron-right Create views
+											p
+												span.lnr.lnr-chevron-right Display further details
+										.part
+											h5 Part 7 Advanced DAX Function Use Cases (Case Study)
+											p 课程介绍
+											p
+												span.lnr.lnr-chevron-right Time Intelligence
+											p
+												span.lnr.lnr-chevron-right Top selection by certain entity
+											p
+												span.lnr.lnr-chevron-right Rolling time comparison
+											p
+												span.lnr.lnr-chevron-right Total count in certain period
+											p
+												span.lnr.lnr-chevron-right Table relationships and DAX
+											p
+												span.lnr.lnr-chevron-right DAX tables and filtering
+										.part
+											h5 Part 8 Comprehensive Case study 
+											p 课程介绍
+											p
+												span.lnr.lnr-chevron-right Create comprehensive sales report/dashboard
+											p
+												span.lnr.lnr-chevron-right Create the dashboard of analysing the customer segmentation
+											p
+												span.lnr.lnr-chevron-right Data visualization bonus: visualize the European debt crisis
+											p
+												span.lnr.lnr-chevron-right Publish and share Power BI report
+										.part
+											h5 Part 9 Revision and Q&A  
+											p 课程介绍
+											p
+												span.lnr.lnr-chevron-right Revision from part 1 to 8 
+											p
+												span.lnr.lnr-chevron-right Career Path consultation
+											p
+												span.lnr.lnr-chevron-right CV writing consultation
+	
+	section.jr-instructors
+		.contain
+			h2.text-center Learn with the Best
+			+teachers

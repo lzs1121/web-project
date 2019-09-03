@@ -1,0 +1,206 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+include ../mixins/post-featured
+include ../mixins/teachers
+include ../mixins/post-featured
+
+block content
+	section
+		.contain.row.no-padding-top.col-sm-12
+			.card-course__hero.hero.col-sm.full-stack
+				.hero--overlay
+					h6 匠人课程
+					h1 Web方向
+					h5 前端+后端 提高就业能力 达到Job Ready
+					.stats.row
+						.col-sm
+							h6 本期开课时间
+							h5 2018年7月8月
+							p.small.white 不同课具体开课时间不同
+						.col-sm
+							h6 授课方式
+							h5 线上+线下+Recording
+						.col-sm
+							h6 授课语言
+							h5 中文
+					.row
+						.col-sm-4
+							button.btn.button--secondary.consulting-modal-btn(data-target="consultingInfoModal" data-toggle="modal") 报名咨询
+						.col-sm-8
+							p.small.white *点击左侧按钮，扫码加入课程交流微信群。邀请朋友一起参加享受减免$500
+			.card-course__content.hero.col-sm
+				.card-course__content--header
+					p 选择经典课程
+					.jr-card.green-bg.jr-card__cover
+						.jr-card--overlay
+							h4.white Web开发入门班
+							p.white 零基础掌握Web开发基本方法
+							a.white.btn-right-arrow.float-right(href='/web-developmenet-introduction-bootcamp') 了解课程
+					.jr-card.blue-bg.jr-card__cover
+						.jr-card--overlay
+							h4.white Web全栈项目班
+							p.white .Net Core + Reactjs + API
+							a.white.btn-right-arrow.float-right(href='/web-development-bootcamp') 了解课程
+					p 选择更多辅导课程
+					.jr-card.small-card
+						.jr-card--overlay
+							h4 修改简历+面试辅导
+							a.btn-right-arrow.float-right.consulting-modal-btn(data-target="consultingInfoModal" data-toggle="modal") 了解课程
+					.jr-card.small-card
+						.jr-card--overlay
+							h4 IT匠人实习生计划
+							a.btn-right-arrow.float-right(href='/internship') 了解课程
+
+	section
+		.contain.row.no-padding-top.col-sm-12
+			.card-course__hero.hero.col-sm.data-science
+				.hero--overlay
+					h6 匠人课程
+					h1 数据科学方向
+					h2 数据科学家 Big Data工程师
+					h5 未来趋势 Data Scientist、Machine Learning
+					.stats.row
+						.col-sm
+							h6 本期开课时间
+							h5 2018年8月
+							p.small.white 不同课具体开课时间不同
+						.col-sm
+							h6 授课方式
+							h5 线上+线下+Recording
+						.col-sm
+							h6 授课语言
+							h5 中文
+					.row
+						.col-sm-4
+							button.btn.button--secondary.consulting-modal-btn(data-target="consultingInfoModal" data-toggle="modal") 报名咨询
+						.col-sm-8
+							p.small.white *点击左侧按钮，扫码加入课程交流微信群。邀请朋友一起参加享受减免$500
+			.card-course__content.hero.col-sm
+				.card-course__content--header
+					p 选择经典课程
+					.jr-card.green-bg.jr-card__cover
+						.jr-card--overlay
+							h4.white 数据分析·Business Intelligence
+							p.white Power BI 应用
+							a.white.btn-right-arrow.float-right(href="/powerbi") 了解课程
+					.jr-card.blue-bg.jr-card__cover
+						.jr-card--overlay
+							h4.white 数据科学项目加强
+							p.white 从入门到精通，初级班、中级班
+							a.white.btn-right-arrow.float-right(href="/data-science-bootcamp") 了解课程
+					p 选择更多辅导课程
+					.jr-card.small-card
+						.jr-card--overlay
+							h4 修改简历+面试辅导（数据科学方向）
+							a.btn-right-arrow.float-right.consulting-modal-btn(data-target="consultingInfoModal" data-toggle="modal") 了解课程
+					.jr-card.small-card
+						.jr-card--overlay
+							h4 职业规划（数据科学方向）
+							a.btn-right-arrow.float-right.consulting-modal-btn(data-target="consultingInfoModal" data-toggle="modal") 了解课程
+	section
+		.contain.row.no-padding-top.col-sm-12
+			.card-course__hero.uiDesign
+				.hero--overlay
+					h6 匠人课程
+					h1 UI设计方向
+					h2 UI设计 UX
+					h5  UI四核心 理论 实践 技术 品味
+					.stats.row
+						.col-sm
+							h6 本期开课时间
+							h5 2018年7月11日
+							p.small.white 不同课具体开课时间不同
+						.col-sm
+							h6 授课方式
+							h5 线上+线下+Recording
+						.col-sm
+							h6 授课语言
+							h5 中文
+					.row
+						.col-sm-4
+							button.btn.button--secondary.consulting-modal-btn(data-target="consultingInfoModal" data-toggle="modal") 报名咨询
+						.col-sm-8
+							p.small.white *点击左侧按钮，扫码加入课程交流微信群。邀请朋友一起参加享受减免$500
+			.card-course__content.hero.col-sm
+				.card-course__content--header
+					p 选择经典课程
+					.jr-card.blue-bg.jr-card__cover
+						.jr-card--overlay
+							h4.white UI设计入门
+							p.white UI设计入門班
+							a.white.btn-right-arrow.float-right(href="/uidesign") 了解课程
+					p 选择更多辅导课程
+					.jr-card.small-card
+						.jr-card--overlay
+							h4 修改简历+面试辅导（UI设计方向）
+							a.btn-right-arrow.float-right.consulting-modal-btn(data-target="consultingInfoModal" data-toggle="modal") 了解课程
+					.jr-card.small-card
+						.jr-card--overlay
+							h4 职业规划（UI设计方向）
+							a.btn-right-arrow.float-right.consulting-modal-btn(data-target="consultingInfoModal" data-toggle="modal") 了解课程
+	
+	section
+		.contain
+			h2.section-title 您的澳洲IT就业培训方案
+			p.description.text-center 澳洲IT圈 + 技能职业培训 + 商业Projects + 工作内推 + 实习
+			.row.services-wrapper.no-margin
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_031_brainstorm_meeting_crowd_people_group_communicatation_team_2090332.svg' alt="Craftsman Academy inteaction design")
+						.col-sm-12.col-12
+							h4 课前咨询
+							p
+								small 决定上课前，与您的课程授课老师一对一咨询，以解答困惑。
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_022_workspace_workplace_beard_guy_man_laptop_computer_2090123.svg' alt="Craftsman Academy Application Development")
+						.col-sm-12.col-12
+							h4 课程训练
+							p
+								small 根据培训方案，完成您的课程培训，迅速提高专业水平。
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_045_global_planet_jiangren.svg' alt="Craftsman Academy Product Strategy")
+						.col-sm-12.col-12
+							h4 面试指导
+							p
+								small 与老师一对一沟通，完成简历修改和模拟面试，获得内部推荐，为面试做好充分准备。
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_015_news_newspaper_sport_games_prize_achievement_articles_2090158.svg' alt="Craftsman Academy Product Strategy")
+						.col-sm-12.col-12
+							h4 职前服务
+							p
+								small 通过面试后，您还可以从IT匠人获得专业的薪酬谈判、职位选择等咨询服务
+	+post-featured
+	#consultingInfoModal.jr-modal.modal.fade.jr-modal__large(tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true")
+		.modal-dialog.modal-dialog-centered(role="document")
+			.modal-content.jr-modal__consutling__content
+				.modal-header
+					button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+						span(aria-hidden="true") &times;
+				.modal-body
+					h4.text-center 扫码加入课程咨询群，查看群公告免费试听课程
+					.row
+						.col-sm
+							.text-center.row
+								.consulting-qr-wrapper.col-sm
+									img.lazyload(data-src="/images/xiaohua.jpeg", alt="IT匠人咨询群二维码")
+									span 添加客服小花
+								.consulting-qr-wrapper.col-sm
+									img.lazyload(data-src="/images/consulting-qr.jpeg", alt="IT匠人咨询群二维码")
+									span 扫描入群咨询
+						.col-sm.align-self-center
+							ul.benefit-list
+								li 入群获得独家资料
+								li 抢先获得开课通知
+								li 学长为你答疑解惑

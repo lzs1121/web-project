@@ -1,0 +1,37 @@
+extends ../layouts/course-layout
+
+block content
+	section.general-hero
+		.university-banner.card
+			.university-banner__content
+				.row.align-items-center
+					.col-xl-9.col-lg-9.col-md-9.col-sm-0
+						.content-detail
+							h1.white.uni-chinesename= (university.chineseName)
+							.university-website
+								a.button--primary__theme.lg.center.inline(href=university.officialWebsite target="_blank") 官网
+							h4.white.uni-englishname= university.name
+							h4.white.uni-location= ("所在城市: "+university.address)
+							p.white.uni-description= university.shortDescription
+
+			if !university.bannerBackground.exists
+				.university__topcard--overlay
+			.university-banner__bg.animated.fadeIn
+				if university.bannerBackground.exists
+					img.universitycard-bg(src=university.bannerBackground.secure_url, alt="stripe")
+
+	section.jr-uni-features-courses
+		section.jr-courses-card
+			section.jr-courses-card--title
+				h3.text-center.bold 你感兴趣的大学课程
+				p.text-center 大学课程学习资料，考点难点，汇总
+	section.jr-uni-features-courses
+		.contain
+			section.jr-courses-card--cards
+				div#searchResultsCards.row.no-margin
+
+	script.
+		var myCourses=!{JSON.stringify(courses)};
+block js
+	script(src=`/apps.bundle.js` async)
+	link(rel="stylesheet", href="/apps.css")

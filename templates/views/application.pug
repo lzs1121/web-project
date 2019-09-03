@@ -1,0 +1,77 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+
+include ../mixins/course-feature
+include ../mixins/post-featured
+include ../mixins/company/student-company
+
+block content
+	section.general-hero(class="jr-"+city)
+		.contain
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				.application--content
+					h6.grey 澳洲最大的IT找工作平台
+					h1= data.title
+					div
+						div#smartBook
+				img.stripe-pattern(src="/images/bgs/strip-patterns.svg", alt="stripe")
+				img.stripe-bg(src="/images/bgs/bg-shape-i.svg", alt="stripe")
+				//- a.button--primary__theme(data-target="consultingInfoModal" data-toggle="modal") 报名咨询
+	div.modal.fade(id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true")
+		.modal-dialog.modal-dialog-centered(role="document")
+			.modal-content
+				.modal-header
+					.modal-title ht
+					button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+						span(aria-hidden="true") &times;
+				.modal-body
+	section
+		.contain
+			+course-feature
+	section.jr-partners
+		.contain
+			h6.text-center 合作机构
+				ul.jr-partners__list
+					li
+						img.jr-partners__list--icon.lazyload(data-src="/images/partners/qiniuyun.png", alt="匠人partner")
+					li
+						img.jr-partners__list--icon.lazyload(data-src="/images/partners/yunxiang.jpeg", alt="匠人partner")
+					li
+						img.jr-partners__list--icon.lazyload(data-src="/images/partners/abcdata.png", alt="匠人partner")
+					li
+						img.jr-partners__list--icon.lazyload(data-src="/images/partners/arc.png", alt="匠人partner")
+					li
+						img.jr-partners__list--icon.lazyload(data-src="/images/partners/Navitas-logo-March-2016.png", alt="匠人partner")
+					li
+						img.jr-partners__list--icon.lazyload(data-src="/images/partners/ribit-black-social.png", alt="匠人partner")
+					li
+						img.jr-partners__list--icon.lazyload(data-src="/images/partners/qujianji.jpg", alt="匠人partner")
+			+student-company
+	+post-featured
+	#consultingInfoModal.jr-modal.modal.fade.jr-modal__large(tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true")
+		.modal-dialog.modal-dialog-centered(role="document")
+			.modal-content.jr-modal__consutling__content
+				.modal-header
+					button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+						span(aria-hidden="true") &times;
+				.modal-body
+					h4.text-center 扫码加入课程咨询群，查看群公告免费试听课程
+					.row
+						.col-sm
+							.text-center.row
+								.consulting-qr-wrapper.col-sm
+									img(src="/images/xiaohua.jpeg", alt="IT匠人咨询群二维码")
+									span 添加客服小花
+								//- .consulting-qr-wrapper.col-sm
+								//- 	img(src="/images/consulting-qr.jpeg", alt="IT匠人咨询群二维码")
+								//- 	span 扫描入群咨询
+						.col-sm.align-self-center
+							ul.benefit-list
+								li 入群获得独家资料
+								li 抢先获得开课通知
+								li 学长为你答疑解惑
+	block js
+		script(src=`/apps.bundle.js` async)
+		link(rel="stylesheet", href="/apps.css")

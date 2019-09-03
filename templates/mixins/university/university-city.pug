@@ -1,0 +1,16 @@
+mixin university-city(city)
+	if (universities.length)
+		section.jr-university
+			.jr-policy-content.tab-content
+				.tab-pane.margin-top-30.active#brisbane
+					.row
+						each university in universities
+							.col-12.col-sm-3
+								.card.jr-card__university
+									.jr-card__university__body.row
+										.col.display-flex.flex-center
+											a(href="/university/"+university.slug)
+												h4.jr-card__university--title= university.chineseName
+									.jr-card__university__background
+										.jr-card__university__background--overlay
+										img.lazyload(data-src=(university._.cardBackground.fill(272,150)), alt=university.name)

@@ -1,0 +1,15 @@
+mixin post-featured
+	.post-featured-section
+		.full-width.flex-1.display-flex.flex-wrap
+			if posts.total
+				each post in posts.results
+					.col-sm-3.col-6.no-padding
+						.img-card-static
+							.img-card-heading-wrapper
+								.img-card-heading
+									.title-holder-inner
+										a(href="/blog/"+post.slug)
+											h2= post.title
+								.img-card-heading-description
+							.img-card-bg(style="background:url("+post.image.secure_url+") no-repeat; background-size:cover;")
+								.img-card-overflow

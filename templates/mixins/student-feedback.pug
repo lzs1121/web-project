@@ -1,0 +1,10 @@
+mixin student-feedback
+	div.student-feedback.jr-student-feedback(id ="area")
+		if students.length
+			ul(style="list-style-type: none;" id="con1")
+				each student in students
+					li.row
+						img.jr-quote-front(src="../images/quote-front.svg")
+						p=student.comments
+						img.jr-quote-back(src="../images/quote-back.svg")
+			ul(id="con2")

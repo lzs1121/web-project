@@ -1,0 +1,52 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+include ../mixins/workshop-application
+include ../mixins/course-feature
+
+block content
+	section
+		.contain
+			.eventApplication-title
+				h3 VIP课程免费试听
+					span 让我们为你量身定做
+			.row
+				.card-application__content.col-sm-7.jr-eventApplication-card
+					img.event-header-bg(src="../images/bgs/bg-shape-eventApplication.svg")
+					h5.white 留下您的联系方式，小花会在第一时间联系您
+					.card-application__content--header
+						+workshop-application
+				.col-sm-4.jr-eventApplication-description
+					h1=curWorkShops.name
+					.row
+						.col-sm-4 
+							p
+								strong 地点
+						.col-sm-7
+							p=curWorkShops.place
+					.row
+						.col-sm-4 
+							p
+								strong 费用
+						.col-sm-7
+							if curWorkShops.totalPrice===0
+								p Free
+							else
+								if curWorkShops.packagePrice
+									p="总价 $"+curWorkShops.totalPrice
+								else
+									p="$"+curWorkShops.unitPrice+(curWorkShops.unit?("/" + curWorkShops.unit):"")
+									p="时长 "+curWorkShops.tutoringLength + curWorkShops.unit||""
+									p="总价 $"+curWorkShops.totalPrice
+					.row
+						.col-sm-4
+							p
+								strong 时间
+						.col-sm-7
+							p=curWorkShops._.startDate.format('dddd DD MMMM YYYY')
+							p=curWorkShops._.startDate.format('h:mm a') + ' - ' +curWorkShops._.endDate.format('h:mm a')
+	block js
+		script(src=`/apps.bundle.js` async)
+		link(rel="stylesheet", href="/apps.css")
+		script(src="https://www.paypal.com/sdk/js?client-id="+process.env.PAYPAL_CLIENT_ID+"&currency=AUD" async)
+		script(src="https://js.stripe.com/v3/" id="stripe-js" async)

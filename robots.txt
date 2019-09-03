@@ -1,0 +1,3 @@
+Sitemap: https://jiangren.com.au/sitemap.xml
+User-agent: *
+Disallow:

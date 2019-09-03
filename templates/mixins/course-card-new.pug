@@ -1,0 +1,93 @@
+mixin course-card-new(course, badge)
+	.container.py-3.course-card-description
+		.card
+			.row
+				.col-sm-4.course-card-description__image
+					if course.courseLink
+						a(href='/'+course.courseLink)
+							.course-card-description__image--wrapper
+								img.img.lazyload(data-src=(course.thumbnail.secure_url || "/images/courses/default.png" ), alt= course.title)
+					else
+						a(href='/program-course/'+course.slug)
+							.course-card-description__image--wrapper
+								img.img.lazyload(data-src=(course.thumbnail.secure_url || "/images/courses/default.png" ), alt= course.title)
+				.col-sm-8
+					.card-block
+						.row
+							.card-block__left.col-12.col-sm-9
+								h4.card-title
+									if course.courseLink
+										a(href='/'+course.courseLink)= badge
+									else
+										a(href='/program-course/'+course.slug)= badge
+								p.grey By 
+									if course.teachers.length
+										each teacher in course.teachers
+											span.course-card-description__teacher= teacher.name
+									else
+										span="Jiangren"
+								p.grey= course.cardDescription
+								.reviews
+									.jr-stars.jr-stars__sm
+										div(style="width:95%;")
+									span.reviews-figure 5.0
+									if course.numberOfPeople
+										span.grey (
+										span.grey=course.numberOfPeople
+										span.grey 人已报名)
+									else 
+										span.grey (火热报名中)
+								.row.card-block__left-details
+									.col-auto
+										.row.card-block__left-details--wrapper
+											.card-block__left-details-icon
+												img.lazyload(data-src="/images/icons/course-clock-icon.svg" alt="Card-icon")
+											.card-block__left-details-description=course.timeLength
+												span  小时
+									.col-auto
+										.row.card-block__left-details--wrapper
+											.card-block__left-details-icon
+												img.lazyload(data-src="/images/icons/course-clock-icon.svg" alt="Card-icon")
+											.card-block__left-details-description=course.courseLength
+												span  节课
+									.col-auto
+										.row.card-block__left-details--wrapper
+											.card-block__left-details-icon
+												img.lazyload(data-src="/images/icons/course-clock-icon.svg" alt="Card-icon")
+											.card-block__left-details-description__third=course.level/*how to get this value*/
+												span  级别
+								.row.card-block__left-details
+									.card-block__left-details-icon
+										img.lazyload(data-src="/images/icons/course-clock-icon.svg" alt="Card-icon")
+									if course.city.length
+										.card-block__left-details-description.card-block__left-details-description--location
+											each city in course.city
+												span= city.name
+									else
+										.card-block__left-details-description.card-block__left-details-description--location Brisbane
+											
+							.card-block__right.col-12.col-sm-3.padding-top-15
+								.card-block__right--price
+									if course.tuition
+										if course.promoTuitionOffline                               
+											p.grey.oringinal-price 原价 $
+												span=course.tuition
+											p.current-price 早鸟价 $
+												span=course.promoTuitionOffline
+										else
+											p.grey.no-price 原价 $
+											p.current-price 请咨询客服
+									else
+										p.grey.no-price 课程准备中
+										p.current-price 请咨询客服
+								.card-block__right--button-actions
+									.card-block__right-button
+										a.btn.btn-lg(href="/application?type="+course.slug) 立即报名
+									.card-block__read-more
+										if course.courseLink
+											a(href='/'+course.courseLink)
+												p.grey 查看详情
+										else
+											a(href='/program-course/'+course.slug)
+												p.grey 查看详情
+

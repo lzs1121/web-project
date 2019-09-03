@@ -1,0 +1,108 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+include ../mixins/post-featured
+include ../mixins/teachers
+include ../mixins/teacher/career-coaching-tabs
+
+block content
+	section
+		.contain.jr-course
+			.row
+				.col-12.col-sm-6.jr-course-header__content
+					p.jr-course-header__content--badge 你的专属求职顾问
+					h1 澳洲求职就业
+					h3 墨尔本，悉尼，布里斯班
+					p 从面试官，雇主角度剖析你的问题
+					p 匠人有庞大的导师队伍 100+ 业界精英
+					p 面向全专业澳洲留学生，新移民，转专业
+					p 简历修改，职业指导，职业规划，面试辅导，模拟面试等
+					p 针对个人的个性化定制服务
+					p 综合多方面提高学员能力
+					//- form(action="/")
+					//-     input(type="search" placeholder="Search" aria-label="Search")
+					//-     button.book-tutor-button.ant-btn.button--primary__theme.lg.center.inline.ant-btn-primary(type="submit") Search
+				.col-12.col-sm-6.jr-course-header__image
+					img.lazyload(data-src="/images/icons/undraw_interview_rmcf.svg" alt="background")
+	section
+		.contain
+			h2.section-title Career Coaching
+			p.description.text-center 职场硬技能，资深导师团队，体系化课程
+			.row.services-wrapper
+				if careerService.length
+					each career in careerService
+						.col-sm-3.col-6.text-center.jr-card-wrapper
+							.card.card-profile.card-plain
+								.card-img-top
+									a(href='/career-coaching/'+career.slug)
+										img.img.lazyload(data-src=(career._.thumbnail.fit(400,300) || "/images/courses/default.png" ), alt= career.name)
+								.card-text-block
+									h2.card-title
+										strong
+											a(href='/career-coaching/'+career.slug target="_blank")= career.chName
+	section
+		.contain
+			+career-coaching-tabs
+	section
+		.contain
+			h2.section-title 您的澳洲IT就业培训方案
+			p.description.text-center 澳洲IT圈 + 技能职业培训 + 商业Projects + 工作内推 + 实习
+			.row.services-wrapper.no-margin
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_031_brainstorm_meeting_crowd_people_group_communicatation_team_2090332.svg' alt="Craftsman Academy inteaction design")
+						.col-sm-12.col-12
+							h3 课前咨询
+							p
+								small 决定上课前，与您的课程授课老师一对一咨询，以解答困惑。
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_022_workspace_workplace_beard_guy_man_laptop_computer_2090123.svg' alt="Craftsman Academy Application Development")
+						.col-sm-12.col-12
+							h3 课程训练
+							p
+								small 根据培训方案，完成您的课程培训，迅速提高专业水平。
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_045_global_planet_jiangren.svg' alt="Craftsman Academy Product Strategy")
+						.col-sm-12.col-12
+							h3 面试指导
+							p
+								small 与老师一对一沟通，完成简历修改和模拟面试，获得内部推荐，为面试做好充分准备。
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_015_news_newspaper_sport_games_prize_achievement_articles_2090158.svg' alt="Craftsman Academy Product Strategy")
+						.col-sm-12.col-12
+							h3 职前服务
+							p
+								small 通过面试后，您还可以从IT匠人获得专业的薪酬谈判、职位选择等咨询服务
+	#consultingInfoModal.jr-modal.modal.fade.jr-modal__large(tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true")
+		.modal-dialog.modal-dialog-centered(role="document")
+			.modal-content.jr-modal__consutling__content
+				.modal-header
+					button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+						span(aria-hidden="true") &times;
+				.modal-body
+					h4.text-center 扫码加入课程咨询群，查看群公告免费试听课程
+					.row
+						.col-sm
+							.text-center.row
+								.consulting-qr-wrapper.col-sm
+									img.lazyload(data-src="/images/xiaohua.jpeg", alt="IT匠人咨询群二维码")
+									span 添加客服小花
+								.consulting-qr-wrapper.col-sm
+									img.lazyload(data-src="/images/consulting-qr.jpeg", alt="IT匠人咨询群二维码")
+									span 扫描入群咨询
+						.col-sm.align-self-center
+							ul.benefit-list
+								li 入群获得独家资料
+								li 抢先获得开课通知
+								li 学长为你答疑解惑

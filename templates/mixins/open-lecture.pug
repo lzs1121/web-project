@@ -1,0 +1,35 @@
+mixin open-lecture
+	if workshops.length
+		each workShop in workshops
+			.jr-open-lecture__card
+				div.jr-open-lecture__row
+						img.jr-open-lecture__card__icons--lg.lazyload(data-src="/images/icons/lecture-title.svg" alt="lecture-title")
+						h2.jr-open-lecture__card__title=workShop.name
+				div.jr-open-lecture__row
+					img.jr-open-lecture__card__icons--sm.lazyload(data-src="/images/icons/lecture-time.svg" alt="lecture-time")
+					p.jr-open-lecture__card__content
+						strong="时间："
+						p.jr-open-lecture__card__content=workShop._.startDate.format('DD MMM YYYY h:mm a')
+				div.jr-open-lecture__row
+					img.jr-open-lecture__card__icons--sm.lazyload(data-src="/images/icons/lecture-type.svg" alt="lecture-type")
+					p.jr-open-lecture__card__content
+						strong="形式："
+						p.jr-open-lecture__card__content=workShop.activityForm
+				if workShop.activityForm === "线下"
+					div.jr-open-lecture__row
+						img.jr-open-lecture__card__icons--sm.lazyload(data-src="/images/icons/lecture-location.svg" alt="lecture-location")
+						p.jr-open-lecture__card__content
+							strong="地址："
+							- const place = workShop.place || '确认中，敬请关注'
+							p.jr-open-lecture__card__content=place
+				if workShop.description
+					div.jr-open-lecture__row
+						p.jr-open-lecture__card__description!=(workShop.description)
+				div.jr-open-lecture__row
+					a.jr-open-lecture__card__read-more(href='/workshop/' + workShop.key) 阅读更多...
+
+	if !workshops.length
+		.row
+			.col-12
+				p
+					strong 近期暂时没有公开课

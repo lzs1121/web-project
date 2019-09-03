@@ -1,0 +1,157 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+
+include ../mixins/post-featured
+include ../mixins/teachers
+include ../mixins/post-collection
+include ../mixins/partnership
+include ../mixins/mentor-company
+include ../mixins/pre-footer
+block content
+	section.jr-hero
+		.contain
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				.video__featured--content
+					h6.white.mb-half 匠人课程
+					h1.white 商业项目培训生（原项目实习）
+					p.legible.center.white 获得项目经验 获得澳洲工作经验
+					p.legible.center.white 澳洲找工作完美解决方案
+					p.legible.center.white 以获取项目经验加速你拿offer
+					p.legible.center.white 选用最流行 最新技术 职场技能提升
+					p.legible.center.white 布里斯班 + 悉尼 + 墨尔本 + 远程实习
+					a.button--primary.lg.center.inline(href="/application?type="+data.slug)
+						strong 报名
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 难度
+					h5 就业
+					p.x-small 项目实习
+				li.col-md-3.col-sm-3.col-6
+					h6 项目时间
+					h5 2-3个月
+					p.x-small 兼职或全职
+				li.col-md-3.col-sm-3.col-12
+					h6 课程价格
+					h5 $3300/2个月
+					p.x-small.x-mall *include GST
+					h5 $3850/3个月
+					p.x-small.x-mall *include GST
+				li.col-md-3.col-sm-3.col-12
+					h6 先修知识
+					h5 Web全栈/iOS初级班/UI进阶班/数据科学全栈班
+					p.x-small 纯项目经验
+					p 新增3月实习，可紧跟职业年，抵扣实习要求。
+	section.jr-projects
+		.contain
+			h2 你将挑战的项目
+		section.jr-projects__cards
+			.contain
+				.cards_contain
+					if data.project.length
+						each project in data.project
+							.jr-projects__card
+								.jr-projects__header.row.no-margin
+									.jr-projects__header__content.col-12.col-sm-6
+										h6 Project
+										h3= project.name
+										p.hidden-md-down!= project.shortDescription
+										.jr-projects__header__content__footer
+											.tag-container
+												if project.skills.length
+													each skill in project.skills
+														.tag= skill
+									.jr-projects__header__image--wrapper.jr-projects__project__one.col-12.col-sm-6
+										img.lazyload(data-src=(project.thumbnail.secure_url), alt=project.name)
+
+	section.jr-why
+		.contain.text-center.row
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 什么是商业项目培训生（项目实习）
+				h4
+					strong 打造Agile Team 团队完成商业项目 获取项目经验
+				p 项目实习是匠人独创的，通过商业项目为载体，配合上career coaching和项目Mentor全程辅导，提升学员的项目能力，获得本地项目经验。让学员获得商业项目能力以及获得工作经验。
+				p 通过2到3个月的完整商业级别项目，由澳洲多年从业经验的导师带队全程手把手指导，配置完整开发团队，体验Agile开发模式，全真模拟本地IT公司工作流程。带给你职场最需要的工作实战经验！过程中导师会给各成员布置任务，如果过程中有任何问题，导师随时解答辅助。
+				p 商业项目实习，实施真正公司工作环境，每周项目20-38小时，每周有6小时的导师解答时间，从实践中出真知，从实战中拿offer
+				h4
+					strong 简历薄弱如何冲击Offer？
+				p IT匠人圈六十位顶级IT导师根据澳洲本土商业环境为刚刚毕业的海外学生、新移民等量身打造，帮助简历薄弱的同学拿到面试机会，自信面对面试官。通过短时间的项目强化，轻松获得本土商业项目经验。所有项目均为真实背景，真实项目。
+				p
+					strong 项目实习安排
+				p 
+					span
+						strong 时长
+					span 2-3个月 每周 20- 38h的项目贡献时间
+				p
+					span
+						strong 形式
+					span 通过进入项目组，直接参与实际项目中，直接上手练习，不含有类似于全栈班的基础知识培训
+				p
+					strong 项目实习包含培训
+				p
+					strong Career Coaching部分
+				ul
+					li 1次模拟面试（15mins 面试+5mins 反馈）
+					li 1次职业咨询（职业规划，职业前途等）
+					li 1次简历修改（修改简历，Professional）
+					li 提供工作证明及Referral
+				p
+					strong Team work部分
+				ul
+					li Agile及项目前培训
+					li Git（默认已会git）
+				h4
+					strong 项目团队成员构成
+				p 项目实战班以一线公司Senior Engineer领军，高强度、针对性地对全栈开发岗位进行专业培训，项目涵盖Backend、Frontend、Cloud  Data、Android、iOS, 区块链，AI等7个track。资深工程师手把手教会同学们整套IT项目开发和设计知识与技能。
+				p 项目执行Agile管理，包含 4-6名 Developer，1-3名 Business Anaylsts，1名 UI Designer， 1名 UX designer，1名 SEO/ Online Marketer，一名Product Owner 等组成。
+				img(src="/images/courses/commercial-team.jpg", alt="澳洲实习找工作IT匠人 6+x商业实战班")
+			.jr-why__stat.col-12.col-sm-12.col-md-3
+				.card.card-border-top.hidden-md-down
+					h4.light 针对毫无项目经验的求职者的完美解决方案
+					p.text-left 无课程，高强度项目实战，全程导师解答疑虑
+					p.text-left 特邀嘉宾解答BA，UI，Agile，技能等问题
+					p.text-left 与企业直接对接，离Offer更进一步
+	+partnership
+	.container-fluid.no-padding
+		section
+			div(class="tab-content" id="pills-tabContent")
+				div(class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab")
+					.container
+						.row.col-sm-12.no-margin
+							.pane-text-wrapper
+								.project-map-wrapper
+									h2.intro-title 为您量身定制的个性化培训方案
+									img(src="/images/tools/6plusx.svg", alt="澳洲商业项目实习")
+						.row.col-sm-12.no-margin
+							.pane-text-wrapper
+								h2.intro-title 项目实习如何让同学们拿到offer
+								p 由澳洲找工作的特殊性，澳洲雇主更看重的项目deliver能力，有没有项目经验。匠人通过提供多个上线的完整项目，让学员真正能够体会到真实商业项目的价值，提升学员的工作经验
+								h2.intro-title 针对学生
+								ul
+									li 针对Developer：IT毕业生，有较强编程能力的学生，匠人Web全栈班等就业班毕业学生
+									li 针对Business Analyst和产品经理: 懂得Agile和Scrum
+									li 针对UI：有Portfolio
+								h2.intro-title 课程目标
+								p
+									strong 让学员了解：
+									ul
+										li 了解互联网公司的真正工作情况
+										li 了解如何进行Team Work，真正的公司Agile如何进行的
+										li 运用工业级，公司真正使用的技术与开发流程
+	
+	section.jr-projects__cards
+		.contain
+			.cards_contain
+				.pane-text-wrapper
+					h2.section-title 充实项目经历，面试脱颖而出
+					h4 紧跟前沿，引领潮流，囊括业界炙手可热的实用技术
+					p 由具有多年工业界经验的资深工程师主讲，课程重点涵盖了工业界普遍使用或正在流行的众多关键技术。项目选题均为各大著名IT公司主打产品的优化，实践证明将大大增加您获得面试机会并最终通过的几率。
+					h4 每期更新，确保您的简历独一无二
+					p 每期都增设精心设计的全新项目，以确保您的简历独一无二。
+					h4 实时跟踪，给您全方位的简历与面试指导
+					p 除了3大项目教学，我们还将实时追踪您的学习进度，同时设有简历修改课和模拟面试（Mock Interview）课，并提供面试技巧和模拟面试指导，由科技公司主力面试官为您逐字逐句推敲简历，让您的实力在简历和面试中得到真实的展现。
+	+mentor-company
+	+post-collection

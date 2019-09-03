@@ -1,0 +1,46 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+
+include ../mixins/post-featured
+include ../mixins/meetup-tree
+
+block content
+	.container-fluid.no-padding
+		div.page-intro.brisbane-page-pag.theme-bg.featured-section-expanded
+			h1.page-title IT社群
+			p.lead 澳洲最大IT专业人士社群
+			p.lead IT求职群，悉尼，墨尔本，布里斯班群，专业群，线上课群，顶尖华人技术群，各大高校社群
+			a.btn-primary.btn-white(href="http://jiangren.cloud/")
+				strong 前往论坛
+		section.page-content
+			.container.text-bg.padding
+				h2.section-title IT匠人圈全球资源
+				.row
+					.col-sm-12.col-md-12
+						p.margin.padding.text-center IT匠人圈全球职业资源已经遍布中国，日本，澳洲，美国，欧洲，新加坡，马来西亚，不管你走到哪里，都有IT匠人圈的小伙伴，都有IT匠人圈的大牛，也有遍布各个公司的工作内推机会，与你的同行建立起了工作推荐，技术交流，技术进步，项目合作，职业咨询等优势。全球6000多个小伙伴，从此IT人不在孤单。
+				.row
+					.col-sm-12.col-12.text-center.margin-v-10
+						p 欢迎扫描下面二维码，加小花好友邀请入群
+						img(src="./images/xiaohua.jpeg", alt="小花")
+						
+				.row
+					.col-sm-12.col-12.text-center.margin-v-10
+						p 我们有IT求职交流群，AWS考证交流群，大前端，最美php群，Mobile开发者爱好群，墨尔本，悉尼，布里斯班本地匠人群
+				.row.no-padding.no-margin
+					.col-sm-6.col-12
+						.card.card-profile.card-plain
+							.card-img-top
+								img(class="img" src="/images/bgs/itcommunity.jpg" alt="itcommunity")
+					.col-sm-6.col-12
+						.card.card-profile.card-plain
+							.card-img-top
+								img(class="img" src="/images/bgs/recruitment.jpg" alt="recruitment")
+				h2.section-title 澳洲IT学生组织
+				.row
+					.col-sm-12.col-md-12
+						p.margin.padding.text-center 设有澳洲八大高校民间组织，从此IT人有了自己的社团
+				h2.section-title IT匠人活动
+				.row.col-sm-12
+					.meetup-wrapper
+						+meetup-tree

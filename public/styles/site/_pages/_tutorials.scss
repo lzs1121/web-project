@@ -1,0 +1,226 @@
+.jr-tutorial{
+	background-image: url(/images/bgs/background-tutorial-shape.png);
+	background-repeat: no-repeat;
+	background-size: 100% 1030px;
+	@include MQ(L) {
+		background-image: url(/images/bgs/background-tutorial-shape.png);
+		background-repeat: no-repeat;
+		background-size: 100% 1030px;
+	}
+	@include MQ(M) {
+		background-image: url(/images/bgs/background-tutorial-shape-md.png);
+		background-repeat: no-repeat;
+		background-size: 100% 1030px;
+	}
+	@include MQ(S) {
+		background-image: url(/images/bgs/background-tutorial-shape-sm.png);
+		background-repeat: no-repeat;
+		background-size: 100% 780px;
+	}
+	
+	
+	.jr-tutorial-desccription{
+		.jr-tutorial-desccription__left{
+			padding:25px 20px 20px 40px;
+			@include MQ(S) {
+				padding:10px;
+			}
+			h1{
+				@include MQ(S) {
+					font-size: 26px;
+				}
+			}
+			h2{
+				font-size: 24px;
+				@include MQ(S) {
+					font-size: 18px;
+					text-align: left;
+				}
+			}
+			h3{
+				font-size: 18px;
+				@include MQ(S) {
+					font-size: 14px;
+				}
+			}
+			h6{
+				padding-right:30px;
+			}
+			.jr-tutorial-desccription__courses,.jr-tutorial-desccription__application{
+				margin-top: 10px;
+				a{
+					font-size: 15px;
+					padding: 12px;
+					border: solid 2px rgba(255, 255, 255, 0.97);
+				}
+			}
+			.jr-tutorial-desccription__city{
+				margin:50px 0 0 15px;
+				ul{
+					padding-left: 0;
+					li{
+						display:inline;
+					}
+					p{
+						display:inline;
+						color:white;
+					}
+				}
+			} 
+			.solo__social{
+				margin:10px 0 0 4px;
+				padding-left: 0;
+				li{
+					margin-left:7px; 
+				}
+			}
+		}
+		.jr-tutorial-desccription__right{
+			.jr-tutorial__slides{
+				border-radius:12px;
+				background:linear-gradient(217deg, #fa709a, rgba(244, 167, 114, 0.71));
+				padding-top:0px;
+				height:auto;
+				
+				.card-img-top{
+					position:relative;
+					pointer-events: none;
+					.jr-tutorial__workshop-image{
+						border-radius:12px 12px 0 0;
+						position:relative;
+						z-index:1;
+					}
+					.jr-tutorial__upcoming-image{
+						img{
+							position: absolute;
+							z-index: 2;		
+							left:0px;
+							top:10px;
+							border-radius:0px;	
+						}	
+						h4{
+							position: absolute;
+							z-index: 3;
+							left:10px;
+							top:20px;
+						}
+					}
+					.jr-tutorial__upcoming-content{
+						position: absolute;
+						z-index: 4;
+						left:20%;
+						right:20%;
+						top:40%;
+					}				
+				}
+				.card-text-block{
+					display: flex;
+					flex-direction: row;
+					color:black;
+					background: white;
+					border-radius:0 0 12px 12px;
+					h5{
+						padding-left:25px;
+						font-weight: 600;
+					}				
+				}
+			}
+		}
+		
+	}
+}
+.jr-tutorials-summary__container{
+		.jr-tutorials-summary__description{
+			margin:40px 0;
+			display:flex;
+			flex-direction: column;
+			align-items: center;
+			font-weight: 500;
+			text-align: center;
+			.jr-tutorials-summary__description-header{
+				h2{
+					font-size: 24px;
+					line-height: 1.23;
+					letter-spacing: 1.4px;	
+					color: #080808;
+				}
+			}
+			.jr-tutorials-summary__feature--description-figure{
+				width:100%;
+				h3{
+					font-size: 24px;
+					color: #fa709a;
+					@include MQ(S) {
+						font-size: 25px;
+					}
+				}
+				h4{
+					width:100%;
+					font-size: 18px;
+					line-height: 2.06;
+					letter-spacing: 0.8px;
+					color: #838383;
+					@include MQ(S) {
+						font-size: 11px;
+					}
+				}
+				p{
+					margin-bottom: 5px;
+				}
+				span.highlight-span{
+					color: #fa709a;
+					font-weight: 600;
+				}
+			}
+			.jr-tutorials-summary__description-figure{
+				width:100%;
+				h3{
+					font-size: 35px;
+					letter-spacing: 2.2px;
+					color: #fa709a;
+					@include MQ(S) {
+						font-size: 25px;
+					}
+				}
+				h4{
+					width:100%;
+					font-size: 18px;
+					line-height: 2.06;
+					letter-spacing: 0.8px;
+					color: #838383;
+					@include MQ(S) {
+						font-size: 11px;
+					}
+				}
+			}
+			.jr-tutorials-summary__description-detail{
+				max-width: 470px;
+				p{
+					text-align: right;
+					padding: 15px 0;
+					color: #838383;
+					position: relative;
+					@include MQ(S) {
+						padding:0 15px;
+						left:0;
+						text-align: center;
+					}
+				}
+			}
+			.jr-tutorials-summary__description-button{
+				justify-content: center;
+				width:100%;
+				max-width: 470px;
+				margin-top:30px;
+			}
+		}
+	.jr-tutorials-summary__picture{
+		margin:40px 0;
+		img{
+			width:100%;
+		}
+	}
+}
+#resourcePanel{
+	padding: 20px 0;
+}

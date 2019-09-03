@@ -1,0 +1,65 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+
+include ../mixins/course-feature
+include ../mixins/post-featured
+include ../mixins/partnership
+include ../mixins/mentor-company
+include ../mixins/why-choose-mentor
+include ../mixins/tutors
+include ../mixins/post-collection
+include ../mixins/university/university-tabs
+include ../mixins/breadcrumbs
+
+block content
+	section.general-hero(class="jr-"+city)
+		.contain
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				.application--content
+					h6.grey 澳洲最大的IT找工作平台
+					h1= service.name
+					p.grey= service.slogan
+					.jr-grey!= service.shortDescription
+					div
+						div#smartBook
+					.margin
+						a.button--primary__theme.lg.center.inline(href="/application") 快速报名
+					if service.type == 'Tutoring'
+						.margin
+							a.button--primary__theme.lg.center.inline(href="/tutorials") 查看其它IT辅导
+					.stats-box
+						p.grey  80% 澳洲IT在校生选择了匠人
+				img.stripe-pattern(src="/images/bgs/strip-patterns.svg", alt="stripe")
+				img.stripe-bg(src="/images/bgs/bg-shape-i.svg", alt="stripe")
+				
+				//- a.button--primary__theme(data-target="consultingInfoModal" data-toggle="modal") 报名咨询
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				if service.type == 'Tutoring'
+					li.col-md-3.col-sm-3.col-6
+						h6 辅导安排
+						p!= service.scheduling
+					li.col-md-3.col-sm-3.col-6
+						h6 套餐价格
+						p!= service.packageIntroduction
+					li.col-md-3.col-sm-3.col-12
+						h6 优惠方式
+						p!= service.promotion
+	section
+		.contain
+			+university-tabs
+	if service.type == 'Tutoring'
+		section.jr-why
+			.contain
+				.jr-why__description
+					div!= service.longDescription
+		+why-choose-mentor
+	section
+		.contain
+			+tutors
+	+mentor-company
+	+partnership
+	+post-collection

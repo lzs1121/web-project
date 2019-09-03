@@ -1,0 +1,15 @@
+mixin course-feature
+	h2.section-title 推荐课程
+	.row.services-wrapper
+		if courses.length
+			each course in courses
+				.col-sm-4.col-12.text-center
+					.card.card-profile.card-plain
+						.card-img-top
+							a(href='/'+course.courseLink)
+								img.img.lazyload(data-src=(course.thumbnail.secure_url || "/images/courses/default.png" ), alt= course.title)
+						.card-text-block
+							h5.card-category= course.promoDescription
+							h4.card-title
+								a(href='/'+course.courseLink target="_blank")= course.title
+	

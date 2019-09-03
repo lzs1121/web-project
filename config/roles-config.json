@@ -1,0 +1,98 @@
+{
+	"roles": [{
+			"name": "member",
+			"description": "vip memebers",
+			"policies":[
+				{
+					"resource": [
+						"/*"
+					],
+					"effect": "allow",
+					"action": "view"
+				}
+			]
+		},{ 
+			"name": "staff",
+			"description": "basic manipulation with data",
+			"tags": ["memebr", "author", "student", "tutor", "teacher"],
+			"policies":[
+				{
+					"resource": [
+						"/*"
+					],
+					"effect": "allow",
+					"action": "view"
+				}
+			]
+		}, {
+			"name": "author",
+			"description": "author for posting articles",
+			"policies":[
+				{
+					"resource": [
+						"/*"
+					],
+					"effect": "allow",
+					"action": "view"
+				}
+			]
+		}, {
+			"name": "student",
+			"description": "default registered user",
+			"policies":[
+				{
+					"resource": [
+						"/*"
+					],
+					"effect": "allow",
+					"action": "view"
+				},
+				{
+					"resource": [
+						"/programs"
+					],
+					"effect": "deny",
+					"action": "view"
+				}
+			]
+		}, {
+			"name": "tutor",
+			"description": "university tutroing",
+			"permission": ["post"],
+			"policies":[
+				{
+					"resource": [
+						"/*"
+					],
+					"effect": "allow",
+					"action": "view"
+				}
+			]
+		}, {
+			"name": "teacher",
+			"description": "course cooridinator",
+			"permission": ["post","lecture","program"],
+			"policies":[
+				{
+					"resource": [
+						"/*"
+					],
+					"effect": "allow",
+					"action": "view"
+				}
+			]
+		}, {
+			"name": "admin",
+			"description": "roles everything",
+			"tags": ["memebr", "staff", "author", "student", "tutor", "teacher", "admin"],
+			"policies":[
+				{
+					"resource": [
+						"/*"
+					],
+					"effect": "allow",
+					"action": "view"
+				}
+			]
+		}]
+}

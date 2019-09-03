@@ -1,0 +1,300 @@
+extends ../layouts/default
+
+//- INCLUDES
+
+include ../mixins/what-you-get
+include ../mixins/mentor-company
+include ../mixins/program-card
+include ../mixins/post-featured
+include ../mixins/who-trust-us
+include ../mixins/pre-footer
+include ../mixins/tutorials
+include ../mixins/partnership
+include ../mixins/upcoming-event-cards
+
+block content
+	.home-page
+		.container-fluid.no-padding.position-relative
+			div.home-page-pag.star-bg
+				div#particles-js
+				div.jumbton.getconnected
+					h1 匠人学院
+					h2 来自8000多人的信任
+					h3 找匠人 拿offer 拒挂科
+					a.outline-btn(href="/application") 报名课程
+			section#service-bar
+				.columns.text-center
+					ul.no-padding.margin-center
+						li
+							a(href="/program-courses")
+								span.item-holder
+									i.lnr.lnr-laptop-phone
+									h2.white.category-title 技能培训
+						li
+							a.item-holder(href="/career-coaching")
+								span.item-holder
+									i.lnr.lnr-rocket
+									h2.white.category-title 求职服务
+						li
+							a.item-holder(href="/tutorials")
+								span.item-holder
+									i.lnr.lnr-users
+									h2.white.category-title 大学辅导
+						li
+							a.item-holder(href="/events")
+								span.item-holder
+									i.lnr.lnr-bubble
+									h2.white.category-title 匠人活动
+			section#location-bar
+				.columns.large-9.large-centered.medium-9.medium-centered.more-locations
+					ul.no-padding.margin-center
+						li
+							a.fa-white(href="/city/melbourne") 墨尔本
+						li
+							a.fa-white(href="/city/sydney") 悉尼
+						li
+							a.fa-white(href="/city/brisbane") 布里斯班
+						li 西雅图
+		.container
+			.homepage-welcome-section
+				h2.section-title 选择你的就业方向
+				.jr-course-selection--nav.margin-top-30
+					.row
+						.col
+							a(href="/program-courses/#full-stack")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web_3-04_1152162.svg" alt="Full-stack")
+									.jr-course-selection__card--text-block
+										p 全栈工程师
+						.col
+							a(href="/program-courses/#full-stack")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web-93_1048351.svg" alt="web")
+									.jr-course-selection__card--text-block
+										p Web前端
+						.col
+							a(href="/program-courses/#full-stack")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web_3-33_1153614.svg" alt="web")
+									.jr-course-selection__card--text-block
+										p 后端
+						.col
+							a(href="/program-courses/#full-stack")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web-95_1048349.svg" alt="web")
+									.jr-course-selection__card--text-block
+										p Devops
+						.col
+							a(href="/program-courses/#full-stack")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web-72_1046265.svg" alt="web")
+									.jr-course-selection__card--text-block
+										p Mobile
+						.col
+							a(href="/program-courses/#ui-ux-designer")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web_3-41_1153630.svg"  alt="Ui-ux-designer")
+									.jr-course-selection__card--text-block
+										p UI/UX设计师
+						.col
+							a(href="/program-courses/#data-science-ai")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web_3-57_1153780.svg" alt="Data-science-ai")
+									.jr-course-selection__card--text-block
+										p 数据分析
+						.col
+							a(href="/program-courses/#data-science-ai")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web_2-27_1045309.svg" alt="Data-science-ai")
+									.jr-course-selection__card--text-block
+										p 数据科学
+						.col
+							a(href="/program-courses/#data-science-ai")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web_3-40_1153631.svg" alt="Data-science-ai")
+									.jr-course-selection__card--text-block
+										p 数据工程师
+						.col
+							a(href="/program-courses/#data-science-ai")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web-52_1046194.svg" alt="Data-science-ai")
+									.jr-course-selection__card--text-block
+										p Python
+						.col
+							a(href="/program-courses/#ba-project-management")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web_2-45_1045329.svg" alt="Business Analyst")
+									.jr-course-selection__card--text-block
+										p Business Analyst
+						.col
+							a(href="/program-courses/#ba-project-management")
+								.jr-course-selection__card
+									.jr-course-selection__card--img-wrapper
+										img.lazyload(data-src="/images/icons/if_seo_web_3-97_1153802.svg" alt="Business Analyst")
+									.jr-course-selection__card--text-block
+										p SEO & Digital Marketing
+		section
+			.contain
+				h2.section-title 即将开的培训课程
+				.row
+					if(programs)
+						each program in programs
+							.col-12.col-sm-4
+								+program-card(program)
+		section
+			.contain
+				h2.section-title IT职业培训
+				p.description.text-center 助力澳洲IT留学生找到工作，短时间内提高你的职业能力和就业能力
+				.row.services-wrapper
+					if courses.length
+						each course in courses
+							.col-sm-4.col-12.text-center.jr-card-wrapper
+								.card.card-profile.card-plain.card__course
+									.card-img-top
+										if course.courseLink
+											//- a(href='/'+course.courseLink)
+											img.img.lazyload(data-src=(course._.thumbnail.fit(400,300) || "/images/courses/default.png"), alt= course.title onclick=`window.location.href='/${course.courseLink}'`)
+										else
+											//- a(href='/program-course/'+course.slug)
+											img.img.lazyload(data-src=(course._.thumbnail.fit(400,300) || "/images/courses/default.png"), alt= course.title onclick=`window.location.href='/program-course/${course.slug}'`)
+									.card-text-block
+										h5.card-category= course.promoDescription
+										if course.courseLink
+											a(href='/'+course.courseLink target="_blank" title= course.title)
+												h3.card-title= course.title
+										else
+											a(href='/program-course/'+course.slug target="_blank" title= course.title)
+												h3.card-title= course.title
+										p.card-description= course.cardDescription
+										.card-footer
+											if course.enrollURL
+												button.btn.btn-lg(onclick=`window.location.href='/${course.enrollURL}'`) 参加报名
+											else
+												button.btn.btn-lg(onclick=`window.location.href='/application?type=${course.slug}'`) 参加报名
+											if course.courseLink
+												button.btn.btn-lg(onclick=`window.location.href='/${course.courseLink}'`) 了解课程
+											else
+												button.btn.btn-lg(onclick=`window.location.href='/program-course/${course.slug}'`) 了解课程
+				h2.section-title 职场培训
+				p.description.text-center 职场硬技能，资深导师团队，体系化课程
+				.row.services-wrapper
+					if careerCoachingList.length
+						each career in careerCoachingList
+							.col-sm-3.col-6.text-center.jr-card-wrapper
+								.card.card-profile.card-plain
+									.card-img-top.cursor-click
+										//- a(href='/career-coaching/'+career.slug)
+										img.img.lazyload(data-src=(career._.thumbnail.fit(264,147) || "/images/courses/default.png" ), alt= career.name onclick=`window.location.href='/career-coaching/${career.slug}' `)
+									.card-text-block
+										h5.card-category= career.slogan
+										h4.card-title
+											strong
+												a(href='/career-coaching/'+career.slug target="_blank" title= career.chName)= career.chName
+				+upcoming-event-cards
+				+tutorials
+				h3.section-title 布里斯班 · 墨尔本 · 悉尼
+				p.description.text-center 匠人臻选HD大神，带你Carry全课程
+				ul.paths
+					li.framework
+						h4 豪华导师大神阵容
+						h3 50位来自世界名校，服务于世界一流公司的大牛.
+						a.btn-white(href="/program-courses" class="btn sm") 匠人培训
+					li.pro
+						h4 最大IT从业者组织
+						h3 澳洲近万个IT从业者的组织，打造最专业垂直IT社群.
+						a.btn-white(href="/community" class="btn sm") 匠人社群
+					li.enterprise
+						h4 墨尔本+悉尼+布里斯班+西雅图
+						h3 提供最好的本土化IT最专业技术指导和职业规划
+						a.btn-white(href="/career-coaching" class="btn sm") 职业辅导
+				+mentor-company
+				h2.section-title 您的澳洲IT就业培训方案
+				p.description.text-center 澳洲IT圈 + 技能职业培训 + 商业Projects + 工作内推 + 实习
+				.row.services-wrapper
+					.col-sm-3.col-6
+						.row
+							.col-sm-12.col-12
+								div.service-img-holder
+									img.lazyload(data-src='/images/tools/if_031_brainstorm_meeting_crowd_people_group_communicatation_team_2090332.svg' alt="JR Academy inteaction design")
+							.col-sm-12.col-12
+								h4 课前咨询
+								p
+									small 决定上课前，与您的课程授课老师一对一咨询，以解答困惑。
+					.col-sm-3.col-6
+						.row
+							.col-sm-12.col-12
+								div.service-img-holder
+									img.lazyload(data-src='/images/tools/if_022_workspace_workplace_beard_guy_man_laptop_computer_2090123.svg' alt="JR Academy Application Development")
+							.col-sm-12.col-12
+								h4 课程训练
+								p
+									small 根据培训方案，完成您的课程培训，迅速提高专业水平。
+					.col-sm-3.col-6
+						.row
+							.col-sm-12.col-12
+								div.service-img-holder
+									img.lazyload(data-src='/images/tools/if_045_global_planet_jiangren.svg' alt="JR Academy Product Strategy")
+							.col-sm-12.col-12
+								h4 面试指导
+								p
+									small 与老师一对一沟通，完成简历修改和模拟面试，获得内部推荐，为面试做好充分准备。
+					.col-sm-3.col-6
+						.row
+							.col-sm-12.col-12
+								div.service-img-holder
+									img.lazyload(data-src='/images/tools/if_015_news_newspaper_sport_games_prize_achievement_articles_2090158.svg' alt="JR Academy Product Strategy")
+							.col-sm-12.col-12
+								h4 职前服务
+								p
+									small 通过面试后，您还可以从IT匠人获得专业的薪酬谈判、职位选择等咨询服务
+		.container
+			+partnership
+		.container-fluid
+			.testimonial
+		section.jr-overview
+			.contain
+				h2.section-title 匠人最新文章
+				if posts.total
+					each post in posts.results
+						a(href="/blog/"+post.slug)
+							p.text-center= post.title
+		script(type="application/ld+json").
+			{
+				"@context": "http://schema.org",
+				"@type": "Organization",
+				"url": "https://jiangren.com.au",
+				"name": "JR Academy",
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"telephone": "+61-‭421-672-555‬",
+					"contactType": "Customer service"
+				}
+			},
+			{
+				"@context": "http://schema.org",
+				"@type": "Blog",
+				"url": "https://jiangren.com.au/blog"
+			},
+			{
+				"@context": "http://schema.org",
+				"@type": "Organization",
+				"name": "JR Academy",
+				"url": "https://jiangren.com.au/",
+				"sameAs": [
+				"https://www.facebook.com/jiangrenquan/",
+				"https://plus.google.com/u/0/104735790585354331739"
+				]
+			}
+	block js
+		script(src='/js/particles.min.js')

@@ -1,0 +1,21 @@
+mixin uni-post-slides
+	.swiper-container.post-slides
+		if posts.total
+			div.swiper-wrapper
+				each post in posts.results
+					div.swiper-slide
+						div(data-swiper-parallax="-100")
+							.card.card-profile.card-plain
+								.card-img-top
+									a(href="/blog/"+post.slug)
+										img.slider-image.img.lazyload(data-src=(post.image.secure_url || "/images/test.jpg" ), alt= post.title)
+										.slider-wrapper
+											h4.white.text-shadow(data-swiper-parallax="-300" data-swiper-parallax-duration="500")=post.title
+											p.white.text-shadow(data-swiper-parallax="-300" data-swiper-parallax-duration="600")="|  "+post.author.name.first
+		div.row.slide-btn
+			div.swiper-button-prev.post-btn-left
+				.jr-btn-circle-arrow-left
+					img(src="/images/icons/arrow-left.svg" alt="arrow")
+			div.swiper-button-next.post-btn-right
+				.jr-btn-circle-arrow-right
+					img(src="/images/icons/arrow-right.svg" alt="arrow")

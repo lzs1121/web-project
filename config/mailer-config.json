@@ -1,0 +1,26 @@
+{
+  "registry": {
+    "from": "JR Academy <jracademybne@gmail.com>",
+    "subject": "报名成功通知-澳洲IT匠人圈",
+    "text": "亲爱的同学,\n\n欢迎注册成为澳洲IT匠人圈用户！\n请点击链接完成账户激活:\n\n"
+  },
+  "password": {
+    "from": "JR Academy <jracademybne@gmail.com>",
+    "subject": "重新设置密码通知-澳洲IT匠人圈",
+    "text": "亲爱的同学,\n\n您已成功申请重置密码！\n请点击链接完成密码重置\n"
+  },
+  "resource": {
+    "from": "JR Academy <jracademybne@gmail.com>",
+    "subject": "资料-澳洲IT匠人圈",
+    "text": "亲爱的同学，\n\n您所需要的资料已经附上。\n\n如果您有任何问题，请与客服小花联系。微信号：uniapp001\n\n澳洲IT匠人圈\n\nhttps://jiangren.com.au/"
+  },
+  "signature": "\n\n如果您有任何问题，请与客服小花联系。\n澳洲IT匠人圈\n微信号：uniapp001\nhttps://jiangren.com.au/",
+  "orderToCustomer": {
+    "from": "JR Academy <jracademybne@gmail.com>",
+    "subject": "报名成功通知-匠人学院"
+  },
+  "orderToSales": {
+    "from": "JR Academy <jracademybne@gmail.com>",
+    "subject": "New Order"
+  }
+}

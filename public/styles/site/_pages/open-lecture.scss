@@ -1,0 +1,46 @@
+.jr-open-lecture {
+	.jr-course-header__content--badge {
+		width: 270px;
+	}
+	&__title {
+		margin: 0;
+		font-size: 40px;
+		text-align: center;
+	}
+	&__card {
+		display: block;
+		margin-bottom: 20px;
+		&__title {
+			display: inline;
+			font-size: 28px;
+		}
+		&__content {
+			display: inline;
+		}
+		&__description {
+			margin-left: $indent-open-lecture-card;
+		}
+		&__read-more {
+			margin-left: $indent-open-lecture-card;
+			color: #f7345f;
+		}
+		&__icons {
+			&--lg {
+				width: 40px;
+				height: 40px;
+				margin-right: 10px;
+				margin-top: 10px
+			}
+			&--sm {
+				width: 20px;
+				height: 20px;
+				margin-left: $indent-open-lecture-card;
+				margin-right: 10px;
+			}
+		}
+	}
+	&__row {
+		display: flex;
+		align-items: flex-start;
+	}
+}

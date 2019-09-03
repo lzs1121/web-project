@@ -1,0 +1,25 @@
+mixin workshops-upcoming-list
+	if workshops.length
+		.row
+			each workShop in workshops
+				.col-12
+					.jr-card__recent
+						.jr-card__recent--image
+							a(href='/workshop/' + workShop.key)
+								img.lazyload(data-src=workShop.image.secure_url alt="new meetup")
+						.jr-card__recent--text-block
+							.jr-card__recent--centre
+								h4.card-title
+									a.text-black(href='/workshop/' + workShop.key)
+										strong= workShop.name
+								p.card-description= workShop.cardDescription
+								p.card-description
+									strong 开课时间: 
+									span= workShop._.startDate.format('MMM. DD')
+							.jr-card__recent--actions
+								a.btn.btn-lg(href='/workshop-application?course=' + workShop.key) 报名
+	if !workshops.length
+		.row
+			.col-12
+				p
+					strong 近期还没有辅导班开课

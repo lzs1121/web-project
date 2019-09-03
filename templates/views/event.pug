@@ -1,0 +1,45 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+
+include ../mixins/post-featured
+include ../mixins/meetup-tree
+include ../mixins/upcoming-meetup
+
+block content
+	section.jr-hero
+		.contain.jr-event
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				.video__featured--content
+					h6.white.mb-half IT匠人活动
+					h1.white IT匠人线下活动
+					h2.white 澳洲各大学IT补习专家
+					p.legible.center.white offer收割机 · 大咖面对面 
+					p.legible.center.white 匠人Workshop · 匠人线上公开课 · 创业英雄会
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 Offer收割机
+					h5 免费帮你修改简历，面试
+					p.x-small 让你成为offer收割机
+				li.col-md-3.col-sm-3.col-6
+					h6 大咖面对面
+					h5 与大牛近距离接触
+					p.x-small 了解最新技术，了解你的职业规划
+				li.col-md-3.col-sm-3.col-12
+					h6 创业英雄会
+					h5 创业者并不孤独
+					p.x-small 创业者交流
+	section.jr-partners
+		.contain
+			.padding
+			h2.section-title IT匠人圈近期活动
+			.row.col-sm-12
+				.meetup-wrapper
+					+upcoming-meetup
+			h2.section-title IT匠人圈Meetups
+			.row.col-sm-12
+				.meetup-wrapper
+					+meetup-tree

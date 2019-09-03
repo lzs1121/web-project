@@ -1,0 +1,40 @@
+extends ../layouts/course-layout
+//- INCLUDES
+block content
+	section.jr-meetup
+		section.jr-meetup__cards
+			.cards_contain
+				.jr-meetup__card
+					.jr-meetup__header.row.no-margin
+						if curMeetups.image.secure_url
+							.jr-meetup__header__image(style='background-image: url('+ curMeetups.image.secure_url + ');').col-sm-7.hidden-xs-down
+							.jr-meetup__header__content.col-sm-5
+								h6= (curMeetups._.startDate.format('MMM. DD'))
+								h1= (curMeetups.name)
+								if curMeetups.state =="active"
+									a.btn.btn-lg.ppd-btn.ppd-btn-solid.ppd-btn-large(href='/eventApplication/' + curMeetups.key) 点我报名
+								.jr-meetup__header__content--details
+									p.gray-medium= (curMeetups.hoster)
+									p.gray-medium= "门票：" + (curMeetups.price)
+						unless curMeetups.image.secure_url
+							.jr-meetup__header__image(style='background-image: url(https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/image-syllabus-01@2x-f4be2598bea724657d8f295449bb8f45a954581306292393cb71a8417acf3cd3.jpg);').col-sm-7.hidden-xs-down
+							.jr-meetup__header__content.col-sm-5
+								h6= (curMeetups._.startDate.format('MMM. DD'))
+								h1= (curMeetups.name)
+								if curMeetups.state =="active"
+									a.btn.btn-lg.ppd-btn.ppd-btn-solid.ppd-btn-large(href='/eventApplication/' + (curMeetups.key)) 点我报名
+								.jr-meetup__header__content--details
+									p.gray-medium= (curMeetups.hoster)
+									p.gray-medium= "门票：" + (curMeetups.price)
+					.jr-meetup__main.row.no-margin
+						.jr-meetup__main__content.col-sm-7
+							br
+							!= curMeetups.description
+							//p= utils.htmlToText(curMeetups.description)
+						.jr-meetup__main__content.col-sm-5
+							h2 时间
+							p= (curMeetups._.startDate.format('dddd DD MMMM YYYY'))
+								br
+								= (curMeetups._.startDate.format('h:mm a') + ' - ' +curMeetups._.endDate.format('h:mm a'))
+							h2 地点
+							p= (curMeetups.place)

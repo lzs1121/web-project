@@ -1,0 +1,105 @@
+.portfolio-image-wrapper{
+	img{
+		max-width: 100%;
+	}
+}
+.portfolio-list-wrapper{
+	.gallery-images{
+		margin: 25px auto;
+		width: 90%;
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.4);
+		max-height: 250px;
+		img{
+			width: 100%;
+			height: auto;
+		}
+		@include MQ(S) {
+			width:100%;
+			margin: 20px 0;
+		}
+	}
+	.blog-details{
+		padding-top: 25px;
+		padding-bottom: 25px;
+		@include MQ(S) {
+			padding-top: 0;
+		}
+		h2{
+			margin-bottom: 10px;
+			text-align: left;
+			@include MQ(S) {
+				text-align: left;
+			}
+			a{
+				font-size: 24px;
+				color: black;
+				@include MQ(S) {
+					font-size: 18px;
+				}
+			}
+		}
+		.author-box{
+			padding-top: 5px;
+			padding-bottom: 10px;
+			h4{
+				margin-top:5px;
+				margin-bottom: 2px;
+			}
+		}
+		.text-overflow{
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			p{
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+		.read-more{
+			a{
+				color: $theme-color;
+			}
+		}
+		
+	}
+	
+	.portfolio-list-text-wrapper{
+		@include MQ(S){
+			padding: 0;
+		}
+	}
+}
+.protfolio-home-page-list{
+	a{
+		.thumbnail{
+			height: 100%;
+			padding: 0;
+			margin-bottom: 0;
+			line-height: 1;
+			background-color: #fff;
+			border: 0px;
+			padding: 1px;
+			@include MQ(S) {
+				width: 100%;
+				height: auto;
+			}
+		}
+		.logo-work{
+			height: auto;
+			margin: auto;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 50px;
+		}
+	}
+
+}
+.back-link{
+	color: white;
+}

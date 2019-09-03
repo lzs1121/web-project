@@ -1,0 +1,44 @@
+extends ../layouts/default
+//- INCLUDES
+
+include ../mixins/post-featured
+include ../mixins/flash-messages
+		
+block content
+	.container-fluid.no-padding
+		div.page-intro.services-page-pag.theme-bg.featured-section-expanded
+			h1.page-title Contact Us
+			p.lead We're digital natives with a pioneering
+			p.lead approach to open-source and
+			p.lead enterprise development.
+			div.bg-wrapper
+				.video-bg
+		section.page-content
+			.container.text-bg.no-padding
+				.col-sm-12.text-align-center
+					if enquirySubmitted
+						h3 Thanks for getting in touch.
+					else
+						div
+							+flash-messages(messages)
+							.ppd-contact-form
+								form(method='post')
+									input(type='hidden', name='action', value='contact')
+									.form-group.ppd-input-field(class=validationErrors.name ? 'has-error' : null)
+										input(type='text', name='name.full', value=formData['name.full'] placeholder="Name").form-control
+									.form-group.ppd-input-field(class=validationErrors.email ? 'has-error' : null)
+										input(type='email', name='email', placeholder="Email", value=formData.email).form-control
+									.form-group.ppd-input-field
+										input(type='text', name='phone' value=formData.phone, placeholder='Phone').form-control
+									.form-group.ppd-input-field(class=validationErrors.enquiryType ? 'has-error' : null)
+										label What are you contacting us about?
+										select(name='enquiryType').form-control
+											option(value='') (select one)
+											each type in enquiryTypes
+												option(value=type.value, selected=formData.enquiryType == type.value)= type.label
+									.form-group.ppd-input-field(class=validationErrors.message ? 'has-error' : null)
+										label Message
+										textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message
+									.btn-group.ppd-btn-field
+										button.btn.btn-default.outline-btn(type='submit')  Send
+	+post-featured

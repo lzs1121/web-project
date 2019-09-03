@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="788px" height="218px" viewBox="0 0 788 218" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>bg-shape-eventApplication</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="13.5121665%" y1="-25.2008034%" x2="96.7786922%" y2="103.101182%" id="linearGradient-1">
+            <stop stop-color="#FF8833" offset="0%"></stop>
+            <stop stop-color="#FA2562" stop-opacity="0.81" offset="59.3351403%"></stop>
+            <stop stop-color="#FA2562" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bg-shape-eventApplication" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <path d="M788,83.6 C764.5,93.1 731.7,103.6 691.5,108.6 C653.1,113.3 620.1,111.5 595.5,108.3 C548.5,102.2 540.4,102.3 491.5,97.6 C392.9,88.2 343.3,86.3 287.4,94.8 C287.4,94.8 202.6,107.8 160.6,140 C145.2,151.8 129,166.6 129,166.6 C123.8,171.1 118.6,175.5 113.3,180 C104.8,185.8 94.9,191.7 83.5,197.1 C51.4,212.2 21.3,216.5 0,217.6 C0,145 0,72.5 0,0 L788,0 C788,27.9 788,55.7 788,83.6 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,7 @@
+{
+    "s3Url": "https://s3-ap-southeast-2.amazonaws.com/jracademy/resources/",
+    "verifyUrl": "http://localhost:8000/user/emailVerification?token=",
+    "jrKSDev": "localhost:3000",
+    "jrDashProd": "http://learn.jiangren.com.au",
+    "jrDashDev": "http://localhost:8000"
+}

@@ -1,0 +1,78 @@
+extends ../layouts/course-layout
+
+include ../mixins/post-featured
+include ../mixins/teachers
+include ../mixins/review
+include ../mixins/mentor-company
+include ../mixins/tutors
+include ../mixins/uni-post-slides
+include ../mixins/uni-post-essay
+include ../mixins/workshops-list
+
+block content
+	section.general-hero.general-hero__sm.tutor-hero__sm
+		.tutor__top--bg
+		.contain
+			.tutor__topcard--bg.animated.fadeIn
+			.tutor__topcard--overlay
+				.application--content
+					.row
+						.col-xl-3.col-lg-3.col-md-3.col-sm-12.tutor-leftside
+							.tutor-logo.shadow-md 
+								if tutor.avatar.exists
+									img.rounded-circle.lazyload(data-src=(tutor._.avatar.fit(100,100)), alt=tutor.name)
+							.tutor-name
+								h1=(tutor.name)
+								h2=(tutor.university[0].chineseName)
+								p=(tutor.slogan)
+						.col-xl-9.col-lg-9.col-md-9.col-sm-0
+							.content-detail
+								p.tutor-description= (tutor.introduction)
+							.skills-detail
+								each highlight in tutor.highlights
+									label.skills=(highlight)
+							.content-detail
+								p
+									strong 个人能力
+							.skills-detail
+								label.skills=("GPA: "+tutor.score)
+								each skill in tutor.techSkills
+									label.skills= (skill.name)
+							form(action="/application?tutor="+tutor.slug)
+								.book-tutor
+									button.btn(type="submit") 预约
+	section.features
+		.contain
+			.navbar.tutor-3button#policy-list
+				ul.nav.navbar-nav#tutor-button.row
+					li
+						a(href="#serviceIntro" data-toggle="tab" class="nav-item nav-link active") 服务介绍
+					li
+						a(href="#relatedResources" data-toggle="tab" class="nav-item nav-link") 相关资源
+					li
+						a(href="#studentReview" data-toggle="tab" class="nav-item nav-link") 学生评价
+			.row.tab-content
+				.tab-pane.active#serviceIntro
+					if workshopsList.length
+					section.work-shop
+						.contain.homepage-welcome-section.no-padding-top
+							h2.section-title.margin 大学辅导考试作业冲刺班
+							p.description 突击培训，短时间内解决你的困惑和问题，让你真正达到全方位无死角
+							.row.services-wrapper
+								each workShop in workshopsList
+									.col-sm-4.col-12.text-center.jr-card-wrapper
+										.card.card-profile.card-plain.card__course
+											h6.card__course--commence= workShop.commenceDate
+											.card-img-top
+												a(href='/workshop/' + workShop.key)
+													img(src=workShop.image.secure_url alt="new meetup")
+											.card-text-block
+												h4.card-title
+													strong
+														a(href='/workshop/' + workShop.key)= workShop.name
+												p.card-description= workShop.cardDescription
+											.card-footer
+													a.btn.btn-lg(href='/workshop-application/' + workShop.key) 参加报名
+													a.btn.btn-lg(href='/workshop/' + workShop.key ) 了解更多
+				.tab-pane#relatedResources
+				.tab-pane#studentReview

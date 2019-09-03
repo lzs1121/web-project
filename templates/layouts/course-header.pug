@@ -1,0 +1,15 @@
+header.header
+	nav.navbar(role='navigation')
+		.navbar-header
+			a.navbar-brand(href="/")
+				img.logo.lazyload(data-src="/images/logo-jr-academy-transparent-md.png" alt="jiangren logo")
+			a#site-nav-toggle(href='javascript:;').site-nav-toggle
+				.patty
+		#site-nav.col
+			nav(role='navigation')
+				ul.navbar-nav.navbar-nav--right
+					each link in navLinks
+						li(class=(section == link.key ? 'nav-item-' + link.key + ' active' : 'nav-item-' + link.key))
+							a(href=link.href)= link.label
+							if(link.key==='courses')
+								div(class='courses-content')

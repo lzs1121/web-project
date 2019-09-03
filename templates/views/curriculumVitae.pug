@@ -1,0 +1,79 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+include ../mixins/post-featured
+include ../mixins/teachers
+include ../mixins/review
+
+block content
+	section.jr-hero
+		.contain
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				.video__featured--content
+					h6.white.mb-half 匠人课程
+					h1.white 简历修改
+					p.legible.center.white.hidden-xs-down 专业大神 简历修改 搞定面试 
+					p.legible.center.white 布里斯班 + 悉尼 + 线上指导
+					//- a.button--primary.lg.center.inline(href="/application/"+slug)
+					//- 	strong 报名
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 Bundle（与面试指导服务）
+					h5 $380
+				li.col-md-3.col-sm-3.col-12
+					h6 价格
+					h5 $200
+				//- li.col-md-3.col-sm-3.col-12
+				//- 	h6 先修知识
+				//- 	h5 零基础
+	section.jr-partners
+		.contain
+			h6.text-center 这些企业信任我们
+			ul.jr-partners__list
+				li
+					img.jr-partners__list--icon(src="/images/partners/Aurion-logo-1.png", alt="匠人partner")
+				li
+					img.jr-partners__list--icon(src="/images/partners/logo-ladbrokes-color1.png", alt="匠人partner")
+				li
+					img.jr-partners__list--icon(src="/images/partners/suncorp.jpg", alt="匠人partner")
+				li
+					img.jr-partners__list--icon(src="/images/partners/Allianz.svg.png", alt="匠人partner")
+				li
+					img.jr-partners__list--icon(src="/images/partners/flight-center.png", alt="匠人partner")
+	section.jr-why
+		.contain.text-center.row
+			//- img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/image-laptop@1x-e0453c763ea5449882c8db6988b1bec11edcc93cca14c1ccdba29eb425727dbd.png", alt="Front-End Developer")
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 为什么选择IT匠人的简历修改?
+				p 普通市场上提供的修改简历服务并不是专门针对于IT专业学生，IT匠人圈提供专业的资深面试官和多年的IT专业大牛，从更高的角度审理你的简历。达到行业标准
+				p
+					strong 适合人群:
+				ul
+					li 寻找工作的毕业生
+					li 简历信心不足的求职者
+					li 转方向的IT专业人士
+			.jr-why__stat.col-12.col-sm-12.col-md-3
+				.card.card-border-top.hidden-md-down
+					h4.light IT匠人圈资深面试官和大牛提供专业简历修改服务
+	section.jr-syllabus-term
+		.contain
+			h2 你将学到什么
+		section.jr-syllabus-term__cards
+			.cards_contain
+				.jr-syllabus-term__card
+					.jr-syllabus-term__header.row.no-margin
+						.jr-syllabus-term__header__content.col-sm-7
+							h6 Syllabus
+							h3 Web开发入门班 Wordpress 方向
+							p.hidden-md-down 通过进入现代Web的世界，了解现代web技术，学习HTML CSS 和Javascript 网页三剑客，后面进行学习基础PHP和MYSQL，为后面的wordpress开展打下基础。通过制作个人网站，官方网站和电商网站，基本掌握Wordpress的搭建开发到部署
+							.jr-syllabus-term__header__content--details
+								p SEE FEWER DETAILS
+								p.gray-medium 2个半月完成
+						.jr-syllabus-term__header__image.col-sm-5.hidden-xs-down
+	section.jr-instructors
+		.contain
+			h2.text-center Learn with the Best
+			//- +teachers

@@ -1,0 +1,78 @@
+extends ../../layouts/course-layout
+include ../../mixins/breadcrumbs
+block content
+	.page-heading-jobboard
+		.container-inner
+			.container
+				h1.find-jobs-title 澳洲求职招聘信息
+				h2.find-jobs-subtitle 澳洲 IT, Developer, Front-end, Back-end, Business Analyst , UI Designer, Data Analyst, Data Engineer, Data Scientist Marketing, HR, Accounting, Finance
+	.section.jr-jobboard
+		.container
+			h2.section-title.font-PoiretOne 澳洲工作招聘
+			if !published.length
+				.row
+					h3.text-muted 暂时没有工作
+			else
+				if data.featuredJobs.results.length
+					.container.jr-featured-job-wrapper
+						.row
+							h3 匠人精选IT工作
+						.row
+							each job in data.featuredJobs.results
+								.col-sm-6.col-12.job-wrapper
+									.job-card
+										.job-item-featured
+											.job-info.text-left.job-info-featured
+												.job-info__logo--wrapper
+													img(src=job.company.logo.secure_url, alt=job.title)
+												h2.job-title.job-featured
+													a(href='/job/' + job.key)=job.title
+												.job-type-list
+													p.job-location=job.city.name
+													p.job-type=job.jobType
+													p.job-level=job.level
+													p.job-status=job.status
+												h5.job-short-description=job.briefDescription
+												a.btn-jobs(href='/job/' + job.key) 了解更多
+							.col-12
+								.pagination-center
+									if data.featuredJobs.totalPages > 1
+										ul.pagination.flex-wrap
+											if data.featuredJobs.previous
+												li: a(href='/job/?page=' + data.featuredJobs.previous): span.glyphicon.glyphicon-chevron-left
+											else
+												li.disabled: a(href='/job/?page=' + 1): span.glyphicon.glyphicon-chevron-left
+											each p, i in data.featuredJobs.pages
+												li(class=data.featuredJobs.currentPage == p ? 'active' : null)
+													a(href='/job/?page=' + (p == '...' ? (i ? data.featuredJobs.totalPages : 1) : p ))= p
+											if data.featuredJobs.next
+												li: a(href='/job/?page=' + data.featuredJobs.next): span.glyphicon.glyphicon-chevron-right
+											else
+												li.disabled: a(href='/job/?page=' + data.featuredJobs.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
+
+				if closedJobs.length
+					.container.jr-closed-job-wrapper
+						.row
+							h3 往期职位回顾
+						.row.closeJob-wrapper
+							.col-sm-3.col-12
+								.closeJob-card
+									a(href='/job/' + closedJobs[0].key)=closedJobs[0].title
+							.col-sm-3.col-12
+								.closeJob-card
+									if closedJobs.length > 1
+										a(href='/job/' + closedJobs[1].key)=closedJobs[1].title
+									else
+										h3 暂时没有更多
+							.col-sm-3.col-12
+								.closeJob-card
+									if closedJobs.length > 2
+										a(href='/job/' + closedJobs[2].key)=closedJobs[2].title
+									else
+										h3 暂时没有更多
+							.col-sm-3.col-12
+								.closeJob-card
+									if closedJobs.length > 3
+										a(href='/job/' + closedJobs[3].key)=closedJobs[3].title
+									else
+										h3 暂时没有更多

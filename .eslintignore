@@ -1,0 +1,9 @@
+public/js/bootstrap
+public/js/jquery
+public/js/**/*.min.js
+public/js/*.min.js
+public/dist
+public/js/uploadimage/*
+dist
+logs
+node_modules

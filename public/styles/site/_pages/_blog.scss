@@ -1,0 +1,64 @@
+.blog{
+	h2{
+		@include MQ(S){
+			font-size: 20px;
+		}
+	}
+	.post{
+		@include MQ(S) {
+			padding:0;
+		}
+	}
+}
+
+.pagination-center{
+	display: flex;
+	justify-content: center;
+}
+	
+.pagination > li{
+	padding: 20px 20px;
+	@include MQ(S) {
+		padding: 10px;
+	}
+	& > a{
+		font-size: 1.5rem;
+		color:#F7345F;
+	}
+}
+.active > a{
+	color: black !important;
+}
+	
+article.blog-wrapper{
+	max-width: 740px;
+	margin: 0 auto;
+	img{
+		max-width: 700px;
+		margin:0 auto;
+		@include MQ(M) {
+			width: 100%;
+			height: auto;
+		}
+		@include MQ(S) {
+			width: 100%;
+			height: auto;
+		}
+		@include MQ(XS) {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.post{
+		.image-wrap{
+			text-align: center;
+			img{
+				max-width: 100%;
+			}
+		}
+	}
+	header{
+		height: 100px;
+		margin-bottom: 10px;
+	}
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="145px" height="145px" viewBox="0 0 145 145" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" fill="#000000">
+            <g id="copy" transform="translate(21.000000, 28.000000)">
+                <g id="Слой_1">
+                    <g id="Group">
+                        <path d="M2.5,88.8700027 C1.1,88.8700027 0,87.9389837 0,86.7540503 L0,2.11595245 C0,0.931019076 1.1,0 2.5,0 L102.5,0 C103.9,0 105,0.931019076 105,2.11595245 L105,86.7540503 C105,87.9389837 103.9,88.8700027 102.5,88.8700027 L2.5,88.8700027 Z M102,85.6400032 L102,3.22999954 L3,3.22999954 L3,85.6400032 L102,85.6400032 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+            <g id="delete" transform="translate(56.000000, 55.000000)">
+                <g id="Слой_1">
+                    <g id="Group">
+                        <polygon id="Shape" points="31.6458333 34.2708333 0.729166667 3.35416667 3.28125 0.802083333 34.2708333 31.6458333"></polygon>
+                        <polygon id="Shape" points="0.729166667 31.71875 31.6458333 0.729166667 34.1979167 3.28125 3.35416667 34.2708333"></polygon>
+                    </g>
+                </g>
+            </g>
+            <polygon id="Triangle" transform="translate(24.500000, 73.000000) rotate(90.000000) translate(-24.500000, -73.000000) " points="24.5 69.5 33.5 76.5 15.5 76.5"></polygon>
+        </g>
+    </g>
+</svg>

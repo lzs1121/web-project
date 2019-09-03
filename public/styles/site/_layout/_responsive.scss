@@ -1,0 +1,20 @@
+.s-text-align-center{
+	@include MQ(S){
+		text-align: center;
+	}
+}
+.s-text-align-left{
+	@include MQ(S){
+		text-align: left;
+	}
+}
+.s-text-align-right{
+	@include MQ(S){
+		text-align: right;
+	}
+}
+.hide-mobile{
+	@include MQ(S){
+		display: none;
+	}
+}

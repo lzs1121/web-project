@@ -1,0 +1,362 @@
+extends ../layouts/course-layout
+
+include ../mixins/post-featured
+include ../mixins/teachers
+include ../mixins/review
+include ../mixins/partnership
+include ../mixins/company/student-company
+//- - var slug = data
+block content
+	section.jr-hero
+		.contain.jr-data-science
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				.video__featured--content
+					h6.white.mb-half 匠人课程
+					h1.white 数据科学与云大数据工程就业技能班(三期)
+					p.legible.center.white.hidden-xs-down 清华学霸+墨尔本大学PHD
+					p.legible.center.white.hidden-xs-down 数据科学+云技术+大数据
+					p.legible.center.white.hidden-xs-down 本课程已帮助众多学员拿到科技、金融、咨询等行业数据科学家、数据分析等岗位offer。
+					p.legible.center.white 布里斯班 + 面授 + 远程直播
+					a.button--primary.lg.center.inline(href="/application?type="+slug)
+						strong 报名
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 难度
+					h5 进阶
+					p.x-small 实习就业
+				li.col-md-3.col-sm-3.col-6
+					h6 学习时间
+					h5 2月15日开班
+					p.x-small 48小时
+				li.col-md-3.col-sm-3.col-12
+					h6 课程价格
+					p.x-small 早鸟价面授 $2970（截止日期2月8日），早鸟价远程 $2300（截止日期12月7日），原价$3190
+				li.col-md-3.col-sm-3.col-12
+					h6 先修知识
+					p.x-small 基础数学和计算机知识
+					p.x-small 了解基本的数学知识
+	+partnership
+	section.jr-why
+		.contain.text-center.row
+			//- img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/image-laptop@1x-e0453c763ea5449882c8db6988b1bec11edcc93cca14c1ccdba29eb425727dbd.png", alt="Front-End Developer")
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 为什么选择IT匠人的数据科学与云大数据工程就业技能班?
+				p 匠人推出的数据科学与云大数据工程就业技能班旨在帮助学员在两个月的时间内从理论而实践全面提升能力，在最短时间内最大幅度拓展技能树，从0到1的学会数据抓取、模型构建、机器学习原理、FinTech基本知识、AWS云技术和大数据、Azure云技术、云大数据工程、DataBricks等数十种技术，并进行实战搭建房价预测，图像识别，汇率预测与回测等APP。优秀学员可获得免费项目实习机会。通过理论和项目实践结合，可以迅速大幅提升学员的市场竞争力。
+				h4 课程目标
+				ul
+					li 了解澳洲数据科学行业背景，职业前景和职业发展方向
+					li 学习数据抓取和搜集，如何从网站上抓取数据并进行分析
+					li 学习AzureML以及简单预测模型的构建 
+					li 学习机器学习的基本原理，应对面试中的基础问题
+					li 学习Python和SKLearn的基本概念与Backend的关联，应对面试中选择算法相关的问题
+					li 学习深度学习以及其在图像识别中的应用
+					li 掌握金融预测基本概念以及实际应用
+					li 学习Angular+Asp.Net Core全站开发
+					li 学习云技术、基于云技术的全栈和大数据开发
+					li 学习大数据工程Spark、Scala、DataBricks、Athena、Lambda等多种利用云平台快速进行大数据开发的技术
+				h4 优秀学员可获得免费实习项目
+				ul
+					li 医疗人工智能（Angular+Asp.Net Core+微信小程序+WPF+TensorFlow模型开发）
+					li 监控系统行人识别（WPF+TensorFlow+OpenCV）
+			.jr-why__stat.col-12.col-sm-12.col-md-3
+				.card.card-border-top.hidden-md-down
+					p 匠人推出的数据科学基础课程组由清华学霸导师设计研发，能够有效帮助学员在三个月的时间内从理论到实践全面提升能力，为学员以后的自学提升及求职就业之路打下坚实基础。
+	+student-company
+	section.features
+		.contain
+			div.row.margin-bottom-lg.col-sm
+				.features__col-short.col-sm.text-center
+					img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-01@1x-a6975a860f7ced563f475e3bb8801361b6c3f2abd7e85e2c89a7c761a3992197.png", alt="features__images")
+				.features__col-wide.col-sm.text-center
+					.features__content
+						ul.features__list
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 全面的课程设置
+									p 理论基础 + 项目实战 + 常用工具
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 顶尖导师团队
+									p 匠人导师团队均为多年经验的IT大咖，每一个培训都是由各自专属领域的大牛授课，导师也是名校毕业和名企经验，从百度到阿里巴巴，从ThoughtWorks到Microsoft，Amazon，从Senior Developer到CTO，应有尽有。同时加入匠人圈，也是加入了IT匠人全球IT职业资源。
+			div.row.margin-bottom-lg.col
+				.features__col-wide.col-sm.text-center
+					.features__content
+						ul.features__list
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 丰富的项目经验
+									p 数据抓取词频分析 + Azure ML搭建房价预测APP + CNN & Fullstack搭建图像识别APP + FinTech实战汇率预测
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 模拟工作场景+团队协作
+									p 面试中常问的如何团队协作，那我们在本培训中会有很好的解决，我们通过最流行的Agile项目管理方式，通过顶级Agile大师带领大家理解Agile的Methodology，真实的工作环境中如何使用agile，团队是如何协作的，如何进行代码管理，版本控制，怎样融合团队成员的代码，同时我们也会在每节课带领大家模拟公司的standup和retro等等
+				.features__col-short.col.text-center
+					img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-02@1x-8e9d672908d063cc0513ef55ffd7519eef7f5b889325d89efd9cadeb202dfdc1.png", alt="features__images")
+	section.jr-projects
+		.contain
+			h2 你将挑战的项目
+		section.jr-projects__cards
+			.cards_contain
+				.jr-projects__card
+					.jr-projects__header.row.no-margin
+						.jr-projects__header__content.col-sm-7
+							h6 Project
+							h3 图像识别全栈Web APP
+							p.hidden-md-down 构建基于Angular 6+、ASP.NET CORE、TensorFlow、ProtoBuf等技术的Web全栈项目。通过这个项目你讲学习到如何写一个Angular前端App，如何搭建ASP.NET CORE的后端Web API服务，如何用ProtoBuf+Grpc进行通讯，如何用训练TensorFlow搭建和训练图像识别的深度神经网络。
+						.jr-projects__header__image.jr-projects__project__data_two.col-sm-5.hidden-xs-down
+				.jr-projects__card
+					.jr-projects__header.row.no-margin
+						.jr-projects__header__content.col-sm-7
+							h6 Project
+							h3 房价预测APP
+							p.hidden-md-down AzureML API+前端框架搭建房价预测APP
+							p 学习用AzureML实现简单预测模型的构建 - 如何预测房价。从零开始学习AzureML图形化工具，学习AzureML在电影推荐、汇率预测、文本分析和图像分析等场景下的应用。利用AzureML 作为API简单结合前端框架（如Angular）搭建房价预测APP。
+						.jr-projects__header__image.jr-projects__project__data_one.col-sm-5.hidden-xs-down
+				
+	section.jr-syllabus-term
+		.contain
+			h2 你将学到什么
+		section.jr-syllabus-term__cards
+			.cards_contain
+				.jr-syllabus-term__card
+					.jr-syllabus-term__header.row.no-margin
+						.jr-syllabus-term__header__content.col-sm-7
+							h6 Syllabus
+							h3 数据科学基础班
+							p
+								strong 项目
+							p.hidden-md-down 房价预测+汇率预测
+							.jr-syllabus-term__header__content--details
+								p SEE FEWER DETAILS
+								p.gray-medium 48小时
+						.jr-syllabus-term__header__image.col-sm-5.hidden-xs-down
+					.jr-syllabus-term__main.row.no-margin
+						.jr-syllabus-term__main__content.col-7
+							h6 先修知识
+							p.margin-bottom-3 这是一门进阶课程，你需要懂得最基本的HTML CSS和Javascript，并且理解变量，面向对象等基本编程概念。
+							section.jr-syllabus-term__main__content--parts
+								ul
+									li
+										.part
+											h5 机器学习和人工智能数学基础
+											p
+												span.lnr.lnr-chevron-right 微积分(重要极限、微分原理、积分、泰勒展开、常微分方程)
+											p
+												span.lnr.lnr-chevron-right 用Mathematica推导微积分的原理、进行微积分计算、求解微分方程
+											p
+												span.lnr.lnr-chevron-right 线性代数(向量、矩阵、向量和矩阵的运算和微分)
+											p
+												span.lnr.lnr-chevron-right 利用Mathematica做线性代数计算和矩阵向量的微积分
+											p
+												span.lnr.lnr-chevron-right 概率论与统计(概率概念、条件概率、概率分布、离散概率、连续概率、翁模型、正态分布、 χ2-分布、t-分布、f-分布、z-分布、ANOVA、 WoE等)
+											p
+												span.lnr.lnr-chevron-right 用Mathematica进行离散数学计算、推导和计算概率和统计学分布、检验和ANOVA分析
+											p
+												span.lnr.lnr-chevron-right 用Numpy做数值计算
+											p
+												span.lnr.lnr-chevron-right 用TensorFlow处理数值、矩阵、向量、变量的 导数
+											p
+												span.lnr.lnr-chevron-right 用SciPy做统计学计算和分析
+									li
+										.part
+											h5 AzureML数据处理和建模
+											p
+												span.lnr.lnr-chevron-right 数据导入
+											p
+												span.lnr.lnr-chevron-right 数据清洗
+											p
+												span.lnr.lnr-chevron-right 分类器算法
+											p
+												span.lnr.lnr-chevron-right 回归算法
+											p
+												span.lnr.lnr-chevron-right 回测
+											p
+												span.lnr.lnr-chevron-right 模型优选
+											p
+												span.lnr.lnr-chevron-right AzureML的模型发布和API整合
+									li
+										.part
+											h5 机器学习算法原理
+											p
+												span.lnr.lnr-chevron-right DT(决策树)
+											p
+												span.lnr.lnr-chevron-right RF(随机森林)
+											p
+												span.lnr.lnr-chevron-right PCA(主成分分析)
+											p
+												span.lnr.lnr-chevron-right kNN(k-邻近)
+											p
+												span.lnr.lnr-chevron-right K-means(K-平均值)
+											p
+												span.lnr.lnr-chevron-right LR(逻辑回归)
+											p
+												span.lnr.lnr-chevron-right LDA(线性判别分析)/QDA(二次判别分析)
+											p
+												span.lnr.lnr-chevron-right SVM(支持向量机)/SVR(支持向量机回归)
+											p
+												span.lnr.lnr-chevron-right kernel methods(核方法)
+											p
+												span.lnr.lnr-chevron-right RIDGE(脊回归)/LASSO(套索回归)
+											p
+												span.lnr.lnr-chevron-right Ensemble Learning(集成学习)
+											p
+												span.lnr.lnr-chevron-right MLE(最大似然估计)和Linear Regression(线性 回归)
+											p
+												span.lnr.lnr-chevron-right MAP(最大后验估计)
+											p
+												span.lnr.lnr-chevron-right NBC(朴素贝叶斯分类器)
+											p
+												span.lnr.lnr-chevron-right Sk-Learn和SparkML当中机器学习算法的使用练习
+									li
+										.part
+											h5 神经网络和深度学习原理
+											p 神经网络的运算原理和训练方法
+									li
+										.part
+											h5 Data Scraping
+											p 利用HTML、API和Selenium抓取数据的方法： .Net Core, Selenium WebDriver, ChromeDriver, Ubuntu Linux。
+											p
+												span.lnr.lnr-chevron-right 利用HttpClient访问网页和调用Web API
+											p
+												span.lnr.lnr-chevron-right 用Regular Expression直接抓取
+											p
+												span.lnr.lnr-chevron-right 利用HtmlAgilityPack解析HTML并抓取数据
+											p
+												span.lnr.lnr-chevron-right 利用NewtonSoft.JSON解析抓取JSON数据
+											p
+												span.lnr.lnr-chevron-right 利用Selenium Chrome Driver浏览器自动 +HtmlAgilityPack化抓取复杂网页的数据
+											p
+												span.lnr.lnr-chevron-right Selenium和Chrome在Ubuntu Linux上的部署
+											p
+												span.lnr.lnr-chevron-right 爬虫在Windows和Ubuntu Linux上的部署
+									li
+										.part
+											h5 前端开发(Angular, TypeScript, JavaScript, NodeJS, VS Code)
+											p
+												span.lnr.lnr-chevron-right Angular开发环境的配置
+											p
+												span.lnr.lnr-chevron-right VS Code的插件和使用
+											p
+												span.lnr.lnr-chevron-right 利用TypeScript编写Angular的Component、 Pipe、Service、Singleton Service
+											p
+												span.lnr.lnr-chevron-right Router和RouterOutlet的使用以及多RouterOutlet的导航规则
+									li
+										.part
+											h5 后端开发和数据库使用
+											p ASP.Net MVC, Visual Studio, Ubuntu Linux
+											p
+												span.lnr.lnr-chevron-right Asp.Net Core MVC开发环境的配置
+											p
+												span.lnr.lnr-chevron-right Asp.Net Core MVC的后端逻辑分层规则
+											p
+												span.lnr.lnr-chevron-right 数据库访问PostgreSQL关系型数据库和统计分 析查询、ArangoDB图数据库的使用、MongoDB 文档数据库的使用
+											p
+												span.lnr.lnr-chevron-right Asp.Net Core MVC与Angular前端的整合
+											p
+												span.lnr.lnr-chevron-right 发布Asp.Net Core与Angular全栈项目到 Windows(Windows服务配置和Task Scheduler) 和Linux VM(Ubuntu Linux的服务配置和Crontab)
+									li
+										.part
+											h5 跨语言整合(ProtoBuf, Grpc)
+											p
+												span.lnr.lnr-chevron-right ProtoBuf和Grpc在Visual Studio当中的编写和整合
+											p
+												span.lnr.lnr-chevron-right 利用ProtoBuf编写跨语言服务协议
+											p
+												span.lnr.lnr-chevron-right 在Asp.Net Core当中通过ProtoBuf调用Python机器学习服务
+									li
+										.part
+											h5 Python与机器学习、深度学习
+											p Python, AnaConda, SK-Learn, TensorFlow, Numpy, OpenCV 实现前端、后端到深度学习的全栈-深度学习整合
+											p
+												span.lnr.lnr-chevron-right Python和AnaConda开发环境与Visual Studio的配置和整合
+											p
+												span.lnr.lnr-chevron-right 神经网络的数学原理(数值优化、链式法 则、正反向传递)
+											p
+												span.lnr.lnr-chevron-right 神经网络应用和技术前沿的介绍
+											p
+												span.lnr.lnr-chevron-right 利用TensorFlow构造简单的神经网络
+											p
+												span.lnr.lnr-chevron-right 利用TensorFlow和OpenCV实现深度卷积图像 识别的训练与预测
+											p
+												span.lnr.lnr-chevron-right Asp.Net Core与TensorFlow图像识别服务通过 ProtoBuf的整合
+											p
+												span.lnr.lnr-chevron-right 发布全栈-深度学习到Windows和Linux
+									li
+										.part
+											h5 大数据工程
+											p IntelliJ IDEA, Spark, Spark SQL, Scala, SBT, Parquet, Spark MapReduce原理
+											p
+												span.lnr.lnr-chevron-right MapReduce和Spark的原理
+											p
+												span.lnr.lnr-chevron-right IntelliJ IDEA开发环境和Spark的SBT配置
+											p
+												span.lnr.lnr-chevron-right 利用SBT直接编译并在Linux上运行Spark
+											p
+												span.lnr.lnr-chevron-right Scala的基本语法
+											p
+												span.lnr.lnr-chevron-right CSV文件、Parquet文件的读取和导出
+											p
+												span.lnr.lnr-chevron-right 利用Spark编写并行算法的练习
+											p
+												span.lnr.lnr-chevron-right SparkSQL与DataFrame的使用
+											p
+												span.lnr.lnr-chevron-right 通过DataBricks集群使用Spark
+											p
+												span.lnr.lnr-chevron-right AWS Lambda与Athena
+											p
+												span.lnr.lnr-chevron-right Azure BlobStorage与DataBricks
+									li
+										.part
+											h5 源代码管理
+											p GitHub, VSTS源代码管理将渗透到具体的每个项目当中
+											p
+												span.lnr.lnr-chevron-right 在GitHub和VSTS上创建repo
+											p
+												span.lnr.lnr-chevron-right 多人合作Repo的权限管理
+											p
+												span.lnr.lnr-chevron-right Git Flow(Git开发流程)、创建分支、Pull Request、代码审核、合并
+									li
+										.part
+											h5 云存储与Serverless
+											p
+												span.lnr.lnr-chevron-right 云存储与Serverless服务在大数据与数据科学 工业方案当中的应用
+											p
+												span.lnr.lnr-chevron-right Azure Blob Storage的使用
+											p
+												span.lnr.lnr-chevron-right Azure Functions的开发配置
+											p
+												span.lnr.lnr-chevron-right AWS S3的使用
+											p
+												span.lnr.lnr-chevron-right AWS Lambda的开发与CloudWatch和API Gateway
+											p
+												span.lnr.lnr-chevron-right 基于AWS Lambda与S3的全栈开发与部署
+											p
+												span.lnr.lnr-chevron-right 用Asp.Net Core编写ETL(数据转化导出)工 程(SFTP的使用、数据格式的转化)
+						.jr-syllabus-term__main__content.col-5
+	section.jr-instructors
+		.contain
+			h2.text-center 我们的老师
+			+teachers
+	script(type="application/ld+json").
+		{
+			"@context": "http://schema.org",
+			"@type": "Course",
+			"name": "Data Science数据科学基础班",
+			"description": "适合喜欢往Data Science学习的同学",
+			"provider": {
+				"@type": "Organization",
+				"name": "澳洲IT匠人圈",
+				"sameAs": "https://jiangren.com.au"
+			}
+		}

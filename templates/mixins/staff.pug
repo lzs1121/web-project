@@ -1,0 +1,11 @@
+mixin staff
+	div.row.no-margin
+		if users.length
+			each user in users
+				.col-sm-4
+					.card.jr-instructors__card
+						.card-avatar
+							img.lazyload(data-src=(user._.avatar.fill(100,100)), alt=user.name.first)
+						h5.jr-instructors__name= user.name.first + ' '+user.name.last
+						p.jr-instructors__title= user.title
+						p.bio= user.introduction

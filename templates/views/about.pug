@@ -1,0 +1,65 @@
+extends ../layouts/course-layout
+//- INCLUDES
+
+include ../mixins/post-featured
+include ../mixins/teachers
+include ../mixins/meetup-tree
+include ../mixins/staff
+include ../mixins/mentor-company
+
+block content
+	section.jr-about-us
+		.contain.no-padding-bottom
+			h1.text-center 关于匠人
+			p.lead.text-center 澳洲最大华人IT组织
+			p.lead.text-center 每两个IT人，就有一个关注IT匠人
+	section.jr-mission
+		.contain.row.col-sm-12
+			.col-sm
+				.mission__photos.row.col-12
+					.mission__photos--col.col
+						img.lazyload(data-src="/images/bgs/vr-event.jpg" alt="IT匠人圈")
+						img.lazyload(data-src="/images/bgs/WSEE-3042.jpg" alt="IT匠人圈")
+					.mission__photos--col.col
+						img.lazyload(data-src="/images/bgs/course.jpg" alt="IT匠人圈")
+						img.lazyload(data-src="/images/bgs/IMG_4332.jpg" alt="IT匠人圈")
+			.col-sm
+				.mission__statement.card
+					h2.white 我们的愿景
+					p.white 让所有的IT华人落地找工作不再是难事
+					p.white 已经有8000多个IT小伙伴关注加入我们，成为澳洲最大华人IT组织。也同样被上千名IT小伙伴认可。来自全球顶尖的IT大牛也聚在于此，让我们在异国他乡，也感受到了温暖
+					p.white 社群涵盖了IT求职群，悉尼，布里斯班，墨尔本地方群，大前端，php，AI，区块链，Java，Mobile，Laraval等专业技术群。每天上万条的活跃度，也证明了，我们IT人是一群有激情，有理想，更有爱心的群体。
+	section.jr-training
+		.contain.no-padding-bottom.row.col-sm-12
+			.col-sm-6
+				h2.intro-title 澳洲最好的IT培训
+				p 每当面对刚毕业或者刚移民到澳洲的小伙伴找不到工作，我们的责任感也唤起。我们召集了二十位顶级的IT大牛共同打造，根据澳洲本地特色，打磨了整体课程，做到最适合澳洲IT就业环境。
+				h3.bold 与最好的导师一起
+				p 我们的导师来自世界名校，从上海交大，到北大，到墨尔本大学，到CMU。我们的导师服务过的公司从百度，微软，到REA（Real Estate），埃森哲，德勤。导师不仅仅拥有多年的工作经验和项目经验，更是把我时代潮流，掌握最新最in技术。
+			.col-sm-6
+				.jr-training__photos.row.col-12
+					.jr-training__photos--col.col
+						img.lazyload(data-src="/images/bgs/bg3.jpeg", alt="IT匠人圈")
+	section
+		.contain
+			+mentor-company
+	section.jr-section
+		.contain
+			+teachers
+	section
+		.contain
+			.jr-team
+				.section_statement
+					h2.intro-title 我们的团队
+			+staff
+	section
+		.contain
+			.section_statement
+				h2 IT匠人线下活动
+				p 在布里斯班，墨尔本，悉尼定期举办线下交流互动
+				p 大咖面对面，与大咖近距离接触，了解大咖们如何一步一步成长，求职过程中的坑又有多少。指点迷津，拨云见雾，老人带新人。
+				p 各种各样的主题活动，体验Agile，叠纸飞机体验如何团队合作；探讨技术栈，了解当下流行的技术；Offer收割机，通过面试官，指点迷津，做到面试心里有数；Engage，无人机，大数据，区块链，人工智能，最IN技术，与全球最好最知名组织和公司合作
+				.row
+					.meetup-wrapper
+						+meetup-tree
+		+post-featured

@@ -1,0 +1,33 @@
+include ./career-coaching-tab
+
+mixin career-coaching-tabs
+	if (teachers.length)
+		section.jr-university
+			.jr-career-nav
+				ul.nav.nav-pills#policy-list(role="career")
+					li.nav-item
+						a.active.nav-link(href="#general" data-toggle="tab" role="tab" aria-controls="general" aria-selected="true") 职业辅导
+					li.nav-item
+						a.nav-link(href="#back-end-developer" data-toggle="tab" role="tab" aria-controls="backend" aria-selected="false") 后端
+					li.nav-item
+						a.nav-link(href="#front-end-developer" data-toggle="tab" role="tab"  aria-controls="frontend" aria-selected="false") 前端
+					li.nav-item
+						a.nav-link(href="#data-analyst" data-toggle="tab" role="tab" aria-controls="data" aria-selected="false") 大数据
+					li.nav-item
+						a.nav-link(href="#network" data-toggle="tab" role="tab" aria-controls="network" aria-selected="false") Network
+					li.nav-item
+						a.nav-link(href="#devops" data-toggle="tab" role="tab" aria-controls="devops" aria-selected="false") Devops
+					li.nav-item
+						a.nav-link(href="#business-analyst" data-toggle="tab" role="tab" aria-controls="ba" aria-selected="false") Business Analyst
+					li.nav-item
+						a.nav-link(href="#mobile" data-toggle="tab" role="tab" aria-controls="mobile" aria-selected="false") Mobile
+			.jr-career-content.tab-content
+				+career-coaching-tab('general', 'active')
+				+career-coaching-tab('front-end-developer')
+				+career-coaching-tab('back-end-developer')
+				+career-coaching-tab('data-analyst')
+				+career-coaching-tab('network')
+				+career-coaching-tab('devops')
+				+career-coaching-tab('business-analyst')
+				+career-coaching-tab('mobile')
+				

@@ -1,0 +1,48 @@
+.img-wrapper {
+  width: 130px;
+  @include MQ(S) {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 80px;
+  }
+  height:auto;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-bottom: 30px;
+}
+
+
+
+.img-wrapper>img{
+  max-width: 130px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  @include MQ(S) { 
+	padding-right: 20px;
+  }
+}
+
+.partners-wrapper{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @include MQ(S) {
+	padding-bottom: 0px;
+	padding-top: 0px;
+  }
+}
+
+.partership-wrapper{
+  @include MQ(S) {
+	padding-top: 40px;
+  }
+}
+
+
+

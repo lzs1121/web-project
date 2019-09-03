@@ -1,0 +1,20 @@
+mixin tutors
+	div.row.margin-bottom-lg
+		if tutors.length
+			each tutor in tutors
+				.col-12.col-sm-6.col-md-4
+					.card.jr-instructors__card.jr-instructors__card--tutor
+						.card-avatar
+							img.lazyload(data-src=(tutor._.avatar.fill(100,100)), alt=tutor.name)
+						a(href=`/mentors/${tutor.id}`)
+							h5.jr-instructors__name= tutor.name
+						p.jr-instructors__title= tutor.title
+						p.jr-instructors__title= tutor.company
+						div.bio= tutor.introduction
+						.jr-instructors__card--tag
+							.tag-container.tag-container--orange
+								if tutor.highlights.length
+									each highlight in tutor.highlights
+										.tag= highlight
+						.jr-instructors__buttons
+							button.cursor-click.btn.btn__sm(onclick=`window.location.href='/mentors/${tutor.id}'`) 查看介绍

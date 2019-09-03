@@ -1,0 +1,200 @@
+{
+	"env": {
+		"browser": true,
+		"node": true,
+		"commonjs": true,
+		"es6": true,
+		"jquery": true
+	},
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true,
+			"jsx": true
+		}
+	},
+	"plugins": [
+		"react",
+		"eslint-plugin-react"
+	],
+	"rules": {
+		"prefer-const": ["error", {
+			"destructuring": "any",
+			"ignoreReadBeforeAssign": false
+		}],
+		"no-var":["error"],
+		"array-callback-return": ["error", { "allowImplicit": true }],
+		"class-methods-use-this": ["error", {
+		  "exceptMethods": []
+		}],
+		"curly": ["error", "multi-line"],
+		"consistent-return": "error",
+		"default-case": ["error", { "commentPattern": "^no default$" }],
+		"eqeqeq": ["error", "always", { "null": "ignore" }],
+		"max-classes-per-file": ["off", 1],
+		"no-alert": "warn",
+		"no-case-declarations": "error",
+		"no-else-return": ["error", { "allowElseIf": false }],
+		"no-empty-function": ["error", {
+		  "allow": [
+			"arrowFunctions",
+			"functions",
+			"methods"
+		  ]
+		}],
+	   "no-eq-null": "off",
+		"no-eval": "error",
+		"no-extend-native": "error",
+		"no-extra-bind": "error",
+		"no-extra-label": "error",
+		"no-fallthrough": "error",
+		"no-floating-decimal": "error",
+		"no-empty-pattern": "error",
+		"no-implicit-coercion": ["off", {
+		  "boolean": false,
+		  "number": true,
+		  "string": true,
+		  "allow": []
+		}],
+		"no-implicit-globals": "off",
+		"no-implied-eval": "error",
+		"no-invalid-this": "off",
+		"no-loop-func": "error",
+		"no-magic-numbers": ["off", {
+		  "ignore": [],
+		  "ignoreArrayIndexes": true,
+		  "enforceConst": true,
+		  "detectObjects": false
+		}],
+		"no-multi-spaces": ["error", {
+		  "ignoreEOLComments": false
+		}],
+		"no-multi-str": "error",
+		"no-new": "error",
+		"no-new-func": "error",
+		"no-new-wrappers": "error",
+		"no-octal": "error",
+		"no-octal-escape": "error",
+		"no-param-reassign": ["error", {
+		  "props": true,
+		  "ignorePropertyModificationsFor": [
+			"acc",
+			"accumulator",
+			"e",
+			"ctx",
+			"req",
+			"request",
+			"res",
+			"response",
+			"$scope",
+			"staticContext"
+		  ]
+		}],
+		"no-redeclare": "error",
+		"no-restricted-properties": ["error", {
+		  "object": "arguments",
+		  "property": "callee",
+		  "message": "arguments.callee is deprecated"
+		}, {
+		  "object": "global",
+		  "property": "isFinite",
+		  "message": "Please use Number.isFinite instead"
+		}, {
+		  "object": "self",
+		  "property": "isFinite",
+		  "message": "Please use Number.isFinite instead"
+		}, {
+		  "object": "window",
+		  "property": "isFinite",
+		  "message": "Please use Number.isFinite instead"
+		}, {
+		  "object": "global",
+		  "property": "isNaN",
+		  "message": "Please use Number.isNaN instead"
+		}, {
+		  "object": "self",
+		  "property": "isNaN",
+		  "message": "Please use Number.isNaN instead"
+		}, {
+		  "object": "window",
+		  "property": "isNaN",
+		  "message": "Please use Number.isNaN instead"
+		}, {
+		  "property": "__defineGetter__",
+		  "message": "Please use Object.defineProperty instead."
+		}, {
+		  "property": "__defineSetter__",
+		  "message": "Please use Object.defineProperty instead."
+		}, {
+		  "object": "Math",
+		  "property": "pow",
+		  "message": "Use the exponentiation operator (**) instead."
+		}],
+			"no-return-await": "error",
+			"no-script-url": "error",
+			"no-self-assign": ["error", {
+				"props": false
+			}],
+			"no-self-compare": "error",
+			"no-sequences": "error",
+
+			"no-throw-literal": "error",
+			"no-unmodified-loop-condition": "off",
+			"no-unused-labels": "error",
+		
+			"no-useless-call": "off",
+		
+			"no-useless-catch": "off",
+		
+			"no-useless-concat": "error",
+		
+			"no-useless-escape": "error",
+		
+			"no-useless-return": "error",
+
+			"no-void": "error",
+
+			"no-warning-comments": ["off", { "terms": ["todo", "fixme", "xxx"], "location": "start" }],
+		
+
+			"no-with": "error",
+			"require-await": "off",
+
+			"require-unicode-regexp": "off",
+			"vars-on-top": "error",
+			"wrap-iife": ["error", "outside", { "functionPrototypeMethods": false }],
+			"yoda": "error",
+			"no-unused-expressions": ["error", { "allowTernary": true }],
+			"space-before-blocks": "error",
+			"object-curly-spacing": ["error", "always"],
+			"comma-spacing": ["error", { "before": false, "after": true }],
+			"indent": [
+				"error",
+				"tab"
+			],
+			"react/jsx-indent":[2,"tab", 
+			{
+				"checkAttributes": true
+			}],
+			"react/jsx-indent-props": [2, "tab"],
+			"no-irregular-whitespace": ["error", { "skipTemplates": true }],
+			"block-spacing": "error",
+			"no-mixed-spaces-and-tabs": [1,"smart-tabs"],
+			"no-underscore-dangle":0,
+			"no-trailing-spaces": ["error", { "ignoreComments": true }],
+			"linebreak-style": [
+				"error",
+				"unix"
+			],
+			"quotes": [
+				"error",
+				"single"
+			],
+			"semi": [
+				"error",
+				"always"
+			]
+	}
+}

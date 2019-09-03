@@ -1,0 +1,17 @@
+export const userName = '姓名';
+export const userWechat = '微信号';
+export const userEmail = '邮箱';
+export const userPhone = '电话';
+export const userMajor = '专业';
+export const userDegree = '学位';
+export const bachelor = '本科';
+export const master = '研究生';
+export const firstStep = '第一步';
+export const secondStep = '第二步';
+export const paymentStep = '付款';
+export const complete = '完成';
+export const prevStep = '上一步';
+export const nextStep = '下一步';
+export const thankLetterTitle = '感谢你对我们的信任';
+export const thankLetterContent = '报名确认信已发送至邮箱，你也可以扫码添加匠人小花的微信咨询哦';
+export const xiaohua = '匠人小花';

@@ -1,0 +1,35 @@
+.home-page-pag{
+	height: 500px;
+	overflow: hidden;
+	position: relative;
+	@include MQ(S) {
+		height: 450px;
+	}
+}
+
+.section-title {
+	text-align: center;
+	font-size: 40px;
+	margin:  1.75em;
+	line-height: 1;
+	@include MQ(S){
+		font-size: 25px;
+	};
+}
+
+.section-subtitle{
+	text-align: center;
+	font-size: 26px;
+	line-height: 1.25;
+	font-family: 'PoiretOne', sans-serif;
+	margin: 0 0 1.5em;
+	@include MQ(S){
+		font-size: 18px;
+	};
+}
+
+.ourteam-title {
+	@include MQ(S){
+		margin-bottom: 50px;
+	}
+}

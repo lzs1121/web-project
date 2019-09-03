@@ -1,0 +1,28 @@
+.projects-wrapper{
+	max-width: 850px;
+	margin: 0 auto;
+	.card{
+		.card-image{
+			height: 250px;
+			width: 400px;
+			overflow: hidden;
+			position: relative;
+			border-radius: 12px 0 0 12px;
+			@include MQ(S) {
+				width: 100%;
+			}
+			img{
+				border-radius: 0;
+				height: 100%;
+				@include MQ(S) {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+.project-map-wrapper{
+	img{
+		max-width: 100%;
+	}
+}

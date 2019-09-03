@@ -1,0 +1,289 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+
+include ../mixins/post-collection
+include ../mixins/teachers
+include ../mixins/review
+include ../mixins/partnership
+include ../mixins/mentor-company
+include ../mixins/program-card
+include ../mixins/breadcrumbs
+
+block content
+	section.jr-hero
+		.contain
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				+breadcrumbs([{link:'/', label:'首页'}, {link:'/program-courses', label:'课程'},{link:'/program-course/'+training.slug, label:training.title}])
+				.video__featured--content
+					h6.white.mb-half 匠人课程
+					h1.white.training-title=(training.title)
+					p.legible.center.white=(training.cardDescription)
+					p.legible.center.white=(training.promoDescription)
+					p.legible.center.white=(training.courseObjective)
+					p.legible.center.white=(training.teachingMethod)
+					a.button--primary.lg.center.inline(href="/application?type="+training.slug)
+						strong 报名
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 难度
+					h5=(training.level)
+				li.col-md-3.col-sm-3.col-6
+					h6 学习时间
+					h5=(training.commenceDate+"开班")
+					p.x-small=(training.timeLength+"课程")
+				li.col-md-3.col-sm-3.col-12
+					h6 课程价格
+					h5=("早鸟价：$"+training.promoTuitionOffline+"(线下) "+"$"+training.promoTuitionOnline+"(线上)")
+					p.x-small=("截止日期 "+training.dueDate.format('DD/MM/YYYY  '))
+					p.x-small.x-mall *exclude GST
+				li.col-md-3.col-sm-3.col-12
+					h6 先修知识
+					h5=(training.prerequisitecourse)
+					p.x-small=(training.prerequisiteknowledge)
+	section
+		nav.navbar.navbar-expand-lg.navbar-light#navbar--sticky
+			button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar__course__content" aria-controls="navbar__course__content" aria-expanded="false" aria-label="Toggle navigation")
+				span.navbar-toggler-icon
+			.collapse.navbar-collapse#navbar__course__content
+				ul.navbar-nav.mr-auto
+					li.nav-item
+						a.nav-link(href="#overview") 课程介绍
+					li.nav-item
+						a.nav-link(href="#syllabus") 课程大纲
+					li.nav-item
+						a.nav-link(href="#projects") 课程项目
+					li.nav-item
+						a.nav-link(href="#instructor") 匠人导师
+					li.nav-item
+						a.nav-link(href="#career") 就业服务
+					li.nav-item
+						a.nav-link(href="#dates") 开课时间
+	section(data-offset="0")
+		#overview
+			+mentor-company
+			section.jr-why
+				.contain.text-center.row
+					.jr-why__description.col-12.col-sm-12.col-md-9
+						h2=("为什么选择IT匠人的"+training.title+"?")
+						p=(training.reasons)
+						.jr-why__content
+							!=training.courseIntrodcution
+						p
+							strong 适合人群:
+						ul
+							each appropriate in training.suitable.split(" ")
+								li=(appropriate)
+					.jr-why__stat.col-12.col-sm-12.col-md-3
+						.card.card-border-top.hidden-md-down
+							h4.light= training.cardDescription
+							p.text-left= training.syllabusDetail
+			section.features
+				.contain
+					div.row.margin-bottom-lg
+						.features__col-short.col-sm.text-center
+							img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-01@1x-a6975a860f7ced563f475e3bb8801361b6c3f2abd7e85e2c89a7c761a3992197.png", alt="features__images")
+						.features__col-wide.col-sm.text-center
+							.features__content
+								ul.features__list
+									li.row
+										span
+											img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+										div.col-sm
+											h4 完胜其他培训学校就业率
+											p=("经过"+training.numberOfTerms+"期"+"的"+training.title+"积累，40%的学生课程刚结束就找到了全职工作；另外百分之30%，在三个月内找到了全职工作。由于真实的工作offer，我们也有自信说，匠人和匠人的导师真心帮助了许多学生就业。")
+									li.row
+										span
+											img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+										div.col-sm
+											h4 顶尖导师团队
+											p 匠人导师团队均为多年经验的IT大咖，每一个培训都是由各自专属领域的大牛授课，导师也是名校毕业和名企经验，从百度到阿里巴巴，从ThoughtWorks到Microsoft，Amazon，从Senior Developer到CTO，应有尽有。同时加入匠人圈，也是加入了IT匠人全球IT职业资源。
+					if((training.feature1Title))
+						div.row.margin-bottom-lg
+							.features__col-wide.col-sm.text-center
+								.features__content
+									ul.features__list
+										li.row
+											span
+												img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+											div.col-sm
+												h4=(training.feature1Title)
+												p=(training.feature1Detail)
+										li.row
+											span
+												img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+											div.col-sm
+												h4=(training.feature2Title)
+												p=(training.feature2Detail)
+							.features__col-short.col-sm.text-center
+								img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-02@1x-8e9d672908d063cc0513ef55ffd7519eef7f5b889325d89efd9cadeb202dfdc1.png", alt="features__images")
+					if((training.feature3Title))
+						div.row.margin-bottom-lg
+							.features__col-short.col-sm.text-center
+								img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-01@1x-a6975a860f7ced563f475e3bb8801361b6c3f2abd7e85e2c89a7c761a3992197.png", alt="features__images")
+							.features__col-wide.col-sm.text-center
+								.features__content
+									ul.features__list
+										li.row
+											span
+												img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+											div.col-sm
+												h4=(training.feature3Title)
+												p=(training.feature3Detail)
+										li.row
+											span
+												img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+											div.col-sm
+												h4=(training.feature4Title)
+												p=(training.feature4Detail)
+
+	#syllabus
+		section.jr-syllabus-term
+			h2 你将学到什么
+			section.jr-syllabus-term__cards
+				.cards_contain
+					.jr-syllabus-term__card
+						.jr-syllabus-term__header.row.no-margin
+							.jr-syllabus-term__header__content.col-sm-7
+								h6 Syllabus
+								h3=(training.syllabusTitle)
+								p=(training.syllabusDetail)
+								.jr-syllabus-term__header__content--details
+									p.cursor-click.jr-syllabus-term__toggle.collapsed(data-toggle="collapse" data-target="#course_detail" aria-expanded="false" aria-controls="course_detail")
+										span 显示全部课程表信息(点击展开)
+									//- p.gray-medium=(training.length.split(' ')[0])
+							.jr-syllabus-term__header__image.col-sm-5.hidden-xs-down
+						.jr-syllabus-term__main.row.no-margin
+							.jr-syllabus-term__main__content.col-sm-7.collapse#course_detail
+								h6 先修知识
+								p.margin-bottom-3=(training.prerequisiteknowledge)
+								section.jr-syllabus-term__main__content--parts
+									if(training.sections)
+										ul
+											each section in training.sections
+												li
+													.part
+														h5=(section.split(" : ")[0])
+														-var n=0;
+														while n< (section.split(" : ").length-1)
+															- n++
+															p
+																span.lnr.lnr-chevron-right=(section.split(" : ")[n])
+							.jr-syllabus-term__main__content.col-sm-5
+	#projects
+		if training.project.length
+			section.jr-projects
+				.contain
+					h2 你将挑战的项目
+				section.jr-projects__cards
+					.contain
+						.cards_contain
+							each project in training.project
+								.jr-projects__card
+									.jr-projects__header.row.no-margin
+										.jr-projects__header__content.col-12.col-sm-6
+											h6 Project
+											h3= project.name
+											p.hidden-md-down!= project.shortDescription
+											.jr-projects__header__content__footer
+												.tag-container
+													if project.skills.length
+														each skill in project.skills
+															.tag= skill
+										.jr-projects__header__image--wrapper.jr-projects__project__one.col-12.col-sm-6
+											img.lazyload(data-src=(project.thumbnail.secure_url), alt=project.name)
+	#instructor
+		section.jr-instructors
+			.contain
+				h2.text-center Learn with the Best
+				+teachers
+	section#dates
+		.contain
+			h2.text-center 开课时间
+			.row
+				if(programs)
+					each program in programs
+						.col-12.col-sm-4
+							+program-card(program)
+	section.jr-reviews
+		.contain
+			header
+				h2.blue.inline 学员反馈
+			.jr-reviews__container.row
+				.col-sm-4
+					.jr-reviews__card.stats
+						.stats__average
+							span=(training.courseScore)
+							.stats__container
+								.jr-stars
+									div(style="width:95%;")
+						.jr-reviews__overview
+							.wrapper
+								.h6.text-right 5 stars
+								.progress
+									div(style="width:87%;") 62
+							.wrapper
+								.h6.text-right 4 stars
+								.progress
+									div(style="width:13%;") 6
+							.wrapper
+								.h6.text-right 3 stars
+								.progress
+									div(style="width:0%;") 0
+							.wrapper
+								.h6.text-right 2 stars
+								.progress
+									div(style="width:0%;") 0
+							.wrapper
+								.h6.text-right 1 stars
+								.progress
+									div(style="width:0%;") 0
+				if(reviews)
+					each review in reviews
+						.col-sm-4
+							.jr-reviews__card.card
+								.row
+									.col-sm-6
+										h5.student__name= review.name
+									.col-sm-6
+										.student__stars
+											div(style="width:92%;")
+								p.student__review= review.content
+	section.jr-faq
+		.contain
+			.faq__content
+				h2 帮助与常见问题
+				.contain-center#accordion
+				each FAQ,index in training.FAQs
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingOne(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href=("#collapse"+index) aria-expanded="true" aria-controls=("collapse"+index) class="collapsed" role="tab")
+									h4
+										strong=(FAQ.split("?")[0])
+									i.lnr.lnr-chevron-up
+							//- div(id="collapse"+index).collapse(role="tabpanel" aria-labelledby=("heading"+index))
+								.card-body
+									p=(FAQ.split("?")[1])
+	+partnership
+	//- +post-collection
+	script(type="text/javascript").
+		var title = document.getElementsByClassName("training-title")[0].innerText;
+		var metadescription = document.getElementsByClassName("meta-description")[0].innerText;
+		var obj = (
+			{"@context": "http://schema.org","@type": "Training","name": + '"'+ title +'"' , "description": + '"' + metadescription + '"' , "provider":{ "@type": "Organization", "name": "澳洲IT匠人圈", "sameAs": "https://jiangren.com.au"} }
+			);
+		var jsonLD = document.createElement('script');
+		jsonLD.type = 'application/ld+json';
+		jsonLD.text = JSON.stringify(obj);
+		jsonLD.text = jsonLD.text.replace(/\\"/g, '"');
+		jsonLD.text = jsonLD.text.replace(/""/g, '"');
+		jsonLD.text = jsonLD.text.replace("NaN", "");
+		jsonLD.text = jsonLD.text.replace("NaN", "");
+		document.querySelector('body').appendChild(jsonLD);
+block js
+	script(src=`/apps.bundle.js` async)
+	link(rel="stylesheet", href="/apps.css")

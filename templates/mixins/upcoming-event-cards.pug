@@ -1,0 +1,33 @@
+mixin upcoming-event-cards
+	section.jr-services
+		.contain
+			h2.section-title 匠人最新活动
+			p.description.text-center 匠人活动开拓你的IT朋友圈，获得最新最实用的行业经验与资讯
+			div
+				if !upcomingMeetups.length
+					h3.text-muted.text-center 新活动筹备中。。。
+				else
+					.row.jr-upcoming-event.col-sm-12.no-padding
+						each meetup, i in upcomingMeetups
+							.col-sm-12.col-12
+								a.jr-upcoming-event__link(href='/events/' + meetup.key target="_blank" title= meetup.name)
+									.card.card-profile.jr-upcoming-event__card
+										.row.jr-upcoming-event__card-content
+											.col-sm-2.jr-upcoming-event__date
+												.jr-upcoming-event__date-content
+													h3=meetup.startDate.format("DD")
+													p=meetup.startDate.format("MMMM")+" "+meetup.startDate.format("YYYY")
+											.col-sm-6.jr-upcoming-event__title
+												.jr-upcoming-event__title-content
+													h3=meetup.name.toUpperCase()
+													p=meetup.startDate.format("HH:mm")+" - "+meetup.startDate.format("DDDD")+" "+meetup.startDate.format("MMMM")+" "+meetup.startDate.format("D")+", "+meetup.startDate.format("YYYY")+" to "+meetup.endDate.format("HH:mm")+" - "+meetup.endDate.format("DDDD")+" "+meetup.endDate.format("MMMM")+" "+meetup.endDate.format("D")+", "+meetup.endDate.format("YYYY")
+											.col-sm-4.row
+												.col-sm-9.jr-upcoming-event__address
+													.jr-upcoming-event__address-content.row
+														.col-lg-3.jr-upcoming-event__address-content-icon
+															img(src="/images/icons/upcoming-event-address.svg")
+														.col-lg-9
+															p=meetup.map			
+												.col-sm-3.jr-upcoming-event__img
+													.jr-upcoming-event__img-content
+														img(src="/images/icons/calendar.svg" alt="new meetup")

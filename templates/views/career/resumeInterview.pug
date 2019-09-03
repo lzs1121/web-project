@@ -1,0 +1,151 @@
+extends ../../layouts/course-layout
+
+//- INCLUDES
+include ../../mixins/post-featured
+include ../../mixins/teachers
+include ../../mixins/review
+
+block content
+	section.jr-hero
+		.contain
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				.video__featured--content
+					h6.white.mb-half 匠人课程
+					h1.white Web开发全栈项目班（三期）
+					p.legible.center.white.hidden-xs-down 快速掌握面向工作的核心技术 - WEB 开发
+					p.legible.center.white.hidden-xs-down Reactjs + Nodejs + .Net + MVC + C# + REST API + Agile + Career Coaching
+					p.legible.center.white 布里斯班 + 悉尼 + 线上直播
+					a.button--primary.lg.center.inline(href="/application?type="+data.slug)
+						strong 报名
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 难度
+					h5 进阶
+					p.x-small 实习就业
+				li.col-md-3.col-sm-3.col-6
+					h6 学习时间
+					h5 3月10日开班
+					p.x-small 三个月（72小时）
+				li.col-md-3.col-sm-3.col-12
+					h6 课程价格
+					h5 早鸟价：$3500(线下) $2000(线上)
+					p.x-small 原价$4800(线下)，$3500(线上)
+					p.x-small.x-mall *exclude GST
+				li.col-md-3.col-sm-3.col-12
+					h6 先修知识
+					h5 Web入门
+					p.x-small 了解基本的面向对象
+	section.jr-partners
+		.contain
+			h6.text-center 这些企业信任我们
+			ul.jr-partners__list
+				li
+					img.jr-partners__list--icon.lazyload(data-src="/images/partners/Aurion-logo-1.png", alt="匠人partner")
+				li
+					img.jr-partners__list--icon.lazyload(data-src="/images/partners/logo-ladbrokes-color1.png", alt="匠人partner")
+				li
+					img.jr-partners__list--icon.lazyload(data-src="/images/partners/suncorp.jpg", alt="匠人partner")
+				li
+					img.jr-partners__list--icon.lazyload(data-src="/images/partners/Allianz.svg.png", alt="匠人partner")
+				li
+					img.jr-partners__list--icon.lazyload(data-src="/images/partners/flight-center.png", alt="匠人partner")
+				li
+					img.jr-partners__list--icon.lazyload(data-src="/images/partners/abcdata.png", alt="匠人partner")
+	section.jr-why
+		.contain.text-center.row
+			//- img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/image-laptop@1x-e0453c763ea5449882c8db6988b1bec11edcc93cca14c1ccdba29eb425727dbd.png", alt="Front-End Developer")
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 为什么选择IT匠人的Web开发全栈项目班?
+				p 们为希望未来从事Web开发， 进入澳洲IT行业的你们专门打造。经过多年的经验和实践，我们推出这一系列基础课，适合具有一定基础却欠缺商业项目经验的小伙伴们学习。如果你想要积累Web开发实战经验，提升职场竞争力，那这门课很适合你的加入。
+				p
+					strong 适合人群:
+				ul
+					li 具有CS基础，项目基础薄弱的同学
+					li IT相关专业，希望转行Web开发的同学
+					li 其他专业，对IT具有一定的了解，想要换专业的同学
+					li IT初级学员，希望获取商业实战项目经验，积累IT人脉
+					li IT新毕业生，想要寻求IT工作，提升职业发展，拓宽职业范围
+			.jr-why__stat.col-12.col-sm-12.col-md-3
+				.card.card-border-top.hidden-md-down
+					h4.light 匠人自豪的说已经帮助几十位学生就业
+					p.text-left 现代Web开发是达到工作的必备条件，区别于大学或Tafe学的过时的旧的Web开发
+					p.text-left 澳洲最Popular职位
+	section.features
+		.contain
+			div.row.margin-bottom-lg
+				.features__col-short.col-sm.text-center
+					img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-01@1x-a6975a860f7ced563f475e3bb8801361b6c3f2abd7e85e2c89a7c761a3992197.png", alt="features__images")
+				.features__col-wide.col-sm.text-center
+					.features__content
+						ul.features__list
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 全面的课程设置
+									p 课程内容基本涵盖了IT项目设计领域的重要知识点，，同时包含大量的工业界最新前沿技术。编程语言（如HTML, Javascript, ECMAscript 6，CSS，JavaScript），团队协作（Agile，Bitbucket， Jira，Bamboo），新兴技术（如.Net，Node.js，Express.js，React.JS，SPA，RESTAPI）以及云端技术（AWS EC2，S3）等最新流行技术
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 顶尖导师团队
+									p 匠人导师团队均为多年经验的IT大咖，每一个培训都是由各自专属领域的大牛授课，导师也是名校毕业和名企经验，从百度到阿里巴巴，从ThoughtWorks到Microsoft，Amazon，从Senior Developer到CTO，应有尽有。同时加入匠人圈，也是加入了IT匠人全球IT职业资源。
+			div.row.margin-bottom-lg
+				.features__col-wide.col-sm.text-center
+					.features__content
+						ul.features__list
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 实战项目+项目经验
+									p 真实实战模拟项目经验，整个培训会deliver两个Projects，一个是个人网站，另一个是有商业背景的LMS(Learning Management System)项目。其中个人网站为自己独立完成此项目，使用HTML5，CSS3，Javascript，Bootstrap，Gihub，Google Map Api等技术去完成。LMS项目是组成5到7个人为一组的Agile小组，使用SCRUM，Jira进行管理团队，通过Bitbucket等git工具，进行团队协作，模拟真实工作场景中需要的团队协作和冲突处理。
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 模拟工作场景+团队协作
+									p 面试中常问的如何团队协作，那我们在本培训中会有很好的解决，我们通过最流行的Agile项目管理方式，通过顶级Agile大师带领大家理解Agile的Methodology，真实的工作环境中如何使用agile，团队是如何协作的，如何进行代码管理，版本控制，怎样融合团队成员的代码，同时我们也会在每节课带领大家模拟公司的standup和retro等等
+				.features__col-short.col-sm.text-center
+					img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-02@1x-8e9d672908d063cc0513ef55ffd7519eef7f5b889325d89efd9cadeb202dfdc1.png", alt="features__images")
+			div.row.margin-bottom-lg
+				.features__col-short.col-sm.text-center
+					img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-01@1x-a6975a860f7ced563f475e3bb8801361b6c3f2abd7e85e2c89a7c761a3992197.png", alt="features__images")
+				.features__col-wide.col-sm.text-center
+					.features__content
+						ul.features__list
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 紧密围绕面试求职
+									p 匠人圈会根据每个学员的个人特色，制定不同的找工作的策略和面试技巧。修改简历，模拟面试。使学员们在求职路上快人一步
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 动手Coding能力提升
+									p 培训课程不仅仅有项目，我们也会在每节课留下作业和任务，每节课都有自己的特色，任务也从易到难，适合各个层次的人做，多种Api的运用，算法题，面试题等等。在上课中就已经在联系未来面试中遇到的问题。除此以外，导师也会做code review，帮助提升学生的代码质量
+	section.jr-syllabus-term
+		.contain
+			h2 你将学到什么
+		section.jr-syllabus-term__cards
+			.cards_contain
+				.jr-syllabus-term__card
+					.jr-syllabus-term__header.row.no-margin
+						.jr-syllabus-term__header__content.col-sm-7
+							h6 Syllabus
+							h3 Web开发全栈培训班
+							p.hidden-md-down Reactjs + Nodejs + .Net + MVC + C# + REST API + Agile + Career Coaching
+							.jr-syllabus-term__header__content--details
+								p.jr-syllabus-term__toggle.collapsed(data-toggle="collapse" data-target="#course_detail" aria-expanded="false" aria-controls="course_detail")
+									span 显示全部课程表信息
+								p.gray-medium 3个月完成
+						.jr-syllabus-term__header__image.col-sm-5.hidden-xs-down
+	section.jr-instructors
+		.contain
+			h2.text-center Learn with the Best
+			+teachers

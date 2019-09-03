@@ -1,0 +1,120 @@
+extends ../layouts/course-layout
+//- INCLUDES
+
+include ../mixins/post-featured
+include ../mixins/teachers
+include ../mixins/meetup-tree
+include ../mixins/staff
+include ../mixins/mentor-company
+
+block content
+	section.jr-policy
+		.contain.no-padding-bottom
+			h1(style="color: white;font-size: 1px;margin: 0;") Privacy Policy | Term Of Service | Disclaimer
+			.jr-policy-nav
+				ul.nav.nav-pills#policy-list(role="tablist")
+					li.nav-item
+						a.active.nav-link(href="#privacyPolicy" data-toggle="tab" role="tab"  aria-controls="Privacy-Policy" aria-selected="true") Privacy Policy
+					li.nav-item
+						a.nav-link(href="#termOfService" data-toggle="tab" role="tab" aria-controls="Term-Of-Service" aria-selected="true") Term Of Service
+					li.nav-item
+						a.nav-link(href="#disclaimer" data-toggle="tab" role="tab" aria-controls="Disclaimer" aria-selected="true") Disclaimer
+			.jr-policy-content.tab-content
+				.tab-pane.active#privacyPolicy
+					h2 JR Academy Privacy Policy
+					p Last updated： 09/03/2018
+					p JR Academy is committed to providing quality services to you and this policy outlines our ongoing obligations to you in respect of how we manage your Personal Information. We have adopted the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth) (the Privacy Act). The NPPs govern the way in which we collect, use, disclose, store, secure and dispose of your Personal Information. A copy of the Australian Privacy Principles may be obtained from the website of The Office of the Australian Information Commissioner at www.aoic.gov.au.
+					h3 What is Personal Information and why do we collect it?
+					p Personal Information is information or an opinion that identifies an individual. Personal Information we collect include but not limited:
+					ul
+						li 
+							p Names
+						li 
+							p Email addresses
+						li 
+							p City
+						li 
+							p Phone and WeChat number
+						li 
+							p Cookies and Usage Data
+					p The information we collect depends on how you interact with us and the purpose of that interaction. The collection method includes but not limited to: interviews, correspondence, by telephone and WeChat, by email, via our website https://jiangren.com.au, from media and publications, from other publicly available sources, from cookies- delete all that aren’t applicable and from third parties. We don’t guarantee website links or policy of authorised third parties.
+					p We collect your Personal Information for the primary purpose of providing our services to you, providing information to our clients and marketing. We may also use your Personal Information for secondary purposes closely related to the primary purpose, in circumstances where you would reasonably expect such use or disclosure. You may unsubscribe from our mailing/marketing lists at any time by contacting us in writing. When we collect Personal Information we will, where appropriate and where possible, explain to you why we are collecting the information and how we plan to use it.
+					h3 Sensitive Information
+					p Sensitive information is defined in the Privacy Act to include information or opinion about such things as an individual's racial or ethnic origin, political opinions, membership of a political association, religious or philosophical beliefs, membership of a trade union or other professional body, criminal record or health information.
+					p Sensitive information will be used by us only:
+					ul
+						li 
+							p For the primary purpose for which it was obtained
+						li 
+							p For a secondary purpose that is directly related to the primary purpose
+						li 
+							p With your consent; or where required or authorised by law.
+					h3 Third Parties
+					p Where reasonable and practicable to do so, we will collect your Personal Information only from you. However, in some circumstances we may be provided with information by third parties. In such a case we will take reasonable steps to ensure that you are made aware of the information provided to us by the third party.
+					h3 Disclosure of Personal Information
+					p Your Personal Information may be disclosed in a number of circumstances including the following:
+					ul
+						li 
+							p Third parties where you consent to the use or disclosure; and
+						li 
+							p Where required or authorised by law.
+					h3 Security of Personal Information
+					p Your Personal Information is stored in a manner that reasonably protects it from misuse and loss and from unauthorized access, modification or disclosure.
+					p When your Personal Information is no longer needed for the purpose for which it was obtained, we will take reasonable steps to destroy or permanently de-identify your Personal Information. However, most of the Personal Information is or will be stored in client files which will be kept by us for a minimum of 7 years.
+					h3 Access to your Personal Information
+					p You may access the Personal Information we hold about you and to update and/or correct it, subject to certain exceptions. If you wish to access your Personal Information, please contact us in writing.
+					p JR Academy will not charge any fee for your access request but may charge an administrative fee for providing a copy of your Personal Information.
+					p In order to protect your Personal Information, we may require identification from you before releasing the requested information.
+					h3 Maintaining the Quality of your Personal Information
+					p It is an important to us that your Personal Information is up to date. We will take reasonable steps to make sure that your Personal Information is accurate, complete and up-to-date. If you find that the information we have is not up to date or is inaccurate, please advise us as soon as practicable so we can update our records and ensure we can continue to provide quality services to you.
+					h3 Policy Updates
+					p This Policy may change from time to time and is available on our website.
+					h3 Privacy Policy Complaints and Enquiries
+					p If you have any queries or complaints about our Privacy Policy, please contact us at:
+					ul
+						li
+							p  Email: 
+								a(href="mailto:info@jiangren.com.au") info@jiangren.com.au
+						li
+							p Mail: Privacy Officer, Level 4, 155 Queen St, Brisbane
+				.tab-pane#termOfService
+					h2 Terms of Service ("Terms") 
+					p Last updated： 09/03/2018
+					p Please read these Terms of Use ("Terms", "Terms of Use") carefully before using the 
+						a(href="https://jiangren.com.au/") https://jiangren.com.au/
+						span  website (the "Service") operated by JR Academy ("us", "we", or "our").
+					p Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.
+					p 
+						strong By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.				
+					h3 Termination
+					p We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.
+					p All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
+					h3 Subscriptions
+					p Some parts of the Service are billed on a subscription basis ("Subscription(s)"). Company will make the applicable Services available to you during the term of this Agreement. Company will provide support for the applicable Services to you during the term of this Agreement at no additional charge.
+					h3 Content
+					p Our Service allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material ("Content"). You are responsible for any access and use of the Services via your account and for all activities that occur relate to your account, regardless of whether the activities were undertaken by you or a third party. Company will not be responsible for any loss or damage arising directly or indirectly from your failure to maintain the security of your account and password or for unauthorized access to your account. You agree to notify Company immediately if you believe that an unauthorized third party may be using your account or if your account information is lost or stolen.
+					p If you provide any Users Content that is untrue, inaccurate, not current, or incomplete, or Company has reasonable grounds to suspect that such Users Content is untrue, inaccurate, not current or incomplete, Company has the right to suspend or terminate your account and refuse any and all current or future use of the Websites and/or Service.
+					p The Users Content provided must in their entirety comply with all applicable, local, and international laws and regulations. Without limiting the foregoing. Users Content shall not contain any material that is defamatory, obscene, indecent, abusive, offensive, harassing, violent, hateful, inflammatory, or otherwise objectionable, or promote sexually explicit or pornographic material, violence, or discrimination based on race, sex, religion, nationality, disability, sexual orientation, or age.
+					h3 Links To Other Web Sites
+					p Our Service may contain links to third-party web sites or services that are not owned or controlled by JR Academy.
+					p JR Academy has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third-party web sites or services. You further acknowledge and agree that JR Academy shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.
+					h3 Policy Updates
+					p This Policy may change from time to time and is available on our website.
+					h3 Contact Us
+					ul
+						li
+							p  Email: 
+								a(href="mailto:info@jiangren.com.au") info@jiangren.com.au
+						li
+							p Mail: Privacy Officer, Level 4, 155 Queen St, Brisbane
+				.tab-pane#disclaimer
+					h2 Disclaimer
+					p Last updated： 09/03/2018
+					p The information contained on the 
+						a(href="https://jiangren.com.au/") https://jiangren.com.au/
+						span  website (the "Service") is for general information purposes only. JR Academy assumes no responsibility for errors or omissions in the contents on the Service.
+					p In no event shall JR Academy be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service. JR Academy reserves the right to make additions, deletions, or modification to the contents on the Service at any time without prior notice. JR Academy does not warrant that the website is free of viruses or other harmful components.
+					h3 External links disclaimer
+					p JR Academy website may contain links to external websites that are not provided or maintained by or in any way affiliated with JR Academy please note that the JR Academy does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.
+					h3 Fitness disclaimer
+					p This website offers health, fitness and nutritional information and is designed for educational purposes only. You should not rely on this information as a substitute for, nor does it replace, professional medical advice, diagnosis, or treatment.

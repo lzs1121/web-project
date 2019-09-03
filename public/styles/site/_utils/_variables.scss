@@ -1,0 +1,153 @@
+
+// Extra small screen / phone
+$screen-xs-min:              		480px !default;
+
+// Small screen / tablet
+$screen-sm-min:              		768px !default;
+
+// Medium screen / desktop
+$screen-md-min:              		992px !default;
+
+// Large screen / wide desktop
+$screen-lg-min:             	 	1200px !default;
+
+// Large scree / wider desktop
+$screen-lg-med:                     1260px !default;
+$screen-xs-max:              		($screen-sm-min - 1) !default;  // 767px
+$screen-sm-max:              		($screen-md-min - 1) !default;  // 991px
+$screen-md-max:              		($screen-lg-min - 1) !default;  // 1199px
+
+$general-border-radius:				4px !default;
+
+$font-color: #505050;
+$font-size: 15px;
+$h3-font-size: 24px;
+$h4-font-size: 20px;
+$text-bg:#FBFBFB;
+$category-btn-size: 78px;
+$category-btn-size-sm: 70px;
+$theme-color: #F7345F;
+
+$navbar-height: 60px;
+
+$green : #65B988;
+$help: #086451;
+$gray: lighten(#000, 33.5%);
+$secondary-panel : #273143;
+$brand-main-color: #FB6E30 !default;
+$gray-dark: black;
+
+$header-top-bg-color: #ffffff !default;
+$header-top-shadow:0px 1px 10px 0px rgba(50, 50, 50, 0.2);
+//current tab color
+//$highlighted-color: #CA5109;
+$highlighted-color:#B2490B;
+//icon , button color
+$icon-color:rgb(243, 113, 36);
+$button-theme-background : #F37022;
+$button-background:#E25E10 ; // button hover background color
+
+//text color
+$black-1 : black;
+$black-2 : lighten($black-1,10%);
+$black-3 : lighten($black-1,25%);
+$black-4 : lighten($black-1,40%);
+$black-5 : lighten($black-1,55%);
+$black-6 : lighten($black-1,70%);
+//Panel heading color
+
+$blue:          #4a8bfc;
+$light-blue:    #529eff;
+$green:         #1ed176;
+$orange:        #fcb52c;
+$purple:        #8b7df1;
+$red:           #f8556c;
+
+$whiteish:      #f9fafb;
+$lighter-grey:  #ebeef2;
+$light-grey:    #e6e9ee;
+$lightish-grey: #a0a5b0;
+$grey:          #9da5b3;
+$darkish-grey:  #898989;
+$dark-grey:     #576070;
+$blackish:      #4C555A;
+$blacker:       #24282e;
+
+/*********************
+* Size: width & height
+***********************/
+//Navigation
+$height-top-bar: 50px;
+$height-mobile-nav: 80px;
+$height-nav: 80px;
+$navigation-icon-size: $height-nav * 0.8;
+$icon-size : $height-nav * 0.56;
+//animation time
+$flap-animation:1.4s;
+//Define Scale variables
+$golden: 1.618;
+$golden-ratio : 0.618;
+$modular-scale-ratio: $golden;
+
+// Header
+$header-height: 80px  !default;
+$header-height-pane:  60px  !default;
+$header-height-xs: ($header-height * 2) !default;
+$header-height-mobile: 46px  !default;
+
+$header-logo-height: 14px;
+$header-menu-toggler-width: 20px;
+$header-menu-toggler-height:  20px;
+$header-sidebar-toggler-margin: ($header-height - $header-menu-toggler-height - 2px) / 2 0 0 0 !default;
+$header-responsive-toggler-margin:   ($header-height - $header-menu-toggler-height) / 2 14px 0 6px !default;
+$header-logo-margin:  ($header-height - $header-logo-height) / 2 0 0 0 !default;
+
+
+$header-top-menu-general-item-padding: 21px 16px 17px 13px !default;
+$header-top-menu-general-item-padding-on-mobile:28px 10px 19px 10px !default;
+$header-top-menu-icon-font-size: 19px !default;
+$header-top-menu-user-item-padding:  18px 12px 24px 12px !default;
+$header-top-menu-user-item-padding-on-mobile: 18px 6px 24px 6px !default;
+
+$header-top-menu-user-font-size: 14px !default;
+$header-top-menu-user-font-weight: 400 !default;
+$header-top-menu-user-dropdown-link-font-size: 14px !default;
+$header-top-menu-user-dropdown-link-font-weight:300 !default;
+$header-top-menu-user-font-color:darken(#889EB2, 3%) !default;
+
+// Page content
+$page-content-min-height: 600px !default;
+$page-content-solid-bg-color:  #F1F3FA !default;
+/*********************
+*breakpoints
+***********************/
+$XS:     420px;
+$S:     480px;
+$M:     767px;
+$ML:	940px;
+$L:     1200px;
+$maxL:    $L + 1px;
+
+/*********************
+* Forms
+***********************/
+/*** Buttons ***/
+
+/*** Global ***/
+// Media Query Ranges
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$order-radius-base:        .2em;
+$border-radius-large:       .3em;
+$border-radius-small:       .15em;
+
+
+$gray-color:  #999999 !default;
+
+// indent settings
+$indent-open-lecture-card: 50px;

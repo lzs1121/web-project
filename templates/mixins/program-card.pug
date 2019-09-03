@@ -1,0 +1,64 @@
+mixin program-card(program)
+	.jr-card__programs.card
+		.jr-card__programs--image-wrapper
+			img.img.lazyload(data-src=(program._.thumbnail.fit(400,300) || "/images/courses/default.png" ), alt= (program.title))
+		.jr-card__programs--body
+			h4.text-center.card-title
+				if program.training.courseLink
+					a(href=`/${program.training.courseLink}`)= (program.name)
+				else
+					a(href=`/program-course/${program.training.slug}`)= (program.name)
+			.jr-card__programs--details-icon
+				span
+					strong 城市: 
+				span= (program.city.chName)
+			.jr-card__programs--details-icon
+				span
+					strong 课程安排:
+				span= (program.courseAgenda)
+			.jr-card__programs--details-icon
+				span
+					strong 开课时间:
+				span= (program._.commenceCourseDate.format('MMM. DD'))
+			if program.tuition
+				.jr-card__programs--details-icon
+					span
+						strong 原价:
+					span= (program.tuition)
+			if program.tuitionOffline
+				.jr-card__programs--details-icon
+					span
+						strong 线下原价：
+					span= (program.tuitionOffline)
+			if program.promoTuitionOffline
+				.jr-card__programs--details-icon
+					span
+						strong 线下早鸟价：
+					span= (program.promoTuitionOffline)
+			if program.tuitionOnline
+				.jr-card__programs--details-icon
+					span
+						strong 线上原价：
+					span= (program.tuitionOnline)
+			if program.promoTuitionOnline
+				.jr-card__programs--details-icon
+					span
+						strong 线上早鸟价：
+					span= (program.promoTuitionOnline)
+			.jr-card__programs--details-icon
+				span
+					strong 早鸟截止日期：
+				span= (program._.earlyBirdDueDate.format('MMM. DD'))
+			.jr-card__programs--details-icon
+				span
+					strong 课程更新
+				.tag-container
+					if (program.highlights.length)
+						each highlight in program.highlights
+							.tag= highlight
+			.jr-card__programs--actions
+				button.btn.btn-lg(onclick=`window.location.href='/application?type=${program.training.slug}'`) 立即报名
+				if program.training.courseLink
+					button.btn.btn-lg(onclick=`window.location.href='/${program.training.courseLink}'`) 了解课程
+				else
+					button.btn.btn-lg(onclick=`window.location.href='/program-course/${program.training.slug}'`) 了解课程

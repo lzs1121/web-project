@@ -1,0 +1,162 @@
+extends ../layouts/course-layout
+
+include ../mixins/post-featured
+include ../mixins/review
+include ../mixins/mentor-company
+include ../mixins/tutors
+include ../mixins/uni-post-essay
+include ../mixins/workshops-upcoming-list
+include ../mixins/workshop-tree
+include ../mixins/breadcrumbs
+
+block content
+	section.general-hero
+		.university-banner.card
+			.university-banner__content
+				.row.align-items-center
+					.col-xl-12.col-lg-12.col-md-12.col-sm-0
+						+breadcrumbs([{link:'/', label:'首页'}, {link:'/university/'+university.slug, label:university.name}])
+						.content-detail
+							h1.white.uni-chinesename= (university.chineseName)
+							.university-website
+								a.button--primary__theme.lg.center.inline(href=university.officialWebsite target="_blank") 官网
+							h4.white.uni-englishname= university.name
+							h4.white.uni-location= ("所在城市: "+university.address)
+							p.white.uni-description= university.shortDescription
+						.search-bar
+							.search-bar__container
+								input#search-input.search-input(type='search' placeholder='输入课程名/编号' onkeyup='handleKeyUp(event)' 
+								onfocus='showResults()' onblur='setTimeout(removeResults, 300)')
+								#result-dropdown.search-result-dropdown.search-result-dropdown--invisible
+									if courses.length
+										each course in courses
+											a(href=slug+"/"+course.slug onmouseover='handleMouseOver(this)' onmouseout='handleMouseOut(this)' target="_blank")
+												p=course.name
+												h6(style='font-style: italic', font-size="5px")='Code:'+course.courseCode
+								button.search-button.ant-btn.button--primary__theme.lg.center.inline.ant-btn-primary(type="submit" onclick='handleOnClick()') 搜索   
+									img(src="/images/icons/arrow-right.svg", alt="rightarrow")
+			if !university.bannerBackground.exists
+				.university__topcard--overlay
+			.university-banner__bg.animated.fadeIn
+				if university.bannerBackground.exists
+					img.universitycard-bg(src=university.bannerBackground.secure_url, alt="stripe")
+	section.features
+		.contain
+			.row
+				.col-12.col-sm-12.col-lg-6
+					h2 学校介绍
+					.jr-school-content
+						.col
+							if (university.foundedYear)
+								.text-left
+									p 
+										strong 创校时间 
+										span= university.foundedYear
+						.col
+							if (university.tution)
+								.text-left
+									p 
+										strong 学费 
+										span= university.tution
+						.col
+							if (university.ielts)
+								.text-left
+									p 
+										strong 雅思要求 
+										span= university.ielts
+					if (university.shortDescription)
+						.jr-school__content
+							h3 学校概况
+							p= university.shortDescription
+					if (university.schoolHistory)
+						.jr-school__content
+							h3 学校历史
+							p= university.schoolHistory
+					if (university.schoolFeatures)
+						.jr-school__content
+							h3 学校特色
+							p= university.schoolFeatures
+				.col-12.col-sm-12.col-lg-6
+					h2 近期大学辅导班
+					+workshops-upcoming-list
+	section.jr-section
+		.contain
+			if resources && resources.length
+				h2.text-center.bold= (university.chineseName) + "资料"
+				p.uni-plan-text.text-center 过去考卷 PPT 学习笔记 学习资料
+				div#resourcePanel(data-resources=resources)
+			p.uni-plan-text.text-center 快速适应大学生活
+			.row
+				if(posts.total>0)
+					each post in posts.results
+						.col-12.col-sm-6
+							+uni-post-essay(post)
+	section.jr-uni-features-courses
+		section.jr-courses-card
+			section.jr-courses-card--title
+				h3.text-center.bold 了解你的大学课程
+				p.text-center 大学课程学习资料，考点难点，汇总
+	section.jr-uni-features-courses
+		.contain
+			section.jr-courses-card--cards
+				div.row.no-margin
+					if courses.length
+						each course in courses
+							.col-sm-4
+								.jr-card.jr-courses-card--card
+									.row
+										.col-1.text-center.jr-course-card--icon
+											img.lazyload(data-src='/images/icons/icon-star-small-yellow.svg' alt="course icon")
+										.col-10.jr-course-card--title
+											a(href=slug+"/"+course.slug)
+												h4.bold= course.courseCode
+											a(href=slug+"/"+course.slug)
+												p= course.name
+										.col-1.jr-course-card--cardLink
+											a(href=slug+"/"+course.slug)
+												img.lazyload(data-src='/images/icons/arrow-right-thin.svg')
+		section
+			.university_section_statement
+				h3.intro-title.bold 制定你的IT/CS/SE辅导计划
+				p.gray 课程无忧，你也能拿HD
+				section.jr-services
+					.contain
+						div.row.no-margin
+							if tutoringServiceList.length
+								each service in tutoringServiceList
+									.col-sm-4.jr-card-wrapper
+										.card.jr-service-card(class="jr")
+											.jr-service-card__header
+												.icon-wrapper-cirlce
+												.overlay
+												img.lazyload(data-src=(service.cardBackground.secure_url), alt=service.name)
+												//- img(src="/images/bgs/background-card.png", alt="")
+											.jr-service-card__body.row
+												.info-box.col-sm-10.col-10
+													.reviews
+														.jr-stars.jr-stars__sm
+															div(style="width:95%;")
+														span.grey= service.temparayRating
+													h4= service.name
+													p.grey= service.cities
+													p= service.slogan
+												.action-box.col-2.col-sm-2.no-padding.position-relative
+													a.btn.jr-btn-circle-arrow-right.position-absolute.bottom-0(href="/tutorials/"+service.slug)
+														img(src="/images/icons/arrow-right.svg", alt="arrow")
+		section
+			.contain
+				.university_section_statement
+					h3.intro-title 认识下你的学长学姐
+					h6.gray 均为各科HD大神亲自面授
+				+tutors
+			section
+		.contain
+			.section_statement
+				h2= university.chineseName+ "往期辅导班"
+				.row
+					.meetup-wrapper
+						+workshop-tree
+block js
+	script(src='/js/searchBar.js')
+	script(src=`/apps.bundle.js` async)
+	link(rel="stylesheet", href="/apps.css")

@@ -1,0 +1,122 @@
+.jr-form{
+	.ppd-input-field{
+		input{
+			width: 100%;
+			outline: none;
+			color: #7d97ad;
+			vertical-align: top;
+			height: 3rem !important;
+			border: 1px solid #dbe2e8;
+			padding: 0 1.25rem;
+			box-sizing: border-box;
+			font-size: 0.875rem;
+			box-shadow: 5px 5px 10px 0 rgba(46,61,73,0.05);
+			border-radius: 0.25rem;
+			transition: box-shadow 0.3s ease, border 0.3s ease;
+		}
+	}
+	input{
+		width: 100%;
+		outline: none;
+		color: #7d97ad;
+		vertical-align: top;
+		height: 3rem ;
+		border: 1px solid #dbe2e8;
+		padding: 0 1.25rem;
+		box-sizing: border-box;
+		font-size: 0.875rem;
+		box-shadow: 5px 5px 10px 0 rgba(46,61,73,0.05);
+		border-radius: 0.25rem;
+		transition: box-shadow 0.3s ease, border 0.3s ease;
+		&:hover{
+			box-shadow: 0 4px 8px 0 rgba(46,61,73,0.12);
+
+		}
+		&:focus{
+			border-color: $theme-color;
+			box-shadow: 5px 5px 10px 0 rgba(46,61,73,0.05)
+		}
+	}
+}
+
+.ppd-input-field{
+	margin-bottom: 20px;
+	width: 100%;
+	input {
+		width: 100%;
+		padding: 12px 18px;
+		border: 1px solid #ebebeb;
+		outline: 0;
+		font-family: Poppins,sans-serif;
+		font-size: 14px;
+		background-color: #fff;
+		color: #1ab5c1;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		margin-bottom: 0;
+		-webkit-appearance: none;
+	}
+}
+.ppd-btn-field{
+	width: 100%;
+	text-align: center;
+	button.btn{
+		float: none;
+	}
+
+}
+.ppd-contact-form{
+	padding:30px;
+	width: 380px;
+	margin: 0 auto;
+}
+.ppd-input-field input {
+	color: #646464;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.ppd-input-field input:focus {
+	border: 1px solid #ebebeb;
+}
+.ppd-input-field textarea {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	min-height: 150px;
+	width: 100%;
+	padding: 12px 18px;
+	border: 1px solid #ebebeb;
+	outline: 0;
+	font-family: Poppins,sans-serif;
+	font-size: 14px;
+	background-color: #fff;
+	color: #1ab5c1;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom: 0;
+	-webkit-appearance: none;
+}
+
+.form-control::-webkit-input-placeholder {
+	-webkit-text-security: none;
+	color: #1ab5c1;
+	pointer-events: none;
+}
+#respond textarea::-webkit-input-placeholder {
+	color: #1ab5c1;
+}
+.label-info {
+	background-color: #f82a62;
+}
+.label {
+	padding: 0.4em 0.9em;
+	border-radius: 16px;
+	color: #FFFFFF;
+	font-weight: 500;
+	font-size: 0.75em;
+	text-transform: uppercase;
+	display: inline-block;
+	margin-bottom: 10px;
+}

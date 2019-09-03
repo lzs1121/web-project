@@ -1,0 +1,77 @@
+{
+	"enquiryType": [
+		{ "value": "friends-family", "label": "Friends/Family" },
+		{ "value": "employer-colleague", "label": "Employer/Colleague" },
+		{ "value": "google", "label": "Google or Other Search Engine" },
+		{ "value": "social-media", "label": "Facebook/Twitter/Social Media" },
+		{ "value": "website-blog", "label": "Another Website/Blog" },
+		{ "value": "news-article", "label": "News Article" },
+		{ "value": "conference", "label": "Conference/Event/Meet-up" },
+		{ "value": "student-alumni", "label":"Student/Alumni" },
+		{ "value": "other", "label": "Other" }
+	],
+	"courseType": [
+		{ "value": "careerdevelopment", "label": "Career Development" },
+		{ "value": "coding", "label": "Coding" },
+		{ "value": "data", "label": "Data" },
+		{ "value": "marketing", "label": "Marketing" },
+		{ "value": "networking", "label": "Networking" },
+		{ "value": "aws", "label": "AWS" }
+	],
+	"locations": [
+		{ "value": "melbourne", "label": "Melbourne" },
+		{ "value": "brisbane", "label": "Brisbane" },
+		{ "value": "sydney", "label": "Sydney" },
+		{ "value": "online", "label": "Online" }
+	],
+	"employmentStatus": [
+		{ "value": "Students", "label": "在校学生" },
+		{ "value": "Employed", "label": "有工作" },
+		{ "value": "Unemployed and looking for work", "label": "还没有工作，正在找工作" },
+		{ "value": "Unemployed but not looking", "label": "没有工作，没有想找工作" },
+		{ "value": "Self-Employed (Freelancer)", "label": "Freelancer" }
+	],
+	"questionSets":{
+		"applicationQuestionStes":[
+			{
+				"id":1,
+				"question":"Do you have an idea for a website that you have always wanted to build?",
+				"type":"radio",
+				"options":[
+					{ "value": "yes", "label": "Yes" },
+					{ "value": "no", "label": "No" }
+				]
+			},
+			{
+				"id":2,
+				"question":"What are you looking to get from this course?",
+				"type":"checkbox",
+				"options":[
+					{ "value": "Learn the fundamentals to build a website from scratch", "label": "Learn the fundamentals to build a website from scratch" },
+					{ "value": "Develop the technical vocabulary to better converse with developers", "label": "Develop the technical vocabulary to better converse with developers" },
+					{ "value": "Complement an existing skill set", "label": "Complement an existing skill set" },
+					{ "value": "Other", "label": "Other" }
+				]
+			},
+			{
+				"id":3,
+				"question":"Do you have prior front-end web development experience?",
+				"type":"radio",
+				"options":[
+					{ "value": "I am a total beginner", "label": "I am a total beginner" },
+					{ "value": "I have some experience with HTML & CSS", "label": "I have some experience with HTML & CSS" },
+					{ "value": "Show me a wireframe and I will make it a reality", "label": "Show me a wireframe and I will make it a reality" },
+					{ "value": "Other", "label": "Other" }
+				]
+			}
+		]
+	},
+	"tempForCompetitors":[
+		"1. Briefly tell us about your experience and/or what you’ve studied? (We’d like to understand where you’re coming from, and how we can best help you)",
+		"2. Now that you’ve told us a bit about yourself, what excites you about a transition into UX? (We’re very purpose-driven in our work, so we’d want to know what makes you tick!)",
+		"3. What outcomes are you hoping to achieve through the course? (We want to set you up for success. What does success mean to you? Are you envisioning a new job in UX, or another kind of outcome?)",
+		"Please provide your LinkedIn Profile (This is optional. Include the link if you have one; otherwise, please leave it blank)",
+		"Thank you for your application. We will contact you shortly by phone to let you know the next steps.",
+		"I would like to apply now and pay later/I already spoke to admissions and I would like to pay for my enrolment"
+	]
+}

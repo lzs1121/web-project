@@ -1,0 +1,224 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+
+include ../mixins/post-featured
+include ../mixins/teachers
+include ../mixins/mentor-company
+include ../mixins/course-card-new
+
+block content
+	section
+		.contain.jr-course
+			.row
+				.col-12.col-sm-6.jr-course-header__content
+					p.jr-course-header__content--badge 澳洲IT教育最大平台
+					h1 IT匠人培训课程
+					p IT匠人携手百位业界导师制定了数据AI方向，Web方向，Mobile方向
+					p 面向澳洲IT学生，毕业生，转专业
+					p 详细基础讲解+商业项目实战，澳洲最强导师团队带你从零基础到就业
+					p
+						a(href="/city/sydney")  悉尼 
+						a(href="/city/melbourne") 墨尔本 
+						a(href="/city/brisbane") 布里斯班 
+						| 面授远程双向教学
+					p 学IT，找匠人，IT匠人助你成就梦想！
+					a.jr-btn.jr-btn--md(href="/application") 快速报名
+				.col-12.col-sm-6.jr-course-header__image
+					img.lazyload(data-src="/images/icons/maintenance-md.png" alt="background")
+	section
+		.contain.jr-course-selection
+			h2.section-title 选择你的就业方向
+			.row
+				a(href="#full-stack")
+					.card.jr-course-selection__card
+						.card-img-overlay
+							.ico.ico-full-stack-course-icon
+						.card-text-block
+							p 全栈工程师
+				a(href="#ui-ux-designer")
+					.card.jr-course-selection__card
+						.card-img-overlay
+							.ico.ico-ui-ux-course-icon
+						.card-text-block
+							p UI/UX设计师
+				a(href="#data-science-ai")
+					.card.jr-course-selection__card
+						.card-img-overlay
+							.ico.ico-data-science-course-icon
+						.card-text-block
+							p 数据科学
+				a(href="#data-science-ai")
+					.card.jr-course-selection__card
+						.card-img-overlay
+							.ico.ico-ai-course-icon
+						.card-text-block
+							p AI人工智能
+				a(href="#ba-project-management")
+					.card.jr-course-selection__card
+						.card-img-overlay
+							.ico.ico-ba-project-management-course-icon
+						.card-text-block
+							p 项目实习
+	section.jr-tutorials-summary.jr-mission
+		.contain.jr-tutorials-summary__container
+			.row
+				.col-12.col-sm-6.jr-tutorials-summary__description
+					.row.jr-tutorials-summary__description-header
+						h2 匠人毕业的学员
+					.row.jr-tutorials-summary__description-figure
+						.col-4
+							h3 73%
+							h4 就业率
+						.col-4
+							h3 $72K+
+							h4 平均PACKAGE
+						.col-4
+							h3 400+
+							h4 累计OFFER
+					.row.jr-tutorials-summary__description-detail
+						p
+							| 匠人旨在帮助那些处在迷茫当中、对所修课程有所疑惑、甚至想冲击高分的学生，我们不会花言巧语，我们只用数据说话。
+							a(href="/offer-board/") 查看Offer榜
+						
+					.row.jr-tutorials-summary__description-button.white
+						a.outline-btn(href="/application") 快速报名
+				.col-sm
+					.mission__photos.row.col-12
+						.mission__photos--col.col
+							img.lazyload(data-src="/images/bgs/web-1.jpeg" alt="IT匠人圈")
+							img.lazyload(data-src="/images/bgs/ui-pics.jpeg" alt="IT匠人圈")
+						.mission__photos--col.col
+							img.lazyload(data-src="/images/bgs/event-1.jpeg" alt="IT匠人圈")
+							img.lazyload(data-src="/images/bgs/web-2.jpeg" alt="IT匠人圈")
+	section(id="full-stack")
+		.contain
+			h2.section-title Web全栈工程师
+			p.description.text-center 从零基础到编程大神 澳洲就业敲门砖 高薪加持
+			.row.services-wrapper
+				if courses.length
+					each course in courses
+						if course.courseCode == 'weba1801'
+							+course-card-new(course,'阶段1：零基础入门')
+						if course.courseCode == 'weba1805'
+							+course-card-new(course,'阶段2：全栈项目就业')
+						if course.courseCode == 'weba1811'
+							+course-card-new(course,'阶段3：项目实习')
+	section(id="data-science-ai")
+		.contain
+			h2.section-title 数据AI就业方向
+			p.description.text-center 数据科学家博士豪华阵容 最强澳洲数据导师团队
+			.row.services-wrapper
+				if courses.length
+					each course in courses
+						if course.courseCode == 'data1905'
+							+course-card-new(course,'阶段1：商业数据分析项目班')
+						if course.courseCode == 'data1801'
+							+course-card-new(course,'阶段1：数据分析PowerBI')
+						if course.courseCode == 'data1802'
+							+course-card-new(course,'阶段2：数据科学与云大数据工程就业技能班')
+						if course.courseCode == 'data1906'
+							+course-card-new(course,'阶段3：数据全栈班')
+						if course.courseCode == 'data1803'
+							+course-card-new(course,'阶段4：数据科学全栈班')
+						if course.courseCode == 'weba1811'
+							+course-card-new(course,'阶段5：项目实习')
+	section(id="ui-ux-designer")
+		.contain
+			h2.section-title UI/UX设计师
+			p.description.text-center 获得UI/UX行业经验 商业项目加强你的portfolio
+			.row.services-wrapper
+				if courses.length
+					each course in courses
+						if course.courseCode == 'weba1801'
+							+course-card-new(course,'阶段1：零基础入门')
+						if course.courseCode == 'weba1813'
+							+course-card-new(course,'阶段2：UI/UX')
+						if course.courseCode == 'weba1811'
+							+course-card-new(course,'阶段3：项目实习')
+	section(id="ba-project-management")
+		.contain
+			h2.section-title 项目实习
+			p.description.text-center 获得全方位能力提升，获得澳洲真正工作经验
+			.row.services-wrapper
+				if courses.length
+					each course in courses
+						if course.courseCode == 'weba1811'
+							+course-card-new(course,'阶段2：项目实习')
+	section
+		.contain
+			+mentor-company
+	section
+		.contain
+			+teachers
+	section
+		.contain
+			h2.section-title 您的澳洲IT就业培训方案
+			p.description.text-center 澳洲IT圈 + 技能职业培训 + 商业Projects + 工作内推 + 实习
+			.row.services-wrapper.no-margin
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_031_brainstorm_meeting_crowd_people_group_communicatation_team_2090332.svg' alt="Craftsman Academy inteaction design")
+						.col-sm-12.col-12
+							h4 课前咨询
+							p
+								small 决定上课前，与您的课程授课老师一对一咨询，以解答困惑。
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_022_workspace_workplace_beard_guy_man_laptop_computer_2090123.svg' alt="Craftsman Academy Application Development")
+						.col-sm-12.col-12
+							h4 课程训练
+							p
+								small 根据培训方案，完成您的课程培训，迅速提高专业水平。
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_045_global_planet_jiangren.svg' alt="Craftsman Academy Product Strategy")
+						.col-sm-12.col-12
+							h4 面试指导
+							p
+								small 与老师一对一沟通，完成简历修改和模拟面试，获得内部推荐，为面试做好充分准备。
+				.col-sm-3.col-6
+					.row
+						.col-sm-12.col-12
+							div.service-img-holder
+								img.lazyload(data-src='/images/tools/if_015_news_newspaper_sport_games_prize_achievement_articles_2090158.svg' alt="Craftsman Academy Product Strategy")
+						.col-sm-12.col-12
+							h4 职前服务
+							p
+								small 通过面试后，您还可以从IT匠人获得专业的薪酬谈判、职位选择等咨询服务
+	//- +post-featured
+	#consultingInfoModal.jr-modal.modal.fade.jr-modal__large(tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true")
+		.modal-dialog.modal-dialog-centered(role="document")
+			.modal-content.jr-modal__consutling__content
+				.modal-header
+					button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+						span(aria-hidden="true") &times;
+				.modal-body
+					h4.text-center 扫码加入课程咨询群，查看群公告免费试听课程
+					.row
+						.col-sm
+							.text-center.row
+								.consulting-qr-wrapper.col-sm
+									img.lazyload(data-src="/images/xiaohua.jpeg", alt="IT匠人咨询群二维码")
+									span 添加客服小花
+								.consulting-qr-wrapper.col-sm
+									img.lazyload(data-src="/images/consulting-qr.jpeg", alt="IT匠人咨询群二维码")
+									span 扫描入群咨询
+						.col-sm.align-self-center
+							ul.benefit-list
+								li 入群获得独家资料
+								li 抢先获得开课通知
+								li 学长为你答疑解惑
+	section.jr-overview
+		.contain
+			h2.section-title 匠人最新文章
+			if posts.total
+				each post in posts.results
+					a(href="/blog/"+post.slug)
+						p.text-center= post.title

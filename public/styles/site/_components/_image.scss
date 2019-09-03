@@ -1,0 +1,44 @@
+.image-center{
+	margin: 0 auto;
+}
+.image-wrap{
+	margin:15px;
+}
+.general-avatar-sm{
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.4);
+	border: white 10px;
+	img{
+		width: 100%;
+	}
+}
+.blog-avatar{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border-color: #848484;
+	overflow: hidden;
+	box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.4);
+	border: white 10px;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	border-width: 2px;
+	border-style: solid;
+	@include floor-2;
+	img{
+		width: 100%;
+	}
+}
+.thumbnail-card{
+	@include shadow();
+	border-radius: 25px;
+	display: inline-block;
+	overflow: hidden;
+	@include MQ(S) {
+		width: 100%;
+	}
+}

@@ -1,0 +1,27 @@
+mixin tutorials
+	section.jr-services
+		.contain
+			h2.text-center 制定你的大学辅导服务
+			p.description.text-center HD大神全程提供大学课程辅导
+			div.row.no-margin
+				if services.length
+					each service in services
+						.col-12.col-sm-6.col-md-4.jr-card-wrapper
+							.card.jr-service-card(class="jr")
+								.jr-service-card__header
+									.icon-wrapper-cirlce
+									.overlay
+									img.lazyload(data-src=(service.cardBackground.secure_url), alt=service.name)
+									//- img(src="/images/bgs/background-card.png", alt="")
+								.jr-service-card__body.row
+									.info-box.col-sm-10.col-10
+										.reviews
+											.jr-stars.jr-stars__sm
+												div(style="width:95%;")
+											span.grey= service.temparayRating
+										h3= service.name
+										p.grey= service.cities
+										p= service.slogan
+									.action-box.col-2.col-sm-2.no-padding.position-relative
+										a.btn.jr-btn-circle-arrow-right.position-absolute.bottom-0(href="/tutorials/"+service.slug)
+											img(src="/images/icons/arrow-right.svg", alt="arrow")

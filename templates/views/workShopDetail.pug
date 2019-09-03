@@ -1,0 +1,64 @@
+extends ../layouts/course-layout
+
+include ../mixins/mentor-company
+include ../mixins/post-collection
+//- INCLUDES
+block content
+	section.jr-meetup
+		section.jr-meetup__cards
+			.cards_contain
+				.jr-meetup__card
+					.jr-meetup__header.row.no-margin
+						if curWorkShops.image.secure_url
+							.jr-meetup__header__image(style='background-image: url('+ curWorkShops.image.secure_url + ');').col-sm-7.hidden-xs-down
+							.jr-meetup__header__content.col-sm-5
+								h6= curWorkShops._.startDate.format('MMM. DD')
+								h1= curWorkShops.name
+								if curWorkShops.state =="active"
+									a.jr-meetup__header__content--button-hover.btn.btn-lg.ppd-btn.ppd-btn-solid.ppd-btn-large(href='/workshop-application?course=' + curWorkShops.key) 点我报名
+								.jr-meetup__header__content--details
+									p.gray-medium= curWorkShops.hoster
+									p.gray-medium= "价格：" + (curWorkShops.totalPrice || "Free")
+						unless curWorkShops.image.secure_url
+							.jr-meetup__header__image(style='background-image: url(https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/image-syllabus-01@2x-f4be2598bea724657d8f295449bb8f45a954581306292393cb71a8417acf3cd3.jpg);').col-sm-7.hidden-xs-down
+							.jr-meetup__header__content.col-sm-5
+								h6= curWorkShops._.startDate.format('MMM. DD')
+								h1= curWorkShops.name
+								if curWorkShops.state =="active"
+									a.btn.btn-lg.ppd-btn.ppd-btn-solid.ppd-btn-large(href='/workshop-application?course=' + curWorkShops.key) 点我报名
+								.jr-meetup__header__content--details
+									p.gray-medium= curWorkShops.hoster
+									p.gray-medium= "价格：" + (curWorkShops.totalPrice || "Free")
+					.jr-meetup__main.row.no-margin
+						.jr-meetup__main__content.col-sm-7
+							.content
+								!= curWorkShops.description
+							.tutor-wrapper
+								if (curWorkShops.tutor)
+									.card.jr-instructors__card.jr-instructors__card--tutor
+										.card-avatar
+											img.lazyload(data-src=(curWorkShops.tutor.avatar.secure_url), alt=curWorkShops.tutor.name)
+										a(href=`/mentors/${curWorkShops.tutor.id}`)
+											h5.jr-instructors__name= curWorkShops.tutor.name
+										p.jr-instructors__title= curWorkShops.tutor.title
+										p.jr-instructors__title= curWorkShops.tutor.company
+										div.bio= (curWorkShops.tutor.introduction)
+										.jr-instructors__card--tag
+											.tag-container.tag-container--orange
+												if (curWorkShops.tutor.highlights.length)
+													each highlight in curWorkShops.tutor.highlights
+														.tag= highlight
+										.jr-instructors__buttons
+											button.cursor-click.btn.btn__sm(onclick=`window.location.href='/mentors/${(curWorkShops.tutor.id)}'`) 查看介绍
+
+						.jr-meetup__main__content.col-sm-5
+							h6 时间
+							p= curWorkShops._.startDate.format('Do MMM YYYY h:mm a') + ' - ' +curWorkShops._.endDate.format('Do MMM YYYY h:mm a')
+							h6 授课方式
+							p= curWorkShops.activityForm
+							h6 地点
+							p= curWorkShops.place
+							h6 扫描小安报名
+							img(src='/images/xiaoan.jpeg', alt='二维码正在筹备中...')
+	+mentor-company
+	+post-collection

@@ -1,0 +1,11 @@
+
+.survey-container {
+	padding: 0 50px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	@include MQ(S) {
+		padding: 10px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}

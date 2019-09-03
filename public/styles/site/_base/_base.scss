@@ -1,0 +1,63 @@
+
+a, a:hover, a:active, a:focus {
+	outline: 0;
+}
+
+a:hover {
+	color: #7E6432;
+}
+
+.panel {
+	border-radius: 0px !important;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+	border-top-color: #F37124 !important;
+}
+
+a,p{
+	font-size: $font-size;
+	font-stretch: normal;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.49em;
+	color: $font-color;
+}
+h3{
+	font-size: $h3-font-size;
+}
+h4{
+	font-size: $h4-font-size;
+}
+/* shadow*/
+
+.shadow {
+	@include shadow;
+}
+.shadow-sm{
+	@include shadow-z-1();
+}
+.shadow-md {
+	@include shadow-z-2();
+}
+
+
+.truncate-text {
+	display: inline-block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.pg-white{
+	background: white;
+}
+
+.container:after, .container:before {
+	content: " ";
+	display: table;
+}
+.hidden-text{
+	color: white;
+	font-size: 0px;
+	margin: 0;
+}

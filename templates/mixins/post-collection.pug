@@ -1,0 +1,24 @@
+mixin post-collection
+	section.post-collection
+		.contain
+			h2.text-center 相关资源
+			.post-featured-section
+				.flex-1.display-flex.flex-wrap
+					if posts.total
+						each post in posts.results
+							.col-12.col-sm-6.no-padding
+								.card.img-card-static.margin
+									.img-card-heading-wrapper
+										.img-card-heading
+											.title-holder-inner
+												a(href="/blog/"+post.slug)
+													h3= (post.title)
+												p.ellipses= (post.content.brief)
+										.img-card-heading-description
+										.blog-avatar
+											if post.author.avatar.exists
+												img.lazyload(data-src=(post.author._.avatar.fill(70,70)))
+									.img-card-bg
+										.overlay-wrapper.post-black-gradient-bg
+										.img-card-overlay
+											img.lazyload(data-src=(post._.image.fill(400,300)) alt= (post.title))

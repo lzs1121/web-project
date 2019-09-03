@@ -1,0 +1,53 @@
+.solo {
+	li {
+		a {
+			color: #777777;
+			cursor: pointer;
+		}
+	}
+	&__hr {
+		margin: 0;
+		padding: 0;
+		li {
+			display: inline-block;
+			text-align: left;
+			margin-left: 1.5rem;
+			a {
+				text-decoration: none;
+				color: #525c65;
+			}
+		}
+	}
+	&__social {
+		margin: 0;
+		padding: 0;
+		li {
+			display: inline-block;
+			text-align: left;
+			margin-left: 1.5rem;
+			a {
+				text-decoration: none;
+				img {
+					overflow: hidden;
+					height: 24px;
+					width: 24px;
+				}
+			}
+		}
+	}
+	&__items--mobile {
+		margin: 0px;
+		@include MQ(XS) {
+			margin: 13px auto;
+		}
+		@include MQ(S) {
+			margin: 13px auto;
+		}
+		@include MQ(M) {
+			margin: 13px auto;
+		}
+		@include MQ(ML) {
+			margin: 13px auto;
+		}
+	}
+}

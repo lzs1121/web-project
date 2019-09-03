@@ -1,0 +1,20 @@
+extends ../layouts/default
+
+block content
+	.container-fluid.no-padding
+		div.page-intro.services-page-pag.theme-bg.featured-section-expanded
+			h1.page-title Meetups
+		section.page-content
+			.container.text-bg.text-aliagn-center
+				if !pastMeetups.length
+					h3.text-muted There are no meetups yet.
+				.timeline
+					.timeline-path
+					.timeline-item--offset
+					each meetup, i in pastMeetups
+						.timeline-item(class=i % 2 == 1 ? 'timeline-item--even' : 'timeline-item--odd')
+							.timeline-item-node
+							a.timeline-item-inner
+								h6.text-caps.text-danger= meetup._.startDate.format('YYYY - MMMM ')
+								h4= meetup.name
+								!=utils.cropString( utils.htmlToText(meetup.description), 240, '...', true )

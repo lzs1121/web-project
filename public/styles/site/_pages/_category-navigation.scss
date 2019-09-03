@@ -1,0 +1,308 @@
+.category-navigation-header {
+	background-image: url('/images/bgs/bg-jobboard-heading.jpg');
+	background-size: cover;
+	background-repeat: repeat;
+	background-position: center center;
+	height: 138px;
+	background-repeat: repeat-x;
+	position: relative;
+	z-index: 20;
+	&__wrap{
+		margin: 0 auto;
+		.category-navigation-header__title {
+			font-size: 32px;
+			text-transform: uppercase;
+			width: 84%;
+			margin-top: 15%;
+			color: #ffffff;
+			line-height: 1;
+			@include MQ(S) {
+				font-size: 30px;
+				text-align: center;
+			}
+		}
+		.category-navigation-header__subtitle {
+			font-size: 20px;
+			font-weight: 200;
+			color: #ffffff;
+			line-height: 1;
+			width: 84%;
+			margin-left: 6%;
+			@include MQ(S) {
+				font-size: 16px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.category-navigation-container{
+	background-color: #f8fafc;
+	.category-navbar-container{
+		height: 72px;
+		background: #fff;
+		box-shadow: 0 8px 16px 0 rgba(28,31,33,.1);
+		padding: 16px 0;
+		box-sizing: border-box;
+		width: 100%;
+		position: relative;
+		z-index: 99;
+		@include MQ(S){
+		height: 50px;
+		}
+		.container{
+			margin-top: -1rem;
+			height: 72px;
+			@include MQ(S){
+				height: 50px;
+			}
+		}
+		.category-navbar {
+			width: 100%;
+			margin: 0.5rem 0;
+			padding: 0;
+			list-style: none;
+			@include MQ(ML){
+				display: block;
+			}
+			@include MQ(M){
+				display: none;
+			}
+			li {
+				display:inline-block;
+				margin:-1px -1px 0 0; 
+				a {
+					float: left;
+					font-size: 16px;
+					color: #07111b;	
+					line-height: 40px;
+					height: 40px;
+					position: relative;
+					margin-right: 46px;
+					font-weight: 700;
+					text-decoration: none !important;
+					padding-bottom: 40px;
+					&.nav-link{
+						padding-left: 0;
+					}
+				}
+				.selected{
+					color:rgb(204, 99, 29);
+					&:before{
+						content: ' ';
+						position: absolute;
+						bottom: 0;
+						border-bottom: 2px solid rgb(236, 116, 35);
+						width: 16px;
+						height: 30px;
+						left: 50%;
+						margin-left: -15px;
+					}
+
+				}
+			}
+		}
+		.category-navbar-mobile {
+			display: none;
+			margin-top: -2rem;
+			padding-left: 1rem;
+			padding-right: 1.5rem;
+			background-color: #fff;
+			@include MQ(ML){
+				display: none;
+			}
+			@include MQ(M){
+				display: flex;
+				justify-content: space-between;
+			}
+			.toggle-container{
+				.toggle-button {
+					margin-left:auto; 
+					margin-right:0;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					height:23px;
+					width: 25px;
+					background: transparent;
+					border:none;
+					cursor: pointer;
+					padding:0;
+					box-sizing: border-box;
+					.toggle-button__line{
+						height: 2px;
+						width: 25px;
+						background: rgb(2, 4, 128);
+					}
+				}
+				.toggle-button--close {
+					margin-left:auto; 
+					margin-right:0;
+					width: 25px;
+					height: 25px;
+					opacity: 0.3;
+					cursor: pointer;
+					padding:0;
+					box-sizing: border-box;
+					
+					:before, :after {
+						position: absolute;
+						right: 38px;
+						top: 18px;
+						content: ' ';
+						height: 25px;
+						width: 2px;
+						background-color: #333;
+					}
+					:before {
+						transform: rotate(45deg);
+					}
+					:after {
+						transform: rotate(-45deg);
+					}
+				}
+				&__links {
+					display: none;
+					position: relative;
+					background-color: #fff;
+					a {
+						text-decoration: none;
+						display: block;
+						float: left;
+						clear: left;
+						padding: 0.5em 0;
+					}
+					.selected{
+						color:brown;
+					}
+				}
+			}
+		}
+	}
+
+	.category-navigation__content{
+		.react-preloader-container{
+			text-align: center;
+			background: transparent;
+			padding: 100px 50px;
+			margin: 20px 0;
+			.swiper-lazy-preloader{
+				position: relative;
+				margin: 0 auto;
+				left: 0px;
+			}
+		}
+		.category-button-container{
+			margin-top:20px;
+			margin-bottom: 20px;
+			&__row{
+				display: -webkit-box;   
+				display: -moz-box;  
+				display: -ms-flexbox; 
+				display: -webkit-flex; 
+				display: flex;
+				-webkit-flex-direction: row;
+				-moz-flex-direction: row;
+				flex-direction: row;
+				justify-content:flex-start;
+				flex-wrap: wrap;
+
+				.category-btn-wrapper{
+					padding-top:5px;
+					padding-bottom: 5px;
+					span{
+					 padding: 1em;
+					 font-size: 14px;
+					 margin: .3em;
+					 text-decoration: none;
+					 flex-grow: 1;
+					 text-align: center;
+					}
+					.category-btn{
+						background: transparent;
+						padding:0.3rem 0.5rem 0.3rem 0.5rem;
+						border: none;
+						cursor: pointer;
+						border-radius: 5px;
+						-webkit-touch-callout: none;
+						-webkit-user-select: none; 
+						-khtml-user-select: none;
+						-moz-user-select: none;
+						-ms-user-select: none;
+						user-select: none; 
+						&:hover{
+							background:rgba(190, 189, 189, 0.5);
+						}
+						&.selected{
+							background: rgba(247, 154, 92, 0.2);
+							color: rgb(204, 99, 29);
+						}
+					}
+				}
+			}
+		}
+
+		.cards-container{
+			position: relative;
+			padding-top: 30px;
+			padding-bottom: 40px;
+			border-top: 1px solid #d9dde1;
+			.teacher-card-wrapper{
+				padding-top: 1.5rem;
+			}
+			.jr-card-wrapper{
+				padding-left: 12px;
+				padding-right:12px;
+				.card.card-plain{
+					.card-img-top{
+						img{
+							height:230px;
+						}
+					}
+					.card-text-block{
+						p{
+							height: 44px;
+						}
+					}
+				}
+			}
+			.jr-course-card{
+				&__icon{
+					padding: 35px 0 0 0;
+				}
+				&__title{
+					padding:5px;
+					p.course-name{
+						font-size: 14px;
+						height: 44px;
+					}
+					p.course-slug{
+						font-size: 14px;
+						height: 20px;
+						text-align: right;
+					}
+					
+				}
+				&__link{
+					padding: 35px 0 0 0;
+				}
+			}
+		}
+		.pagination-container{
+			width: 100%;
+			.ant-pagination {
+				text-align: center;
+				.ant-pagination-prev, .ant-pagination-next{
+					i.anticon{
+						padding-top: 8px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.preloader-container{
+	height:500px;
+	background: #FBFBFB;
+}

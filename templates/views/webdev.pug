@@ -1,0 +1,1453 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+include ../mixins/post-collection
+include ../mixins/teachers
+include ../mixins/review
+include ../mixins/partnership
+include ../mixins/mentor-company
+include ../mixins/program-card
+include ../mixins/skills/web-bootcamp-skills
+include ../mixins/company/student-company
+include ../mixins/breadcrumbs
+block content
+	section.jr-hero
+		.jr-course-wrapper
+			.jr-course-wrapper__content
+				+breadcrumbs([{link:'/', label:'首页'}, {link:'/program-courses', label:'课程'},{link:'web-development-bootcamp', label:'Web全栈班'}])
+				p.white.mb-half 匠人课程
+				h1.white Web开发全栈项目班（8期）
+				p.legible.center.white 快速掌握面向澳洲工作和中国工作的核心技术 - WEB全栈开发
+				p.legible.center.white 一门课程，两条路径：同时学习Nodejs 和 .Net 两个方向后端技术
+				p.legible.center.white Reactjs + Nodejs + REST API + Agile + 就业指导
+				p.legible.center.white 3个月课程 + 1个月项目实习 + 就业指导
+				p.legible.center.white 布里斯班 + 墨尔本 + 悉尼 + 全程Recording
+				a.button--primary.margin-top-30(href="/application?type="+data.slug)
+					strong 报名Web全栈班
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 难度
+					h5 进阶
+					p.x-small 实习就业
+				li.col-md-3.col-sm-3.col-6
+					h6 课程安排
+					h5 三个月课程（100小时）
+					h5 +2个月项目实习
+				li.col-md-3.col-sm-3.col-12
+					h6 课程价格
+					h5 原价: $5,500
+					p.x-small.x-mall *以上价格exclude GST
+				li.col-md-3.col-sm-3.col-12
+					h6 先修知识
+					a(href="/web-development-introduction-bootcamp")
+						h5 Web入门班
+					p.x-small 了解基本的面向对象
+	section
+		nav.navbar.navbar-expand-lg.navbar-light#navbar--sticky
+			button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar__course__content" aria-controls="navbar__course__content" aria-expanded="false" aria-label="Toggle navigation")
+				span.navbar-toggler-icon
+			.collapse.navbar-collapse#navbar__course__content
+				ul.navbar-nav.mr-auto
+					li.nav-item
+						a.nav-link(href="#overview") 课程介绍
+					li.nav-item
+						a.nav-link(href="#syllabus") 课程大纲
+					li.nav-item
+						a.nav-link(href="#projects") 课程项目
+					li.nav-item
+						a.nav-link(href="#instructor") 匠人导师
+					li.nav-item
+						a.nav-link(href="#career") 就业服务
+					li.nav-item
+						a.nav-link(href="#dates") 开课时间
+	section(data-offset="0")
+		#overview
+			+web-bootcamp-skills
+			section.jr-why
+				.contain.text-center.row
+					.jr-why__description.col-12.col-sm-12.col-md-9
+						h2 为什么选择Web开发全栈项目班?
+						h3 匠人独创3+2模式
+						p
+							span 3个月的课程培训加2个月的
+							span
+								a(href="https://jiangren.com.au/commercial-projects-training") 项目实习
+							span 使得全栈班课程体系独树一帜，通过知识+project的形式，推动学员进入到另一个层面
+						p 
+							span
+								strong 全栈班3+2模式
+							span 理论+项目+工作经验 结合澳洲实际求职状态
+						h3 报一次课程，选多条路径
+						p 根据不同的职业路径，您可以选择.net或nodejs后端两个方向, Reactjs和Angular两个方向。课程间和不同城市之间资源共享，帮助您横向拓宽发展机会，收获理想的offer。
+						p 我们为希望未来在澳洲及中国从事Web开发，编程开发， 进入澳洲和中国职场的敲门砖。经过三百多位学员的经验和实践，适合具有一定编程基础却欠缺商业项目经验的小伙伴们学习。如果你想要积累Web开发和编程前后端开发实战经验，提升职场竞争力，那这门课很适合你的加入。
+						p
+							strong 适合人群:
+						ul
+							li 具有IT/CS基础，项目经验少，基础薄弱的同学
+							li Web入门班匠人学员
+							li IT相关专业，希望转行Web开发的同学
+							li 其他专业，对IT具有一定的了解，想要换专业的同学
+							li IT初级学员，希望获取商业实战项目经验，积累IT人脉
+							li IT新毕业生，想要寻求IT工作，提升职业发展，拓宽职业范围
+						p
+							strong 你将会获得:
+						ul
+							li 课程全程配有Tutor 全程答疑
+							li 1年的项目经验
+							li 匠人推荐信和工作证明
+							li 往期及课程全程Recording
+							li 三个项目经验 丰富你的简历
+							li 1对1问题答疑
+							li 模拟面试与HR面试
+							li 简历指导与简历修改
+							li 背景调查证明
+							li 匠人庞大工作内推网络
+							li 匠人庞大学员校友及导师资源
+							li 优秀学员，匠人导师直接挖人
+							li 与匠人合作企业内推及实习与全职工作机会
+					.jr-why__stat.col-12.col-sm-12.col-md-3
+						.card.card-border-top.hidden-md-down
+							h4.light 匠人自豪的说已经帮助上百位学生就业
+							p.text-left 现代Web开发是达到工作的必备条件，区别于大学或Tafe学的过时的旧的Web开发
+							p.text-left 澳洲最Popular职位
+			section.features.section--md
+				div.row.margin-bottom-lg
+					.features__col-short.col-sm.text-center
+						img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-01@1x-a6975a860f7ced563f475e3bb8801361b6c3f2abd7e85e2c89a7c761a3992197.png", alt="features__images")
+					.features__col-wide.col-sm.text-center
+						.features__content
+							ul.features__list
+								li.row
+									span
+										img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="Web Fullstack Training")
+									div.col-sm
+										h4 完胜其他培训学校就业率
+										p 经过7期的全栈培训积累，40%的学生课程刚结束就找到了全职工作；另外百分之30%，在三个月内找到了全职工作。由于真实的工作offer，我们也有自信说，匠人和匠人的导师真心帮助了许多学生就业。
+								li.row
+									span
+										img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="Web Full Stack Training")
+									div.col-sm
+										h4 顶尖导师团队
+										p 匠人导师团队均为多年经验的IT大咖，每一个培训都是由各自专属领域的大牛授课，导师也是名校毕业和名企经验，从百度到阿里巴巴，从ThoughtWorks到Microsoft，Amazon，从Senior Developer到CTO，应有尽有。同时，加入匠人圈，也是加入了IT匠人全球IT职业资源。导师也会做code review，帮助提升学生的代码质量
+				div.row.margin-bottom-lg
+					.features__col-wide.col-sm.text-center
+						.features__content
+							ul.features__list
+								li.row
+									span
+										img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="Web Full Stack Training")
+									div.col-sm
+										h4 实战项目+项目经验
+										p 真实实战模拟项目经验，整个培训会deliver两个Projects，一个是个人网站，另一个是有商业背景的LMS(Learning Management System)项目。其中个人网站为自己独立完成此项目，使用HTML5，CSS3，Javascript，Bootstrap，Gihub，Google Map Api等技术去完成。LMS项目是组成5到7个人为一组的Agile小组，使用SCRUM，Jira进行管理团队，通过Bitbucket等git工具，进行团队协作，模拟真实工作场景中需要的团队协作和冲突处理。
+								li.row
+									span
+										img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="Web Full Stack Training")
+									div.col-sm
+										h4 模拟工作场景+团队协作
+										p 面试中常问的如何团队协作，那我们在本培训中会有很好的解决，我们通过最流行的Agile项目管理方式，通过顶级Agile大师带领大家理解Agile的Methodology，真实的工作环境中如何使用agile，团队是如何协作的，如何进行代码管理，版本控制，怎样融合团队成员的代码，同时我们也会在每节课带领大家模拟公司的standup和retro等等
+					.features__col-short.col-sm.text-center
+						img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-02@1x-8e9d672908d063cc0513ef55ffd7519eef7f5b889325d89efd9cadeb202dfdc1.png", alt="features__images")
+				div.row.margin-bottom-lg
+					.features__col-short.col-sm.text-center
+						img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-01@1x-a6975a860f7ced563f475e3bb8801361b6c3f2abd7e85e2c89a7c761a3992197.png", alt="features__images")
+					.features__col-wide.col-sm.text-center
+						.features__content
+							ul.features__list
+								li.row
+									span
+										img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="Web Full Stack Training")
+									div.col-sm
+										h4 紧密围绕面试求职
+										p 匠人圈会根据每个学员的个人特色，制定不同的找工作的策略和面试技巧。修改简历，模拟面试。使学员们在求职路上快人一步
+								li.row
+									span
+										img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="Web Full Stack Training")
+									div.col-sm
+										h4 班主任+tutor
+										p 随堂Tutor帮助学生解答问题，监督学生完成作业和测试情况。班主任负责学生的学习情况，追踪学生就业状况
+				+student-company
+		#syllabus
+			section.jr-syllabus-term
+				h2 课程大纲
+				section.jr-syllabus-term__cards
+					.cards_contain
+						.jr-syllabus-term__card
+							.jr-syllabus-term__header.row.no-margin
+								.jr-syllabus-term__header__content.col-sm-7
+									h6 Syllabus
+									h3 Web开发全栈培训班 （悉尼）
+									p.hidden-md-down Reactjs + Redux + .Net + MVC + C# + REST API + Agile + Career Coaching
+									p.hidden-md-down 其他城市线上接入
+									.jr-syllabus-term__header__content--details
+										p.jr-syllabus-term__toggle.collapsed(data-toggle="collapse" data-target="#course_detail" aria-expanded="false" aria-controls="course_detail")
+											span 显示全部课程表信息(点击展开)
+										p.gray-medium 3个月完成
+								.jr-syllabus-term__header__image.col-sm-5.hidden-xs-down
+							.jr-syllabus-term__main.row.no-margin
+								.jr-syllabus-term__main__content.col-sm-7.collapse#course_detail
+									h6 先修知识
+									p.margin-bottom-3 这是一门进阶课程，你需要懂得最基本的HTML CSS和Javascript，并且理解变量，面向对象等基本编程概念。
+									section.jr-syllabus-term__main__content--parts
+										ul
+											li
+												.part
+													h5 Class 1 Modern Web Technology
+													p 课程介绍
+													p
+														span.lnr.lnr-chevron-right Scope
+													p
+														span.lnr.lnr-chevron-right Instructor Introduction
+													p
+														span.lnr.lnr-chevron-right Quick Conditions
+													p 网页技术
+													p
+														span.lnr.lnr-chevron-right Network
+													p
+														span.lnr.lnr-chevron-right Chrome Inspect
+													p
+														span.lnr.lnr-chevron-right Web Basics
+													p
+														span.lnr.lnr-chevron-right Javascript History
+													p
+														span.lnr.lnr-chevron-right Modern Web Technology vs Traditional Technology
+											li
+												.part
+													h5 Class 2 Teamwork
+													p 公司代码管理、团队管理方法
+													p
+														span.lnr.lnr-chevron-right Agile
+													p
+														span.lnr.lnr-chevron-right Scrum
+													p
+														span.lnr.lnr-chevron-right Jira
+													p
+														span.lnr.lnr-chevron-right Sprint
+													p
+														span.lnr.lnr-chevron-right Story Point
+													p
+														span.lnr.lnr-chevron-right Team Work
+											li
+												.part
+													h5 Class 3 HTML5 Basics
+													p Html的基础知识
+													p
+														span.lnr.lnr-chevron-right Html5
+											li
+												.part
+													h5 Class 4 CSS3 Basics
+													p CSS的基础知识
+													p
+														span.lnr.lnr-chevron-right Selector
+													p
+														span.lnr.lnr-chevron-right Flexbox
+													p 
+														span.lnr.lnr-chevron-right Responsive Web Design
+													p
+														span.lnr.lnr-chevron-right Sass Introduction
+											li
+												.part
+													h5 Class 5 Javascript Basics
+													p JavaScript的基础知识
+													p
+														span.lnr.lnr-chevron-right Javascript History
+													p
+														span.lnr.lnr-chevron-right Basic Syntax (variable, loop, condition, function)
+													p
+														span.lnr.lnr-chevron-right DOM manipulation
+													p
+														span.lnr.lnr-chevron-right Javascript library introduction
+											li
+												.part
+													h5 Class 6 Git Introduction
+													p 代码管理的基础知识
+													p
+														span.lnr.lnr-chevron-right Install Git
+													p
+														span.lnr.lnr-chevron-right Git Pull / Commit / Push
+													p
+														span.lnr.lnr-chevron-right Branch
+													p
+														span.lnr.lnr-chevron-right Rebase / Merge / Pull Request
+													p
+														span.lnr.lnr-chevron-right Resolve Conlicts
+											li
+												.part
+													h5 Class 7 Project One
+													p 开始项目一
+													p
+														span.lnr.lnr-chevron-right Tutorial & Lab
+											li
+												.part
+													h5 Class 8 Interview and CV
+													p 澳洲求职技巧、注意事项
+													p
+														span.lnr.lnr-chevron-right 解密Linkedin的使用，搭建关系网
+													p
+														span.lnr.lnr-chevron-right 澳洲工作状况分析
+													p
+														span.lnr.lnr-chevron-right Resume & Cover Letter
+													p
+														span.lnr.lnr-chevron-right 解密面试技巧
+											li
+												.part
+													h5 Class 9 REST API and JSON
+													p 学习REST和JSON，为后端打下基础
+													p
+														span.lnr.lnr-chevron-right DNS Mapping
+													p
+														span.lnr.lnr-chevron-right URL fundamentals
+													p
+														span.lnr.lnr-chevron-right Request: Common Headers, Simple/Full Request message
+													p
+														span.lnr.lnr-chevron-right Response: Status Code
+													p
+														span.lnr.lnr-chevron-right Evolvement of Web Service: From web form to web services to API
+													p
+														span.lnr.lnr-chevron-right Introduction to JSON : By comparing XML and JSON including Pros and Cons and the reason why JSON is winning
+													p
+														span.lnr.lnr-chevron-right RESTful services vs SOAP: Pro and Cons for each one
+													p 
+														span.lnr.lnr-chevron-right Introduction of AJAX
+													p
+														span.lnr.lnr-chevron-right Introduction of Postman
+													p
+														span.lnr.lnr-chevron-right Demos for Html + JavaScrip & Google GEO API
+											li
+												.part
+													h5 Class 10 Introduction to Object-oriented programming (OOP)
+													p 学习OO programming
+													p
+														span.lnr.lnr-chevron-right Component of Class: State (Fields and Properties) and Method
+													p
+														span.lnr.lnr-chevron-right Fields vs Properties
+													p
+														span.lnr.lnr-chevron-right Method: Signature, Default variable, Overload
+													p
+														span.lnr.lnr-chevron-right Constructor
+													p
+														span.lnr.lnr-chevron-right Access level: public, protected, private, internal
+													p
+														span.lnr.lnr-chevron-right Static and Const: Static Class vs Singleton
+													p 
+														span.lnr.lnr-chevron-right Encapsulation: Why and How then in-course practice to illustrate
+													p
+														span.lnr.lnr-chevron-right Inheritance : Brief introduction
+													p
+														span.lnr.lnr-chevron-right Polymorphism: virtual, override Abstract Class
+													p
+														span.lnr.lnr-chevron-right Introduction to Interface: Interface vs Abstract Class
+											li
+												.part
+													h5 Class 11 Advanced C#
+													p 进一步学习C#，面向对象编程
+													p
+														span.lnr.lnr-chevron-right Intro to Interface vs Abstract Class Continued
+													p
+														span.lnr.lnr-chevron-right Exception Handling: try catch finally. Catch Chaining
+													i 
+														span Generics
+															p
+																span.lnr.lnr-chevron-right Use real time requiremnet to evaluate diffrent approaches to illustrate why using Generics
+															p
+																span.lnr.lnr-chevron-right Type T Class/Interface
+															p
+																span.lnr.lnr-chevron-right Generics with constrains
+													i
+														span LINQ:
+															p 
+																span.lnr.lnr-chevron-right Why do we need LINQ: Life with vs without LINQ
+															p
+																span.lnr.lnr-chevron-right The evolvemnet of Lambda Expression: From named methodd to Delegate to lambada expression
+															p
+																span.lnr.lnr-chevron-right Query syntax vs Method Syntax
+															p
+																span.lnr.lnr-chevron-right Extension Method
+															p
+																span.lnr.lnr-chevron-right What is out of the box from LINQ
+															p
+																span.lnr.lnr-chevron-right How to buld your own LINQ method with Extension method
+															p
+																span.lnr.lnr-chevron-right LINQ operationsL working with one/multiple resources, projects etc.
+											li
+												.part
+													h5 Class 12 Tutorial Class to practice with C# programming
+													p C#课堂练习
+											li
+												.part
+													h5 Class 13 .NET framwork
+													p 学习.NET framwork，MVC以及Web API
+													i 
+														span .NET framwork (WEB API)
+															p
+																span.lnr.lnr-chevron-right Traditional Web side vs Web API 
+															p
+																span.lnr.lnr-chevron-right MVC Pattern and MVVM Pattern
+															p
+																span.lnr.lnr-chevron-right Why using Web API
+													i
+														span Create a Web API project
+															p 
+																span.lnr.lnr-chevron-right What is in the box
+															p
+																span.lnr.lnr-chevron-right Routing: Conversional vs Attribute
+															p
+																span.lnr.lnr-chevron-right Handling Parameters
+															p
+																span.lnr.lnr-chevron-right Content Negotiation
+															p
+																span.lnr.lnr-chevron-right Help page Documentation and how to interact
+															p
+																span.lnr.lnr-chevron-right Return types: Class opbject, HttpResponseMessage and IHttpActionResult
+															p
+																span.lnr.lnr-chevron-right Domain Class vs Dto
+															p
+																span.lnr.lnr-chevron-right CORS
+															p
+																span.lnr.lnr-chevron-right Demo: Use Singleton pattern as the static data sourcce to retrive, update and create predefined objects
+											li
+												.part
+													h5 Class 14 Entity framework
+													p Entity Framework，连接到Database
+													i 
+														span Intro to MY SQL Server and SSMS:
+															p
+																span.lnr.lnr-chevron-right How to Create a db 
+															p
+																span.lnr.lnr-chevron-right How to create tables: create column, set keys, identity, column type, create and manage relationships
+															p
+																span.lnr.lnr-chevron-right More on mnage relations: use live examples to illustrate one to one, many to many etc.
+															p
+																span.lnr.lnr-chevron-right Concept of how to design a db structure
+													i
+														span Intro to Entity framework
+															p 
+																span.lnr.lnr-chevron-right What is EF, ORM
+															p
+																span.lnr.lnr-chevron-right Why do we need ORM
+															p
+																span.lnr.lnr-chevron-right Ways to connect to db with EFL Model first, Code first and DB first Pros & Cons
+															p
+																span.lnr.lnr-chevron-right Demo on Code First: Migrations, Data Annotations and flunt API
+															p
+																span.lnr.lnr-chevron-right Demo on DB first
+															p
+																span.lnr.lnr-chevron-right Interaction with the databaseL CRUD on one and multiple resource, recab LINQ
+													i
+															span Serialistation
+															p
+																span.lnr.lnr-chevron-right Definition
+															p
+																span.lnr.lnr-chevron-right JSON formater and its common ssettings
+											li
+												.part
+													h5 Class 15 Tutorial on API with DB in the background
+													p API和DB课堂练习
+													
+											li
+												.part
+													h5 Class 16 Deployment
+													p 部署
+													p
+														span.lnr.lnr-chevron-right Introduction to Azure
+													p
+														span.lnr.lnr-chevron-right Direct deploy
+													p
+														span.lnr.lnr-chevron-right CI / CD with bitbucket
+													p
+														span.lnr.lnr-chevron-right Connect to MSSQL / MYSQL
+													p
+														span.lnr.lnr-chevron-right Docker and Deployment on Linux in EC2 (If have enough time)
+											li
+												.part
+													h5 Class 17 .NET framework (Web API & Project and Framework Continued)
+													p 继续.Net framework 以及 Web API教学
+													p
+														span.lnr.lnr-chevron-right Web API security pipeline: Evolvement of security pipeline from message handler to filters to middleware
+													p
+														span.lnr.lnr-chevron-right Intro to Authentication methods: Basic and OAuth 2.0
+													p
+														span.lnr.lnr-chevron-right Demo on Basic authentication using filter
+													p
+														span.lnr.lnr-chevron-right Demo on token based authentication using Owin middleware
+													p
+														span.lnr.lnr-chevron-right Project distributions to teams - suing bitbucket to simulate team works
+													p
+														span.lnr.lnr-chevron-right Advance search function on students using extensive customized LINQ vis extension method
+											li
+												.part
+													h5 Class 18 Tutorial Class for project implementation
+													p 项目课堂练习
+									
+											li
+												.part
+													h5 Class 19 Web API deployment Unit testing and Tools (Advance student only)
+													p Web API测试和工具
+													p
+														span.lnr.lnr-chevron-right Database deployment to Azure
+													p
+														span.lnr.lnr-chevron-right WebApp deployment to Azure
+													p
+														span.lnr.lnr-chevron-right Intro Unit testing with Xunit: Simple unit test, Theory and inline data
+													p
+														span.lnr.lnr-chevron-right Intro to Async and Await and Multi-threading
+											li
+												.part
+													h5 Class 20 React with Modern JavaScript
+													p React基本介绍
+													p
+														span.lnr.lnr-chevron-right React component fundamental
+													p
+														span.lnr.lnr-chevron-right Understand JSX, JS extension for declarative component
+													p
+														span.lnr.lnr-chevron-right ES6 essentials (destructing, spread, rest variable scope(let) arrow fn, callback context), class
+											li
+												.part
+													h5 Class 21 Make it stateful
+													p 进一步介绍react component
+													p
+														span.lnr.lnr-chevron-right Stateful and stateless (state with props)
+													p
+														span.lnr.lnr-chevron-right Create class stateful component and update state
+													p
+														span.lnr.lnr-chevron-right Lifecycle breakdown
+													p
+														span.lnr.lnr-chevron-right ES6 module, why do we need it
+													p
+														span.lnr.lnr-chevron-right How create-react-app lrelease the initial project setup pain
+													p
+														span.lnr.lnr-chevron-right Start rewriting weather app (individual project) keep data in state and render
+											li
+												.part
+													h5 Class 22 Make it interactive
+													p
+														span.lnr.lnr-chevron-right Render repeated components
+													p
+														span.lnr.lnr-chevron-right Container map data to a list of presentational comps
+													p
+														span.lnr.lnr-chevron-right The 'key' in a lkist of comps
+													p
+														span.lnr.lnr-chevron-right React event handling
+													p
+														span.lnr.lnr-chevron-right Fix 'this' in callback context (Function.bind, Arrow and class field method)
+													p
+														span.lnr.lnr-chevron-right Form handling and controlled input
+													p
+														span.lnr.lnr-chevron-right Lab
+											li
+												.part
+													h5 Class 23 Tutorial Class for project implementation
+											li
+												.part
+													h5 Class 24 Remote
+													p
+														span.lnr.lnr-chevron-right Sync vs Async flow
+													p
+														span.lnr.lnr-chevron-right Promise based async action 
+													p
+														span.lnr.lnr-chevron-right Use raw XMLHttpRequest and callback hell
+													p
+														span.lnr.lnr-chevron-right Promise to rescue (promise state transition)
+													p
+														span.lnr.lnr-chevron-right 'Promisify' request manually
+													p
+														span.lnr.lnr-chevron-right Introduce axios for easy promise async control
+											li
+												.part
+													h5 Class 25 Tutorial Class for project implementation
+											li
+												.part
+													h5 Class 26 Build LMS: project structure
+													p
+														span.lnr.lnr-chevron-right Routing conecpt
+													p
+														span.lnr.lnr-chevron-right How client side routing works (Browser Historyh API)
+													p
+														span.lnr.lnr-chevron-right Introduce react-router-dom, declarative routing
+													p
+														span.lnr.lnr-chevron-right Wire up 3 components (Router, route, link)
+													p
+														span.lnr.lnr-chevron-right Start layout the group project and assign responsibility
+											li
+												.part
+													h5 Class 27 Tutorial Class for project implementation
+											li
+												.part
+													h5 Class 28 Build LMS: CRUD flow & routing 
+													p
+														span.lnr.lnr-chevron-right Define the CRUD for 3 models course, student, lecture
+													p
+														span.lnr.lnr-chevron-right Implement routing for CRUD flow
+													p
+														span.lnr.lnr-chevron-right Explain route path params
+													p
+														span.lnr.lnr-chevron-right React router mechanism to send state to component
+													p
+														span.lnr.lnr-chevron-right Ways to hook route component (props / render callback)
+													p
+														span.lnr.lnr-chevron-right Implement controlled form for multi inputs
+													p
+														span.lnr.lnr-chevron-right Immutable state update
+													p
+														span.lnr.lnr-chevron-right Lab
+											li
+												.part
+													h5 Class 29 Build LMS: Connect our API server
+													p
+														span.lnr.lnr-chevron-right Setup axios to request API server
+													p
+														span.lnr.lnr-chevron-right Extract API module, separate promise based async logic (one module per model, course api, student api, etc...) 
+													p
+														span.lnr.lnr-chevron-right Component interaction with API module to get data for state
+													p
+														span.lnr.lnr-chevron-right Error handling in async action
+													p
+														span.lnr.lnr-chevron-right Extrract reusable UI components
+													p
+														span.lnr.lnr-chevron-right Define the scope of each UI comp and have the right abstraction
+													p
+														span.lnr.lnr-chevron-right 'Classnames' package to manage CSS classes
+													p
+														span.lnr.lnr-chevron-right React children
+											li
+												.part
+													h5 Class 30 Tutorial Class for project implementation
+											li
+												.part
+													h5 Class 31 React patterns and reviews
+													p
+														span.lnr.lnr-chevron-right Composition over Inheritance
+													p
+														span.lnr.lnr-chevron-right Container (controller) with Presentation component
+													p
+														span.lnr.lnr-chevron-right Review component lifecycle
+													p
+														span.lnr.lnr-chevron-right React new declarative context
+													p
+														span.lnr.lnr-chevron-right Higher order component
+													p
+														span.lnr.lnr-chevron-right React 16 features: Fragment, portal
+													p
+														span.lnr.lnr-chevron-right Explore more front-end eco system(intro to third party state management)
+													p
+														span.lnr.lnr-chevron-right Redux introduction
+													p
+														span.lnr.lnr-chevron-right React performance caveats
+											li
+												.part
+													h5 Class 32 Tutorial Class for project implementation
+											li
+												.part
+													h5 Class 33 Make it live: Deploy (AWS)
+													p 部署前端代码到 AWS S3
+													p
+														span.lnr.lnr-chevron-right Recap on local dev flow
+													p
+														span.lnr.lnr-chevron-right Deployment strategy
+													p
+														span.lnr.lnr-chevron-right Separate web static host from API server
+													p
+														span.lnr.lnr-chevron-right Client build (with create-react-app, may touch some webpack concept)
+													p
+														span.lnr.lnr-chevron-right Setup S3 bucket (policy etc), upload built bundles to it
+													p
+														span.lnr.lnr-chevron-right Static host handle 404
+													p
+														span.lnr.lnr-chevron-right Use CloudFront with S3 bucket
+													p
+														span.lnr.lnr-chevron-right TypeScript introduction
+													p
+														span.lnr.lnr-chevron-right Lab, let's finish it
+											li
+												.part
+													h5 Class 34 Project Two: Tutorial & Lab
+											
+											
+											li
+												.part
+													h5 Class 35 Interview
+													p
+														span.lnr.lnr-chevron-right Interview
+													p
+														span.lnr.lnr-chevron-right Mock interview
+								
+											li
+												.part
+													h5 Class 36 Group work Presentation
+													p 以小组为单位展示项目。
+													p
+														span.lnr.lnr-chevron-right 项目展示
+													p
+														span.lnr.lnr-chevron-right 大咖点评
+								.jr-syllabus-term__main__content.col-sm-5
+						.jr-syllabus-term__card
+							.jr-syllabus-term__header.row.no-margin
+								.jr-syllabus-term__header__content.col-sm-7
+									h6 Syllabus
+									h3 Web开发全栈培训班 （墨尔本 & 布里斯班 & 悉尼）
+									p.hidden-md-down Reactjs + Redux + Node.js + Express + REST API + AWS + Heroku + Agile + Career Coaching
+									.jr-syllabus-term__header__content--details
+										p.cursor-click.jr-syllabus-term__toggle.collapsed(data-toggle="collapse" data-target="#course_detail_mel" aria-expanded="false" aria-controls="course_detail")
+											span 显示全部课程表信息(点击展开)
+										p.gray-medium 3个月完成
+								.jr-syllabus-term__header__image.col-sm-5.hidden-xs-down
+							.jr-syllabus-term__main.row.no-margin
+								.jr-syllabus-term__main__content.col-sm-7.collapse.show#course_detail_mel
+									h6 先修知识
+									p.margin-bottom-3 这是一门进阶课程，你需要懂得最基本的HTML CSS和Javascript，并且理解变量，面向对象等基本编程概念。
+									section.jr-syllabus-term__main__content--parts
+										ul
+											li
+												.part
+													h5 Class 1 Web Technology
+													p 网页技术
+													p
+														span.lnr.lnr-chevron-right Network
+													p
+														span.lnr.lnr-chevron-right Chrome Inspect
+													p
+														span.lnr.lnr-chevron-right Web Basics
+													p
+														span.lnr.lnr-chevron-right Javascript History
+													p
+														span.lnr.lnr-chevron-right Modern Web Technology vs Traditional Technology
+														
+											li
+												.part
+													h5 Class 2 HTML5 Basics
+													p Html的基础知识
+													p
+														span.lnr.lnr-chevron-right Html5
+											li
+												.part
+													h5 Class 3 CSS3 Basics
+													p CSS的基础知识
+													p
+														span.lnr.lnr-chevron-right Selector
+													p
+														span.lnr.lnr-chevron-right Flexbox
+													p 
+														span.lnr.lnr-chevron-right Responsive Web Design
+													p
+														span.lnr.lnr-chevron-right Sass Introduction
+											li
+												.part
+													h5 Class 4 Javascript Basics
+													p JavaScript的基础知识
+													p
+														span.lnr.lnr-chevron-right Javascript History
+													p
+														span.lnr.lnr-chevron-right Basic Syntax (variable, loop, condition, function)
+													p
+														span.lnr.lnr-chevron-right DOM manipulation
+													p
+														span.lnr.lnr-chevron-right Javascript library introduction
+											li
+												.part
+													h5 Class 5 Project One
+													p 开始项目一
+													p
+														span.lnr.lnr-chevron-right Tutorial & Lab, including VS live sessions
+											li
+												.part
+													h5 Class 6 Git Introduction
+													p 代码管理的基础知识
+													p
+														span.lnr.lnr-chevron-right Install Git
+													p
+														span.lnr.lnr-chevron-right Git Pull / Push / Commit
+													p
+														span.lnr.lnr-chevron-right Branch
+													p
+														span.lnr.lnr-chevron-right Rebase / Merge / Pull Request
+													p
+														span.lnr.lnr-chevron-right Resolve Conlicts
+											li
+												.part
+													h5 Class 7 Project One
+													p 项目一
+													p
+														span.lnr.lnr-chevron-right Tutorial & Lab, including VS live sessions
+											li
+												.part
+													h5 Class 8 Interview and CV
+													p 澳洲求职技巧、注意事项
+													p
+														span.lnr.lnr-chevron-right Linkedin: 解密Linkedin的使用，搭建关系网
+													p
+														span.lnr.lnr-chevron-right Resume & Cover Letter
+													p
+														span.lnr.lnr-chevron-right Review first version of resume and group discussion
+											li
+												.part
+													h5 Class 9 Application Architecture
+													p 应用架构，部署
+													p
+														span.lnr.lnr-chevron-right Relationship Between Node and Express
+													p
+														span.lnr.lnr-chevron-right Generating Express Apps 
+													p
+														span.lnr.lnr-chevron-right Express Route Handlers 
+													p
+														span.lnr.lnr-chevron-right Heroku Deployment 
+											li
+												.part
+													h5 Class 10 REST API 
+													p 学习REST API，为后端打下基础
+													p
+														span.lnr.lnr-chevron-right Routing and URL 
+													p
+														span.lnr.lnr-chevron-right Swagger style
+													p
+														span.lnr.lnr-chevron-right Routers Basics 
+													p
+														span.lnr.lnr-chevron-right Middle-wares 
+													p
+														span.lnr.lnr-chevron-right Response 
+													p
+														span.lnr.lnr-chevron-right CURD
+											li
+												.part
+													h5 Class 11 Introduction to Loopback
+													p 学习Loopbck基础知识
+													p
+														span.lnr.lnr-chevron-right Create a simple API
+													p
+														span.lnr.lnr-chevron-right Use API Explorer 
+													p
+														span.lnr.lnr-chevron-right Connect your API to a data source
+													p
+														span.lnr.lnr-chevron-right Extend your API 
+													p
+														span.lnr.lnr-chevron-right Add a static web page
+													p
+														span.lnr.lnr-chevron-right Add a custom Express route
+											li
+												.part
+													h5 Class 12 Tutorial Class to practice with Nodejs programming, including VS live sessions
+													p Nodejs课堂练习
+											li
+												.part
+													h5 Class 13 Data Source
+													p
+														span.lnr.lnr-chevron-right Entering data source settings 
+													p
+														span.lnr.lnr-chevron-right Installing a connector
+													p
+														span.lnr.lnr-chevron-right Specifying database credentials with environment variables 
+													p
+														span.lnr.lnr-chevron-right Using multiple data source configurations
+											li
+												.part
+													h5 Class 14 Creating Model Relations
+													p
+														span.lnr.lnr-chevron-right BelongsTo relations 
+													p
+														span.lnr.lnr-chevron-right HasOne relations
+													p
+														span.lnr.lnr-chevron-right HasMany relations
+													p
+														span.lnr.lnr-chevron-right HasManyThrough relations
+													p
+														span.lnr.lnr-chevron-right HasAndBelongsToMany relations 
+													p
+														span.lnr.lnr-chevron-right Polymorphic relations
+													p
+														span.lnr.lnr-chevron-right Querying related models
+													p
+														span.lnr.lnr-chevron-right Embedded models and relations 
+													p
+														span.lnr.lnr-chevron-right Nested queries 
+			
+											li
+												.part
+													h5 Class 15 Working with Data
+													p
+														span.lnr.lnr-chevron-right Creating, updating, and deleting data 
+													p
+														span.lnr.lnr-chevron-right Querying data
+													p
+														span.lnr.lnr-chevron-right Fields filter
+													p
+														span.lnr.lnr-chevron-right Include filter 
+													p
+														span.lnr.lnr-chevron-right Limit filter  
+													p
+														span.lnr.lnr-chevron-right Order filter 
+													p
+														span.lnr.lnr-chevron-right Skip filter 
+													p
+														span.lnr.lnr-chevron-right Where filter 
+											li
+												.part
+													h5 Class 16 Tutorial on API with DB in the background, including VS live sessions
+													p API和DB课堂练习
+													
+											li
+												.part
+													h5 Class 17 Agile
+													p 敏捷开发
+													p
+														span.lnr.lnr-chevron-right Agile
+													p
+														span.lnr.lnr-chevron-right Scrum, Kanban, Lean
+													p
+														span.lnr.lnr-chevron-right Breakdown to different teams for project three
+											li
+												.part
+													h5 Class 18 Managing User
+													p 用户管理部分
+													p
+														span.lnr.lnr-chevron-right Registration and confirmation via email
+													p
+														span.lnr.lnr-chevron-right Login and logout
+													p
+														span.lnr.lnr-chevron-right Creating an access token
+													p
+														span.lnr.lnr-chevron-right Password reset
+											li
+												.part
+													h5 Class 19 Tutorial Class for project implementation, including VS live sessions
+													p 项目课堂练习
+									
+											li
+												.part
+													h5 Class 20 Authentication, Authorization, and Permissions
+													p 认证和权限管理
+													p
+														span.lnr.lnr-chevron-right Access control concepts 
+													p
+														span.lnr.lnr-chevron-right General process Initial setup
+													p
+														span.lnr.lnr-chevron-right Enabling access control 
+													p
+														span.lnr.lnr-chevron-right Preparing access control models
+													p
+														span.lnr.lnr-chevron-right Exposing and hiding models, methods, and endpoints 
+													p
+														span.lnr.lnr-chevron-right Hiding methods and REST endpoints
+													p
+														span.lnr.lnr-chevron-right Read-only endpoints example  
+													p
+														span.lnr.lnr-chevron-right Hiding endpoints for related models 
+													p
+														span.lnr.lnr-chevron-right Hiding properties 
+											li
+												.part
+													h5 Class 21 React with Modern JavaScript
+													p React基本介绍
+													p
+														span.lnr.lnr-chevron-right React component fundamental
+													p
+														span.lnr.lnr-chevron-right Understand JSX, JS extension for declarative component
+													p
+														span.lnr.lnr-chevron-right ES6 essentials (destructing, spread, rest variable scope(let) arrow fn, callback context), class
+											li
+												.part
+													h5 Class 22 Make it Stateful
+													p 进一步介绍React component
+													p
+														span.lnr.lnr-chevron-right Stateful and stateless (state with props)
+													p
+														span.lnr.lnr-chevron-right Create class stateful component and update state
+													p
+														span.lnr.lnr-chevron-right Lifecycle breakdown
+													p
+														span.lnr.lnr-chevron-right ES6 module, why do we need it
+													p
+														span.lnr.lnr-chevron-right How create-react-app lrelease the initial project setup pain
+													p
+														span.lnr.lnr-chevron-right Start rewriting weather app (individual project) keep data in state and render
+											li
+												.part
+													h5 Class 23 Make it Interactive
+													p
+														span.lnr.lnr-chevron-right Render repeated components
+													p
+														span.lnr.lnr-chevron-right Container map data to a list of presentational comps
+													p
+														span.lnr.lnr-chevron-right The 'key' in a lkist of comps
+													p
+														span.lnr.lnr-chevron-right React event handling
+													p
+														span.lnr.lnr-chevron-right Fix 'this' in callback context (Function.bind, Arrow and class field method)
+													p
+														span.lnr.lnr-chevron-right Form handling and controlled input
+													p
+														span.lnr.lnr-chevron-right Lab
+											li
+												.part
+													h5 Class 24 Tutorial Class for project implementation, including VS live sessions
+											li
+												.part
+													h5 Class 25 Talk to Remote
+													p
+														span.lnr.lnr-chevron-right Sync vs Async flow
+													p
+														span.lnr.lnr-chevron-right Promise based async action 
+													p
+														span.lnr.lnr-chevron-right Use raw XMLHttpRequest and callback hell
+													p
+														span.lnr.lnr-chevron-right Promise to rescue (promise state transition)
+													p
+														span.lnr.lnr-chevron-right 'Promisify' request manually
+													p
+														span.lnr.lnr-chevron-right Introduce axios for easy promise async control
+													p
+														span.lnr.lnr-chevron-right Lab
+											li
+												.part
+													h5 Class 26 Tutorial Class for project implementation, including VS live sessions
+											li
+												.part
+													h5 Class 27 Build LMS: project structure
+													p
+														span.lnr.lnr-chevron-right Routing conecpt
+													p
+														span.lnr.lnr-chevron-right How client side routing works (Browser Historyh API)
+													p
+														span.lnr.lnr-chevron-right Introduce react-router-dom, declarative routing
+													p
+														span.lnr.lnr-chevron-right Wire up 3 components (Router, Route, Link)
+													p
+														span.lnr.lnr-chevron-right Start layout the group project and assign responsibility
+											li
+												.part
+													h5 Class 28 Tutorial Class for project implementation, including VS live sessions
+											li
+												.part
+													h5 Class 29 Build LMS: CRUD Flow & Routing 
+													p
+														span.lnr.lnr-chevron-right Define the CRUD for 3 models course, student, lecture
+													p
+														span.lnr.lnr-chevron-right Implement routing for CRUD flow
+													p
+														span.lnr.lnr-chevron-right Explain route path params
+													p
+														span.lnr.lnr-chevron-right React router mechanism to send state to component
+													p
+														span.lnr.lnr-chevron-right Ways to hook route component (props / render callback)
+													p
+														span.lnr.lnr-chevron-right Implement controlled form for multi inputs
+													p
+														span.lnr.lnr-chevron-right Immutable state update
+													p
+														span.lnr.lnr-chevron-right Lab
+											li
+												.part
+													h5 Class 30 Build LMS: Connect our API Server
+													p
+														span.lnr.lnr-chevron-right Extract API module, separate promise based async logic (one module per model, course api, student api, etc.,) 
+													p
+														span.lnr.lnr-chevron-right Component interaction with API module to get data for state
+													p
+														span.lnr.lnr-chevron-right Error handling in async action
+													p
+														span.lnr.lnr-chevron-right Extrract reusable UI components
+													p
+														span.lnr.lnr-chevron-right Define the scope of each UI comp and have the right abstraction
+													p
+														span.lnr.lnr-chevron-right 'Classnames' package to manage CSS classes
+													p
+														span.lnr.lnr-chevron-right React children
+											li
+												.part
+													h5 Class 31 Tutorial Class for project implementation, including VS live sessions
+											li
+												.part
+													h5 Class 32 React Patterns and Review
+													p
+														span.lnr.lnr-chevron-right Composition over Inheritance
+													p
+														span.lnr.lnr-chevron-right Container (controller) with Presentation component
+													p
+														span.lnr.lnr-chevron-right Review component lifecycle
+													p
+														span.lnr.lnr-chevron-right React new declarative Context?
+													p
+														span.lnr.lnr-chevron-right Higher order component
+													p
+														span.lnr.lnr-chevron-right React 16 features: Fragment, Portal
+													p
+														span.lnr.lnr-chevron-right Explore more front-end ecosystem(intro to third party state management)
+													p
+														span.lnr.lnr-chevron-right Redux introduction
+													p
+														span.lnr.lnr-chevron-right React performance caveats
+											li
+												.part
+													h5 Class 33 Tutorial Class for project implementation, including VS live sessions
+											li
+												.part
+													h5 Class 34 Make it live: Deploy (AWS)
+													p 部署前端代码到 AWS S3
+													p
+														span.lnr.lnr-chevron-right Recap on local dev flow
+													p
+														span.lnr.lnr-chevron-right Deployment strategy
+													p
+														span.lnr.lnr-chevron-right Separate web static host from API server
+													p
+														span.lnr.lnr-chevron-right Client build (with create-react-app, may touch some webpack concept)
+													p
+														span.lnr.lnr-chevron-right Setup S3 bucket (policy etc), upload built bundles to it
+													p
+														span.lnr.lnr-chevron-right Static host handle 404
+													p
+														span.lnr.lnr-chevron-right Use CloudFront with S3 bucket
+													p
+														span.lnr.lnr-chevron-right TypeScript introduction
+													p
+														span.lnr.lnr-chevron-right Lab, let's finish it
+													p
+														span.lnr.lnr-chevron-right Docker and Dockerization (if time available)
+											li
+												.part
+													h5 Class 35 Project Two: Tutorial & Lab, including VS live sessions	
+											li
+												.part
+													h5 Class 36 1 on 1 service
+													p
+														span.lnr.lnr-chevron-right Interview
+													p
+														span.lnr.lnr-chevron-right Mock interview
+													p
+														span.lnr.lnr-chevron-right This part will be provided individually
+											li
+												.part
+													h5 Class 37 OOP Design
+													p
+														span.lnr.lnr-chevron-right SOLID principle
+													p
+														span.lnr.lnr-chevron-right Code refactor
+											li
+												.part
+													h5 Class 38 Presentation (Group work)
+													p 以小组为单位展示项目
+													p
+														span.lnr.lnr-chevron-right 项目展示
+													p
+														span.lnr.lnr-chevron-right 大咖点评																						
+								.jr-syllabus-term__main__content.col-sm-5
+						.jr-syllabus-term__card
+							.jr-syllabus-term__header.row.no-margin
+								.jr-syllabus-term__header__content.col-sm-7
+									h6 匠人实习培养计划
+									h3 项目实习(商业项目)
+									p.hidden-md-down 基于Nodejs，Expressjs, .Net Core和Reactjs Redux 框架，带领学员学习复杂商业环境下的IT开发，重点掌握REST API、Dependency Injection、Inversion of Control、Redux, JWT，Scalable Nodejs Microservice，AWS云端技术，Stream Video等核心概念。同时学员还会通过完整的Agile 团队学习一个商业项目中，澳洲公司中进行项目开发。
+									a(href="https://jiangren.com.au/commercial-projects-training") 查看项目实习
+									.jr-syllabus-term__header__content--details
+										p.cursor-click.jr-syllabus-term__toggle.collapsed(data-toggle="collapse" data-target="#course_detail_project-intern" aria-expanded="false" aria-controls="course_detail")
+											span 显示项目实习内容(点击展开)
+										p.gray-medium 2个月完成
+								.jr-syllabus-term__header__image.jr-syllabus-term__header__image--intern.col-sm-5.hidden-xs-down
+							.jr-syllabus-term__main.row.no-margin
+								.jr-syllabus-term__main__content.col-sm-7.collapse#course_detail_project-intern
+									h6 先修知识
+									p.margin-bottom-3 完成三个月课程及项目作业
+									section.jr-syllabus-term__main__content--parts
+										ul
+											li
+												.part
+													h5 项目实习介绍
+													p 参与IT匠人或匠人合作公司的商业项目，综合提高学员能力，达到Job Ready状态
+													p
+														span.lnr.lnr-chevron-right 前端：React Redux Redux-saga Angular Vue
+													p
+														span.lnr.lnr-chevron-right 后端：Nodejs Expressjs .Net Core Java JWT OAuth
+													p
+														span.lnr.lnr-chevron-right 数据库：Mongodb MySQL
+													p
+														span.lnr.lnr-chevron-right AWS s3 ec2 lambda
+													p
+														span.lnr.lnr-chevron-right Agile Scrum Git
+								.jr-syllabus-term__main__content.col-sm-5
+						.jr-syllabus-term__card
+							.jr-syllabus-term__header.row.no-margin
+								.jr-syllabus-term__header__content.col-sm-7
+									h6 匠人求职服务
+									h3 澳洲顶级老师的Career Coaching 
+									p.hidden-md-down 简历指导，简历修改，面试指导，Linkedin解密，猎头服务，工作内推，Mock Interview模拟面试，背景调查证明，澳洲工作证明
+									a(href="https://jiangren.com.au/career-coaching") 查看匠人求职
+									.jr-syllabus-term__header__content--details
+										p.cursor-click.jr-syllabus-term__toggle.collapsed(data-toggle="collapse" data-target="#course_detail_career" aria-expanded="false" aria-controls="course_detail_career")
+											span 显示全栈班求职服务内容 (点击展开)
+										p.gray-medium 2个月ongoing support
+								.jr-syllabus-term__header__image.jr-syllabus-term__header__image--career.col-sm-5.hidden-xs-down
+							.jr-syllabus-term__main.row.no-margin
+								.jr-syllabus-term__main__content.col-sm-7.collapse#course_detail_career
+									h6 Career Coaching
+									p.margin-bottom-3 内容包含
+									section.jr-syllabus-term__main__content--parts
+										ul
+											li
+												.part
+													h5 求职服务介绍
+													p 如何写一份澳洲简历及简历修改
+													p 如何运营你的linkedin
+													p 澳洲面试技巧及过程
+													p 模拟面试及导师反馈
+													p 面试包装及简历包装
+													p 背景调查证明
+													p 澳洲工作证明
+								.jr-syllabus-term__main__content.col-sm-5
+				+partnership
+			#projects
+				section.jr-projects
+					h2 你将挑战的项目
+					section.jr-projects__cards
+						.cards_contain
+							.jr-projects__card
+								.jr-projects__header.row.no-margin
+									.jr-projects__header__content.col-12.col-sm-6
+										h6 Personal Web
+										h3 个人网站
+										p.hidden-md-down 通过使用HTML5, CSS3, Javascript 和 Bootstrap达到一个高标准的个人网站。用于放在简历里，达到一个润色自己的自我介绍的目的。From Scatch，让基础的Skills更加的扎实，为后续的LMS大项目做好前期基础。
+										.jr-projects__header__content__footer
+											.tag-container
+												.tag HTML 5
+												.tag CSS3
+												.tag Javascript
+												.tag Github
+												.tag Bootstrap
+												.tag Sass
+												.tag Flexbox
+									.jr-projects__header__image.col-12.col-sm-6
+										img.lazyload(data-src="/images/project/project1.png", alt="Online Learning Management System")
+							.jr-projects__card
+								.jr-projects__header.row.no-margin
+									.jr-projects__header__content.col-12.col-sm-6
+										h6 Weather App
+										h3 Weather Forecast App
+										p.hidden-md-down 练习使用Weather Api 和 REST API，利用Weather App的简单易用，开发Single Page Application，对 Reactjs有初步使用。 学会根据UI使用Sass和CSS对UI设计进行编程化实现
+										.jr-projects__header__content__footer
+											.tag-container
+												.tag Reactjs
+												.tag REST API
+												.tag Sass
+												.tag CSS
+												.tag ES6
+									.jr-projects__header__image.col-12.col-sm-6
+										img.lazyload(data-src="/images/project/weather-app.png", alt="Online Learning Management System")
+							.jr-projects__card
+								.jr-projects__header.row.no-margin
+									.jr-projects__header__content.col-12.col-sm-6
+										h6 LMS
+										h3 Online Learning Management System
+										p.hidden-md-down 全栈班第三个项目之一，采用前后端分离，前端使用reactjs，后端使用.net core或者nodejs作为api server，数据库选用MySql或者Mongodb，部署在AWS上
+										p.hidden-md-down 使用Reactjs, .Net Core, Nodejs, REST API等技术, 组成3到4个人为一组的Agile小组，使用SCRUM，Jira进行管理团队，通过Bitbucket等git工具，进行团队协作，模拟真实工作场景中需要的团队协作和冲突处理。
+										.jr-projects__header__content__footer
+											.tag-container
+												.tag Reactjs
+												.tag Nodejs
+												.tag .Net Core
+												.tag REST API
+												.tag Agile
+												.tag Bitbucket
+												.tag AWS 
+												.tag AZURE
+												.tag JWT
+												.tag MySQL
+												.tag Monogodb
+									.jr-projects__header__image.col-12.col-sm-6
+										img.lazyload(data-src="/images/project/project2.jpg", alt="Online Learning Management System")
+							.jr-projects__card
+								.jr-projects__header.row.no-margin
+									.jr-projects__header__content.col-12.col-sm-6
+										h6 HR Management
+										h3 Human Management System
+										p.hidden-md-down 全栈班第三个项目之一，采用前后端分离，前端使用reactjs，后端使用.net core或者nodejs作为api server，数据库选用MySql或者Mongodb，部署在AWS上
+										p.hidden-md-down 使用Reactjs, .Net Core, Nodejs, REST API等技术, 组成3到4个人为一组的Agile小组，使用SCRUM，Jira进行管理团队，通过Bitbucket等git工具，进行团队协作，模拟真实工作场景中需要的团队协作和冲突处理。
+										.jr-projects__header__content__footer
+											.tag-container
+												.tag Reactjs
+												.tag Nodejs
+												.tag .Net Core
+												.tag REST API
+												.tag Agile
+												.tag Bitbucket
+												.tag AWS 
+												.tag AZURE
+												.tag JWT
+												.tag MySQL
+												.tag Monogodb
+									.jr-projects__header__image.col-12.col-sm-6
+										img.lazyload(data-src="/images/project/tracking.jpeg", alt="Human Management System")
+							.jr-projects__card
+								.jr-projects__header.row.no-margin
+									.jr-projects__header__content.col-12.col-sm-6
+										h6 Booking System
+										h3 Restaurant Booking System
+										p.hidden-md-down 全栈班第三个项目之一，采用前后端分离，前端使用reactjs，后端使用.net core或者nodejs作为api server，数据库选用MySql或者Mongodb，部署在AWS上
+										p.hidden-md-down 使用Reactjs, .Net Core, Nodejs, REST API等技术, 组成3到4个人为一组的Agile小组，使用SCRUM，Jira进行管理团队，通过Bitbucket等git工具，进行团队协作，模拟真实工作场景中需要的团队协作和冲突处理。
+										.jr-projects__header__content__footer
+											.tag-container
+												.tag Reactjs
+												.tag Nodejs
+												.tag .Net Core
+												.tag REST API
+												.tag Agile
+												.tag Bitbucket
+												.tag AWS 
+												.tag AZURE
+												.tag JWT
+												.tag MySQL
+												.tag Monogodb
+									.jr-projects__header__image.col-12.col-sm-6
+										img.lazyload(data-src="/images/project/opt_nudp_react_thumbnail.jpg", alt="Restaurant Booking System")
+		#instructor
+			+mentor-company
+			section.jr-instructors.jr-section.section--md
+				h2.text-center 全栈班导师
+				+teachers
+		section#dates.section--md
+			h2.text-center 开课时间
+			.row
+				if(programs)
+					each program in programs
+						.col-12.col-sm-4
+							+program-card(program)
+	
+	section.jr-reviews
+		.contain
+			header
+				h2.blue.inline 学生反馈
+			.jr-reviews__container.row
+				.col-sm-4
+					.jr-reviews__card.stats
+						.stats__average
+							span 4.9
+							.stats__container
+								.jr-stars
+									div(style="width:95%;")
+						.jr-reviews__overview
+							.wrapper
+								.h6.text-right 5 stars
+								.progress
+									div(style="width:87%;") 62
+							.wrapper
+								.h6.text-right 4 stars
+								.progress
+									div(style="width:13%;") 6
+							.wrapper
+								.h6.text-right 3 stars
+								.progress
+									div(style="width:0%;") 0
+							.wrapper
+								.h6.text-right 2 stars
+								.progress
+									div(style="width:0%;") 0
+							.wrapper
+								.h6.text-right 1 stars
+								.progress
+									div(style="width:0%;") 0
+				if(reviews)
+					each review in reviews
+						.col-sm-4
+							.jr-reviews__card.card
+								.row
+									.col-sm-6
+										h5.student__name= review.name
+									.col-sm-6
+										.student__stars
+											div(style="width:92%;")
+								p.student__review= review.content
+	section.jr-faq
+		.contain
+			.faq__content
+				h2 帮助与常见问题
+				.contain-center#accordion
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingOne(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="collapsed" role="tab")
+									h4 
+										strong 问：本期课程适合什么程度的学生去学呢?
+									i.lnr.lnr-chevron-up
+							#collapseThree.collapse(role="tabpanel" aria-labelledby="headingThree")
+								.card-body
+									p 我们的Web开发全栈班，是针对已有相关IT知识的进阶的课程，如果你是IT新毕业生正在找工作，IT的最后一年学生，或者有IT其他专业背景想要做Web Developer，但不了解真正企业Web开发的流程和技术，这门课程就是为你设计的。同时已经上完Web入门班的同学，也是适合你的进阶课程。我们的导师具有多年经验，通过真实的商业实战项目，指导提升，加深理解。帮助学生找到Junior 等级的WEB开发的⼯作
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingThree(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" class="collapsed" role="tab")
+									h4
+										strong 问：咱们的培训班与其他的线上培训和别的培训有什么不同吗？
+									i.lnr.lnr-chevron-up
+							#collapseFive.collapse(role="tabpanel" aria-labelledby="headingFive")
+								.card-body
+									p 我们的导师都是来自澳洲Local IT 公司的一线开发人员，课程的设置和内容完全是仿造公司真实开发环境的，由导师提供的课后作业以及独家Extra Bonus 可以让你的简历锦上添花，通过项目实战以及Agile和Teamwork的穿插可以让学生在结课时拥有更多的项目实战经验
+									p 我们的培训课程中还包括了简历修改，职业辅导等相关服务，让学生在提高技术水平的时候做到Job Ready的程度
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingSix(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix" class="collapsed" role="tab")
+									h4
+										strong 问：培训的过程中是否有人指导，有没有一些项目可以参与？
+									i.lnr.lnr-chevron-up
+							#collapseSix.collapse(role="tabpanel" aria-labelledby="headingSix")
+								.card-body
+									p 在培训过程中，我们有多年经验一线开发岗位的导师已经Tutor来做指导答疑，下课也有导师在线回答同学问题，都是澳洲IT行业⾥的⼤牛。⼤牛带路，少走弯路。
+									p 除了课程中需要完成的三个项目外，我们也会推荐真实的商业项⽬参与其中，获取更多的宝贵经验，让每个学员尽可能的做到，在培训过程中获得宝贵的商业经验，达到可以直接上⼿工作的目的。
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingSeven(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" class="collapsed" role="tab")
+									h4
+										strong 问：上课的课时有多少，一周的讲课时间多少，费用怎么样
+									i.lnr.lnr-chevron-up
+							#collapseSeven.collapse(role="tabpanel" aria-labelledby="headingSeven")
+								.card-body
+									p 此期培训的课时有100个⼩时包含20小时的Tutorial，每周两次的课，每次课有3个小时，时间会暂定在Weekday的晚上和Weekend，一般一周6-8小时，Tutorial时间额外安排。我们会根据所有人的时间再次安排时间
+									p 上课时间会统计这一期学员的共同Available时间而决定开课时间，所以在开课前无法准确确定。
+									p 费用是原价5500（exclusive GST），同时会有早鸟价格。
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingEight(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight" class="collapsed" role="tab")
+									h4
+										strong 问：全栈班价格好贵啊
+									i.lnr.lnr-chevron-up
+							#collapseEight.collapse(role="tabpanel" aria-labelledby="headingEight")
+								.card-body
+									p 全栈班具备最佳性价比，班主任制度，Tutor随堂，每期5位专业大神，4个月时间，作业讲解，coding讲解，工作内推等等。通过面授的Code Bootcamp达到就业Ready是我们Web全栈培训班的宗旨。
+									p 对于你上完后拿到的全职工作来说，培训费用只是你一个月的薪水而已。帮助几百个学员就业，也证明了全栈班帮助就业的能力
+									p 培训班的费用可以当做自己的income cost，最终可以通过tax claim回来
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingNine(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine" class="collapsed" role="tab")
+									h4
+										strong 问：我是本科生/研究生，你觉得帮助大吗？
+									i.lnr.lnr-chevron-up
+							#collapseNine.collapse(role="tabpanel" aria-labelledby="headingNine")
+								.card-body
+									p 开设全栈课的初衷就是希望能给学生在大学学习以及就业中搭起一道桥梁。
+									p IT技术日新月异，在大学中学到的很多东西已经不足以找到一份澳洲的IT工作。我们的课程内容采用了当下许多公司都在使用的技术栈，培训涉及了澳洲公司真实的小组Teamwork，Agile，如何代码管理，⼯作的⽇常是什么样的。如果你是大学本科/研究生，在有基础的情况下能更快的增加实战经验，了解澳洲工作情况，找到你的Dream Job
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingNine(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseNine" class="collapsed" role="tab")
+									h4
+										strong 问 : 如果我有事不能参加线下课程该怎么办？
+									i.lnr.lnr-chevron-up
+							#collapseTen.collapse(role="tabpanel" aria-labelledby="headingTen")
+								.card-body
+									p 我们的课程采⽤同步线上直播和课上录屏，课后录像回顾的形式，也就是与线下参与培训的同学⼀同上课。课上希望线上的同学和线下⽼师同学一起互动，跟⽼师一起完成开发练习，和线下的同学们一起体验Agile和团队合作。课后我们也留有recording，⽅便学员查看回顾。
+	+post-collection
+	script(type="application/ld+json").
+		{
+			"@context": "http://schema.org",
+			"@type": "Course",
+			"name": "Web开发全栈项目班",
+			"description": "王牌课程，就业利器：Reactjs + Nodejs + .Net + MVC + C# + REST API + Agile + Career Coaching",
+			"provider": {
+				"@type": "Organization",
+				"name": "澳洲匠人学院",
+				"sameAs": "https://jiangren.com.au"
+			}
+		}
+block js
+	script(src=`/apps.bundle.js` async)
+	link(rel="stylesheet", href="/apps.css")

@@ -1,0 +1,6 @@
+mixin uni-post-essay(post)
+	.uni-post-component.margin
+		h3=post.title
+		.uni-post-essay
+			!=post.content.brief
+		a.uni-plan-content-link(href="/blog/"+post.slug)="查看更多 →"

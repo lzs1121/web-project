@@ -1,0 +1,89 @@
+.application {
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	background: #02b3e4;
+	box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.2);
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover; }
+	@media only screen and (max-width: 480px) {
+		.application {
+			border-bottom-left-radius: .375rem;
+			border-top-left-radius: .375rem;
+			border-top-right-radius: 0; } }
+
+.card-event__application {
+	display: table-cell;
+	width: 50%;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0px 2px 20px 0px rgba(46, 61, 73, 0.5);
+	border-top-left-radius: .375rem;
+	border-top-left-radius: .375rem;
+	border-bottom-left-radius: .375rem;
+	height: 45rem;
+	background: linear-gradient(to bottom right, #ff8833, #fa2562); }
+
+
+	.card-event__application h1, .card-event__application h1 a {
+		color: white;
+		font-size: 3rem;
+		line-height: 3.75rem;
+		font-weight: 300; }
+	.card-event__application h2 {
+		color: white;
+		font-size: 2.5rem;
+		line-height: 3.75rem;
+		font-weight: 300; }
+	.card-event__application h6 {
+		color: white;
+		font-size: .8125rem;
+		line-height: 1.5rem; }
+	.card-event__application h5 {
+		color: white;
+		color: #fff;
+		font-weight: 400; }
+
+		.card-event__application th {
+			width: 100px;
+			vertical-align:top;
+			padding:10px;
+			font-family: Serif;
+		}
+		.card-event__application td {
+			vertical-align:top;
+			padding:10px;
+			font-family: Serif;
+		}
+
+	.card-event__application.meetup {
+			background: url("/images/hero/meetup.jpg") 0 0 no-repeat;
+			background-size: cover; }
+
+	.card-event__application .application--overlay {
+		padding-top: 4.5rem;
+		padding-bottom: 4.5rem;
+		padding-left: 50px;
+		padding-right: 50px; }
+		@media only screen and (max-width: 480px) {
+			.card-event__application .application--overlay {
+				padding-left: 15px;
+				padding-right: 15px; }
+				.card-event__application .application--overlay p {
+					margin-top: 5px; } }
+
+	@media only screen and (max-width: 480px) {
+		.card-event__application {
+			display: table-cell;
+			width: 100%;
+			display: block;
+			height: 40rem; } }
+
+.form-validation {
+	color:red;
+	height: 20px;
+	font-size:12px;
+	margin-left:15%;
+}

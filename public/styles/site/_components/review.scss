@@ -1,0 +1,214 @@
+.rating_review {
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	padding: 50px 35px 50px 35px;
+	background-color: #fdfdfd;
+	position: relative;
+	@include MQ(M){
+		padding-bottom: 35px;
+		padding-top: 35px;
+	}
+
+	.review_title {
+		margin-left: -20px;
+		margin-bottom: 50px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #e7e7e7;
+		font-weight: 400;
+		font-size: 24px;
+		margin-top: -20px;
+	}
+	.review-row {
+		.mobile-col {
+			@include MQ(M) {
+				max-width: 100%;
+				flex: 0 0 100%;
+			}
+		}
+		.reviews {
+			display: flex;
+			background-color: #fff;
+			padding: 0;
+			margin-bottom: 50px;
+			position: relative;
+			@include MQ(M) {
+				margin-bottom: 0px;
+			}
+			.average_rating {
+				border: 3px solid #f82a62;
+				width: 230px;
+				display: block;
+				border-radius: 8px;
+				margin-right: 50px;
+				margin-left: 150px;
+				text-align: center;
+				float: left;
+				padding-bottom: 22px;
+				@include MQ(M) {
+					width: 200px;
+					margin-right: auto;
+					margin-left: auto;
+					margin-bottom: 20px;
+				}
+
+				.number_rate {
+					color: #f82a62;
+					padding-bottom: 5px;
+					font-size: 75px;
+					font-weight: 700;
+					padding-top: 22px;
+					margin-bottom: -6px;
+					display: block;
+					line-height: 1.2;
+
+					.review-row {
+						margin: auto auto;
+
+					}
+				}
+			}
+		}
+		.detail_rating {
+			.course_rate {
+				margin-top: 0;
+				margin-bottom: 14px;
+				@include MQ(M){
+					margin-bottom: 5px;
+				}
+				.num_star {
+					float: left;
+				}
+				.review_bar {
+					margin: 0 18px;
+					display: inline-block;
+					border-radius: 10px;
+					background-color: #DDD;
+					width: 350px;
+					@include MQ(M){
+						width: 55%;
+						margin-left:8px;
+						margin-right:8px;
+					}
+					@include MQ(M) {
+						.progress-bar {
+							height: 0.6rem;
+						}
+					}
+					.rating-100 {
+						width: 100%;
+						background: #f82a62;
+						border-radius: 0;
+					}
+					.rating-0 {
+						width: 0%;
+						background: #f82a62;
+						border-radius: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.rating_review.student_review.row.review-row {
+
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	padding: 50px 35px 50px 35px;
+	background-color: #fdfdfd;
+	position: relative;
+	.mobile-col{
+		@include MQ(M){
+			max-width:100%;
+			flex: 0 0 100%;
+		}
+		.review-avatar {
+			max-width: 120px;
+			max-height: 120px;
+			margin: 10px auto;
+			margin-left: 40%;
+			border-radius: 50%;
+			overflow: hidden;
+			float: left;
+			@include MQ(M){
+				width: 100px;
+				height: auto;
+				margin-left: 30%;
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+				border-radius: 12px 12px 0 0;
+				@include MQ(M) {
+					width: 150px;
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	.review-content{
+		.review-row{
+			.student-name {
+				float: left;
+				@include MQ(M) {
+					margin-left: 40%;
+				}
+			}
+			.starset {
+				@include MQ(M) {
+					width: 100%;
+					margin-left: 28%;
+				}
+			}
+
+			.review-text {
+				margin-top: 30px;
+				@include MQ(M){
+					margin-left: 10%;
+				}
+			}
+			@include MQ(M){
+				margin-left: 0px;
+				height: 150px;
+				.review-text{
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+.fa-star {
+	color: #f82a62;
+}
+.jr-stars {
+	width: 7.5rem;
+	height: 1.5rem;
+	overflow: hidden;
+	display: inline-block;
+	&__sm{
+		width: 4.7rem;
+		height: 0.9rem;
+		background: url(/images/icons/icon-star-large-gray-sm.svg) repeat-x;
+		>div {
+			background: url(/images/icons/icon-star-large-yellow-sm.svg) repeat-x;
+		}
+	}
+	&__md{
+		width: 7.5rem;
+		height: 1.5rem;
+		background: url(/images/icons/icon-star-large-gray.svg) repeat-x;
+		>div {
+			background: url(/images/icons/icon-star-large-yellow.svg) repeat-x;
+		}
+	}
+	
+	margin: 0.25rem 0 -0.125rem;
+	>div {
+		float: left;
+		height: 1.5rem;
+		background: url(/images/icons/icon-star-large-yellow-sm.svg) repeat-x;
+	}
+}

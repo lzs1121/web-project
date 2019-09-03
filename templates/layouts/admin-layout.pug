@@ -1,0 +1,79 @@
+doctype html
+html(lang="zh-Hans" xml:lang="zh-Hans" xmlns="http://www.w3.org/1999/xhtml")
+
+	//- HTML HEADER
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+		title= title  || 'IT匠人圈'
+
+		meta(name="description" content= metaDescription || "澳洲最大IT从业者组织")
+		meta(name="keywords" content= metaKeywords || "澳洲最大IT从业者组织")
+		meta(name="referrer" content="always")
+		meta(property="og:title" content=title)
+		meta(property="og:url" content=url || "https://jiangren.com.au/")
+		meta(property="og:site_name" content=title || "澳洲IT匠人圈")
+		meta(property="og:type" content="website")
+		meta(property="og:image" content=thumbnailSrc ||"http://jiangren.com.au/images/logo-colored.png")
+		meta(property="og:description" content=metaDescription || "澳洲最大IT从业者组织")
+		meta(property="twitter:title" content=title || "澳洲IT匠人圈")
+		meta(property="twitter:description" content=metaDescription || "澳洲IT匠人圈")
+		meta(property="twitter:image:src" content=thumbnail || "澳洲IT匠人圈")
+		meta(name="google-site-verification" content="O_DLP7TtwnXyeFEVkpbSAlQtNQrMzfYz4Wcz9h20_y0" )
+		meta(name="baidu-site-verification" content="oZbes14wu9" )
+		meta(name="robots" content="index, follow")
+		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+		link(rel="canonical" href="https://jiangren.com.au"+currentPath)
+		link(href="/styles/site.css", rel="stylesheet")
+
+		//- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		//- Safely remove this block if you are not targeting IE8
+		//-[if lt IE 9]
+			script(src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js")
+			script(src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js")
+		//-[endif]
+		include ../includes/head
+		script(src='/js/modernizr.min.js')
+
+		//- Include template-specific stylesheets by extending the css block
+		block css
+
+		//- Add any other template-specific HEAD tags by extending the head block
+		block head
+
+	//- HTML BODY
+	body
+
+		//- HEADER
+		section.course-layout-header
+			.contain-center
+				include ./admin-header
+		#body
+			block content
+					
+		script(src='/js/lazysizes/lazysizes.min.js' async="")
+		script(src='/js/jquery/jquery-1.11.3.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js')
+		script(src='/js/bootstrap/bootstrap.min.js')
+		script(src='/apps.bundle.js')
+		if user && user.canAccessKeystone
+			script(src='/keystone/js/content/editor.js')
+
+		//- Add scripts that are globally required by your site here.
+		//- ANALYTICS
+		include ../includes/analytics
+		script(type="application/ld+json").
+			{
+				"@context": "http://schema.org",
+				"@type": "Company",
+				"url": "https://jiangren.com.au",
+				"logo": "https://jiangren.com.au/images/logo-without-label.png",
+				"contactPoint": [{
+					"@type": "ContactPoint",
+					"telephone": "+61-421-672-555",
+					"contactType": "customer service"
+				}]
+			}
+		block js

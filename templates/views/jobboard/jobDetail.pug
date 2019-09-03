@@ -1,0 +1,85 @@
+extends ../../layouts/course-layout
+//- INCLUDES
+
+block content
+	.page-heading-jobboard
+		.container-inner
+			.container
+				h1.find-jobs-title=theJob[0].title
+		.breadcrumb
+			ul.breadcrumb__list
+				li.breadcrumb__item
+					a(href="/" title='首页').breadcrumb__link 首页
+				li.breadcrumb__item
+					a(href="/job" title='澳洲IT招聘信息').breadcrumb__link 澳洲IT招聘信息
+				li.breadcrumb__item
+					a(href=`/job/${theJob[0].key}` title=`${theJob[0].title}`).breadcrumb__link=`${theJob[0].title}`
+	.contents-main
+		.container
+			.row
+				.col-sm-12.col-12.col-lg-8.col-md-8
+					.job-detail
+						.job-detail-content
+							div#job-detail-content
+								.job-detail-info
+									ul
+										li.job-location-detail
+											.content-inner
+												.job-content-left
+													span 工作地点
+												.job-content-right
+													p=theJob[0].city.name
+										li.job-salary-detail
+											.content-inner
+												.job-content-left
+													span 薪水
+												.job-content-right
+													p=theJob[0].salary
+										li.job-type-detail
+											.content-inner
+												.job-content-left
+													span 工作类型
+												.job-content-right
+													p=theJob[0].jobType
+										li.job-posted-detail
+											.content-inner
+												.job-content-left
+													span 发布时间
+												.job-content-right
+													p=theJob[0].publishedDate.format('YYYY-MM-DD')
+										li.job-category-detail
+											.content-inner
+												.job-content-left
+													span 工作类别
+												.job-content-right
+													each cat in theJob[0].categories
+														p=cat.name
+										li.job-year-detail
+											.content-inner
+												.job-content-left
+													span 工作状态
+												.job-content-right
+													p=theJob[0].status
+								.job-detail-about
+									.job-requirements
+										span 工作内容
+										.job-detail-about-item
+											!= theJob[0].job.description
+									.job-requirements
+										span 工作要求
+										.job-detail-about-item
+											!= theJob[0].job.requirement
+				.col-sm-12.col-12.col-lg-4.col-md-4
+					.sticky-side-bar
+						.company-area
+							.company-info
+								.company-info-warpper
+									.comany-info-top
+										.job-info__logo--wrapper
+											img(src=theJob[0].company.logo.secure_url, alt=theJob[0].title)
+										h3.company-name=theJob[0].company.name
+									.company-info-bottom
+										p= theJob[0].company.description
+									.apply-job
+										h6 申请工作请将简历发送至：
+										p=theJob[0].apply

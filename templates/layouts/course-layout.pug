@@ -1,0 +1,193 @@
+doctype html
+html(lang="zh-Hans" xml:lang="zh-Hans" xmlns="http://www.w3.org/1999/xhtml")
+
+	//- HTML HEADER
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title= title  || 'IT匠人圈'
+		link(rel="preconnect" href="//www.google-analytics.com")
+		link(rel="preconnect" href="//stats.g.doubleclick.net")
+		link(rel="preconnect" href="//ssl.google-analytics.com")
+		meta(name="description" content= metaDescription || "澳洲最大IT从业者组织")
+		meta(name="keywords" content= metaKeywords || "匠人学院,澳洲最大IT从业者组织")
+		meta(name="referrer" content="always")
+		meta(property="og:title" content=title)
+		meta(property="og:url" content=url || "https://jiangren.com.au/")
+		meta(property="og:site_name" content=title || "澳洲IT匠人圈")
+		meta(property="og:type" content="website")
+		meta(property="og:image" content=thumbnailSrc ||"http://jiangren.com.au/images/logo-colored.png")
+		meta(property="og:description" content=metaDescription || "澳洲最大IT从业者组织")
+		meta(property="twitter:title" content=title || "澳洲IT匠人圈")
+		meta(property="twitter:description" content=metaDescription || "澳洲IT匠人圈")
+		meta(property="twitter:image:src" content=thumbnailSrc || "澳洲IT匠人圈")
+		meta(name="google-site-verification" content="O_DLP7TtwnXyeFEVkpbSAlQtNQrMzfYz4Wcz9h20_y0" )
+		meta(name="baidu-site-verification" content="oZbes14wu9" )
+		meta(name="robots" content="index, follow")
+		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+		link(rel="canonical" href="https://jiangren.com.au"+currentPath)
+		link(href="/styles/site.css", rel="stylesheet")
+
+		//- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		//- Safely remove this block if you are not targeting IE8
+		//-[if lt IE 9]
+			script(src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js")
+			script(src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js")
+		//-[endif]
+		include ../includes/head
+		//- script(src='/js/modernizr.min.js')
+
+		//- Include template-specific stylesheets by extending the css block
+		block css
+
+		//- Add any other template-specific HEAD tags by extending the head block
+		block head
+
+	//- HTML BODY
+	body(data-spy="scroll" data-target="#navbar--sticky")
+		//- HEADER
+		section.course-layout-header
+			.contain-center
+				include ./course-header
+		block intro
+		block content
+		footer#footer
+			section
+				.contain
+					.row.no-margin
+						.col-6.col-sm-3.footer-solos
+							strong.footer-title 技能培训
+							ul.solo
+								if trainingList.length
+									each course in trainingList
+										li.solo__items--mobile
+											if course.courseLink
+												a(href='/'+course.courseLink)= course.title
+											else
+												a(href='/program-course/'+course.slug)= course.title
+						.col-6.col-sm-3.footer-solos
+							strong.footer-title 求职服务
+							ul.solo
+								if careerCoachingList.length
+									each service in careerCoachingList
+										li.solo__items--mobile
+											a(href="/career-coaching/"+service.slug)= service.chName
+						.col-6.col-sm-3.footer-solos
+							strong.footer-title 大学辅导
+							ul.solo
+								if tutoringServiceList.length
+									each service in tutoringServiceList
+										li.solo__items--mobile
+											a(href="/tutorials/"+service.slug)= service.chName
+						.col-6.col-sm-3.footer-solos
+							strong.footer-title 近期辅导
+							ul.solo
+								if workshopsList.length
+									each workshop in workshopsList
+										li.solo__items--mobile
+											a(href="/workshop/"+workshop.key)= workshop.name
+						.col-6.col-sm-3.footer-solos
+							strong.footer-title 成功案例
+							ul.solo
+								li.solo__items--mobile
+									a(href="/offer-board/") Offer榜
+					.row.no-margin
+						.col
+							hr
+					.row.no-margin
+						.col-sm-4.footer-logo-wrapper
+							img.footer-logo.lazyload(data-src="/images/logo-sticker-sm.png" alt="澳洲IT匠人圈 Logo")
+							p 澳洲最大IT找工作平台
+							p.small 求职辅导 技能培训 大学补课
+							p.small ABN 26621887572
+							.qr-wrapper--card
+								img.lazyload(data-src="/images/qr.jpg" alt="Jiangren QR code")
+								p.text-center 匠人公众号
+						.col-sm-8.footer-qr-wrapper.footer-solos
+							.row.flex-just-center
+								.col-sm-8.s-text-align-center
+									strong Email
+									p career@jiangren.com.au
+									p hello@jiangren.com.au
+									strong Mobile
+									p
+										a(href="tel:+61421672555") 0421-672-555
+									strong Wechat
+									p jracademy
+									strong Address
+									p Level 13b, 116 Adelaide Street, Brisbane CBD
+									p Level 8, 11 York st, Wynyard, Sydney CBD
+									p Level 1, 41 Stewart St, Richmond, Melbourne
+									p
+										Strong Brisbane, Melbourne, Sydney, Australia
+							.row.flex-just-center
+								.qr-wrapper--card
+									img.lazyload(data-src="/images/xiaohua.jpeg" alt="匠人小花")
+									p.text-center 匠人小花
+								.qr-wrapper--card
+									img.lazyload(data-src="/images/xiahei.jpeg" alt="匠人小嘿")
+									p.text-center 悉尼小嘿
+								.qr-wrapper--card
+									img.lazyload(data-src="/images/xiaoji.jpeg" alt="匠人小基")
+									p.text-center 猫本小萌
+					//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
+					.row.no-margin
+						.col
+							hr
+					.row.copywrite-wrapper.justify-content-center.no-margin
+						ul.solo__hr
+							li.solo__items--mobile
+								a(href="/") @2017-2019 匠人学院 Inc
+							li.solo__items--mobile
+								a(href="/about") 关于匠人
+							li.solo__items--mobile
+								a(href="/policy") 政策&条款
+							li.solo__items--mobile
+								a(href="/sitemap.xml") Site Map
+							li.solo__items--mobile
+								a(href="http://www.aozhou123.com/" target="_blank" rel="nofollow") 澳洲资讯
+							li.solo__items--mobile
+								a(href="http://www.jobshaigui.com/" target="_blank" rel="nofollow") JOBS海归
+						ul.solo__social
+							li.solo__items--mobile
+								a(href="https://www.youtube.com/channel/UCanQu2BJniNfGViaF23dJgw" target="_blank" title="Youtube" rel="noreferrer")
+									img.lazyload(data-src="/images/icons/youtube.svg", alt="youtube")
+							li.solo__items--mobile
+								a(href="https://www.facebook.com/jiangrenquan" target="_blank" title="Facebook" rel="noreferrer")
+									img.lazyload(data-src="/images/icons/facebook.svg", alt="facebook")
+							li.solo__items--mobile
+								a(href="https://www.linkedin.com/school/jr-academy" target="_blank" title="Linkedin" rel="noreferrer")
+									img.lazyload(data-src="/images/icons/linkedin.svg", alt="linkedin")
+							li.solo__items--mobile
+								a(href="https://www.weibo.com/ozitquan" target="_blank" title="Weibo" rel="noreferrer")
+									img.lazyload(data-src="/images/icons/weibo.svg", alt="weibo")
+							li.solo__items--mobile
+								a(href="https://plus.google.com/104735790585354331739" target="_blank" title="Google Plus" rel="noreferrer")
+									img.lazyload(data-src="/images/icons/google_plus.svg", alt="google plus")
+							li.solo__items--mobile
+								a(href="/images/xiaohua.jpeg" target="_blank" title="Wechat" rel="noreferrer")
+									img.lazyload(data-src="/images/icons/wechat.svg", alt="wechat")
+		script(src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous")
+		script(src='/js/lazysizes/lazysizes.min.js' async)
+		script(src='/js/bootstrap/bootstrap.min.js' async)
+		script(src=`/ui.bundle.js`)
+		//- if user && user.canAccessKeystone
+		//- 	script(src='/keystone/js/content/editor.js')
+
+		//- Add scripts that are globally required by your site here.
+		//- ANALYTICS
+		include ../includes/analytics
+		script(type="application/ld+json").
+			{
+				"@context": "http://schema.org",
+				"@type": "Organization",
+				"url": "https://jiangren.com.au",
+				"logo": "https://jiangren.com.au/images/logo-without-label.png",
+				"contactPoint": [{
+					"@type": "ContactPoint",
+					"telephone": "+61-421-672-555",
+					"contactType": "customer service"
+				}]
+			}
+		block js

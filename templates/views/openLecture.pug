@@ -1,0 +1,31 @@
+extends ../layouts/course-layout
+
+include ../mixins/tutors
+include ../mixins/open-lecture
+
+block content
+	section.jr-header
+		.contain.jr-course
+			.row
+				.col-12.col-sm-6.jr-course-header__content
+					.jr-open-lecture
+						p.jr-course-header__content--badge 打造澳洲最专业的线上知识分享平台
+						h1 匠人学院公开课
+						p 布里斯班 & 悉尼 & 墨尔本
+						p 面向IT/IS/CS专业
+						p 100+ 学霸导师 分享学习考试经验
+						p 经典例题考题回顾 知识点总结
+						p 线上课程指导&干货分享平台
+						a.jr-btn.jr-btn--md(href="https://jiangren.com.au/application") 快速报名
+				.col-12.col-sm-6.jr-course-header__image
+					img.lazyload.jr-header__background--img(data-src="/images/icons/hero.png" alt="background")
+	section
+		.contain.jr-course-selection
+			h2.jr-open-lecture__title.text-center 即将开始的公开课
+			.services-wrapper
+				+open-lecture
+	section.jr-instructors
+		.contain
+			h2.text-center 讲师阵容
+			+tutors
+block js

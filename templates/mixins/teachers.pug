@@ -1,0 +1,27 @@
+mixin teachers
+	div.row.margin-bottom-lg
+		if teachers.length
+			each teacher in teachers
+				.col-sm-4
+					.card.jr-instructors__card(itemprop="instructor" itemscope itemtype="http://schema.org/Person")
+						.card-avatar
+							img.lazyload(data-src=(teacher._.avatar.fill(100,100)), alt=(teacher.name) itemprop="image")
+						h5.jr-instructors__name(itemprop="name")= (teacher.name)
+						p.jr-instructors__title(itemprop="jobTitle")= (teacher.title)
+						p.jr-instructors__title(itemprop="affiliation")= (teacher.company)
+						div.bio(itemprop="disambiguatingDescription")= (teacher.introduction)
+						if (teacher.displayCompany)
+							ul.jr-partners__list
+								each company in teacher.preCompany
+									li
+										img.jr-partners__list--icon.lazyload(data-src=(company.logo.secure_url), alt=(company.name))
+						if (teacher.displayUniversity)
+							ul.jr-partners__list
+								each university in teacher.university
+									li
+										img.jr-partners__list--icon.lazyload(data-src= (university.logo.secure_url), alt= (university.name))
+						.jr-instructors__card--tag
+							.tag-container(itemprop="disambiguatingDescription")
+								if (teacher.highlights.length)
+									each highlight in teacher.highlights
+										.tag= highlight

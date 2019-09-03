@@ -1,0 +1,19 @@
+extends ../layouts/course-layout
+
+block content
+	section
+		.category-navigation-header
+			.category-navigation-header__wrap.container
+				.row
+					.col-xl-4.col-lg-4.col-md-6.col-sm-12
+						p.category-navigation-header__title 信息导航
+							span.category-navigation-header__subtitle 学IT 找匠人
+					.col-xl-8.col-lg-8.col-md-8.col-sm-0
+	section
+		div#categoryNavigation
+		.preloader-container
+			.swiper-lazy-preloader
+
+	block js
+		script(src='/category.bundle.js' async)
+		link(rel="stylesheet", href="/category.css")

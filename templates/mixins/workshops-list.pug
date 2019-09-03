@@ -1,0 +1,21 @@
+mixin workshops-list(workshops)
+	if workshops.length
+		section.work-shop
+			.contain.homepage-welcome-section
+				h2.section-title.margin 大学辅导考试作业冲刺班
+				p.description 突击培训，短时间内解决你的困惑和问题，让你真正达到全方位无死角
+				.row.services-wrapper
+					each workShop in workshops
+						.col-sm-4.col-12.text-center.jr-card-wrapper
+							.card.card-profile.card-plain.card__course
+								.card-img-top
+									a(href='/workshop/' + workShop.key)
+										img.lazyload(data-src=workShop._.image.fit(400,300) alt= (workShop.name))
+								.card-text-block
+									h4.card-title
+										strong
+											a(href='/workshop/' + workShop.key)= workShop.name
+									p.card-description= workShop.cardDescription
+								.card-footer
+										a.btn.btn-lg(href='/workshop-application?course=' + workShop.key) 参加报名
+										a.btn.btn-lg(href='/workshop/' + workShop.key ) 了解更多

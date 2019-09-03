@@ -1,0 +1,12 @@
+export const channelQuestion = '你是通过什么渠道知道我们IT匠人的';
+export const wechatOfficialAccounts = '微信公众号';
+export const wechatGroup = '微信群';
+export const studentUnion = '学生会';
+export const google = '谷歌';
+export const zhihu = '知乎';
+export const weblog = '微博';
+export const friends = '朋友';
+export const poster = '海报';
+export const bee = '小蜜蜂';
+export const forum = '贴吧';
+export const others = '其他';

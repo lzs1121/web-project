@@ -1,0 +1,17 @@
+mixin list-teachers(teachers)
+	div.row.no-margin
+		if teachers.length
+			each teacher in teachers
+				.col-sm-4
+					.card.jr-instructors__card
+						.card-avatar
+							img.lazyload(data-src=(teacher.avatar.secure_url), alt=teacher.name)
+						h5.jr-instructors__name= teacher.name
+						p.jr-instructors__title= teacher.title
+						p.jr-instructors__title= teacher.company
+						div.bio= teacher.introduction
+						.jr-instructors__card--tag
+							.tag-container
+								if teacher.highlights.length
+									each highlight in teacher.highlights
+										.tag= highlight

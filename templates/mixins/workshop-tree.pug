@@ -1,0 +1,14 @@
+mixin workshop-tree
+	div
+		if !pastWorkshop.length
+			h3.text-muted 目前还没有辅导班
+		.timeline
+			.timeline-path
+			.timeline-item--offset
+			each meetup, i in pastWorkshop
+				.timeline-item(class=i % 2 == 1 ? 'timeline-item--even' : 'timeline-item--odd')
+					.timeline-item-node
+					a.timeline-item-inner(href='/workshop/' + meetup.key)
+						h6.text-caps.text-danger= meetup._.startDate.format('YYYY - MMMM ')
+						h4= meetup.name
+						!=utils.cropString( utils.htmlToText(meetup.description), 240, '...', true )

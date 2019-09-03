@@ -1,0 +1,16 @@
+mixin upcoming-meetup
+
+	div
+		if !upcomingMeetups.length
+			h3.text-muted New Meetups are Coming
+		.row.col-sm-12.no-padding.no-margin
+			each meetup, i in upcomingMeetups
+				.col-sm-6.col-12
+					.card.card-profile.card-plain
+						.card-img-top
+							img(src=meetup.image.secure_url alt="new meetup")
+						.card-text-block
+							a(href='/events/' + meetup.key title= meetup.name)
+								h3.card-category= meetup.name
+							p.overflow.card-description=utils.htmlToText(meetup.description)
+							a.btn.btn-lg.ppd-btn.ppd-btn-solid.ppd-btn-large(href='/events/' + meetup.key target="_blank" title= meetup.name) 查看Meetup

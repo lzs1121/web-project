@@ -1,0 +1,26 @@
+#phone-video{
+	@include MQ(S) {
+		width: 250px;
+		height: auto;
+	}
+}
+
+// .grad-showcase-wrapper{
+// 	@include MQ(S) {
+// 		img{
+// 			width: 32px;
+// 			height: auto;
+// 		}
+// 		margin:0;
+// 	}
+// }
+
+.grad-showcase-wrapper-course{
+	@include MQ(S) {
+		img{
+			width: 32px;
+			height: auto;
+		}
+		margin:0;
+	}
+}

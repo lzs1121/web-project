@@ -1,0 +1,10 @@
+export const agreement = '我已经阅读并同意服务与隐私条款';
+export const selectPaymentMethod = '请选择付款方式以完成付款';
+export const payNotice = '付款成功后请截图发给匠人客服';
+export const royalpayMethod = 'RoyalPay';
+export const royalpayValue= 'royalpay';
+export const paypalMethod = 'Paypal';
+export const paypalValue= 'paypal';
+export const stripeMethod = 'Stripe';
+export const stripeValue = 'stripe';
+export const faceToFace = '当面付款';

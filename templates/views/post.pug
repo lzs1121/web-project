@@ -1,0 +1,38 @@
+extends ../layouts/course-layout
+include ../mixins/breadcrumbs
+include ../mixins/program-card
+
+block content
+	section
+		.contain.jr-post
+			.row
+				.col-12.col-sm-5.jr-course-header__image
+					.thumbnail-card
+						img.lazyload(data-src=data.post._.image.scale(400,222) alt="background")
+				.col-12.col-sm-7.jr-course-header__content
+					.jr-post--badge
+						+breadcrumbs([{link:'/', label:'首页'}, {link:'/blog', label:'新闻&资源'}, {link:'/blog/'+data.post.slug, label:data.post.title}])
+					h1= (data.post.title)
+					p.truncate-text.full-width= (data.post.content.brief)
+					.row.no-margin
+						div
+							.jr-post__avatar
+								img(src=data.post.author._.avatar.fill(70,70), alt= data.post.author.name)
+						.col
+							h3= (data.post.author.name.first)
+							p
+								strong= (data.post.author.title)
+	section.page-content
+		article.blog-wrapper
+			.post
+				//- if data.post.image.exists
+				//- 	.image-wrap: img.image-center(src=data.post._.image.fit(750,450) alt= data.post.title).img-responsive
+				!= (data.post.content.full)
+	section
+		.contain
+			h2.section-title 即将开的培训课程
+			.row
+				if(programs)
+					each program in programs
+						.col-12.col-sm-4
+							+program-card(program)

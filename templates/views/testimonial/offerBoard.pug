@@ -1,0 +1,37 @@
+extends ../../layouts/course-layout
+
+//- INCLUDES
+include ../../mixins/company/student-company
+
+block content
+	section
+		.contain.jr-course
+			.row
+				.col-12.col-sm-5.jr-course-header__content
+					p.jr-course-header__content--badge 学IT 找匠人
+					h1 匠人Offer榜
+					p 帮助海外华人找工作不再是难事
+					p 百位行业导师 带你了解求职秘籍
+					p 技能培训，求职服务，就业指导，职业英语 全方位提高
+				.col-12.col-sm-5.jr-course-header__image
+					img.lazyload(data-src="/images/icons/undraw_moving_forward_lhhd.svg" alt="background")
+				.col-12.col-sm-2
+	+student-company
+	section.jr-section
+		.contain
+			.row
+				.col-3
+					h4 姓名
+				.col-5
+					h4 经历
+				.col-4
+					h4 offer
+			.row
+				if (offers)
+					each offer in offers
+						.col-3
+							p= offer.name
+						.col-5
+							p= offer.eduBackground
+						.col-4
+							p= offer.company

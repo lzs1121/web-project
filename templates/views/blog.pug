@@ -1,0 +1,62 @@
+extends ../layouts/course-layout
+
+include ../mixins/course-feature
+include ../mixins/breadcrumbs
+
+mixin post(post)
+	.portfolio-list-wrapper.padding-md.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
+		.row
+			.col-12.col-sm-5.col-md-5
+				.gallery-images.card.cursor-click(onclick=`window.location.href='/blog/${post.slug}'`)
+					img.lazyload(data-src=(post._.image.scale(400,300)) alt= (post.title))
+			.col-12.col-sm-5.col-md-7
+				.blog-details
+					h2: a(href='/blog/' + post.slug)= (post.title)
+					div.author-box.row
+						.col-4.col-md-2
+							.general-avatar-sm
+								if post.author.avatar.exists
+									img.lazyload(data-src=(post.author._.avatar.fill(70,70)))
+						.col-8.col-md-3
+							h4= (post.author.name.first)
+							p.grey= (post.author.title)
+					.text-overflow
+						p!= (post.content.brief)
+					if post.content.extended
+						p.text-overflow.read-more: a(href='/blog/' + (post.slug)) 阅读更多...
+
+block content
+	section
+		.contain.jr-course
+			.row
+				.col-12.col-sm-6.jr-course-header__content
+					+breadcrumbs([{link:'/', label:'首页'}, {link:'/blog', label:'新闻&资源'}])
+					p.jr-course-header__content--badge 澳洲IT圈
+					h1 澳洲IT新闻与资源
+					h2.text-left 新闻 资料 机经
+					p 新闻，资源，大学资料
+					p 匠人活动新闻 各专业资料
+				.col-12.col-sm-6.jr-course-header__image
+					img.lazyload(data-src="/images/icons/four-people.png" alt="background")
+	section.page-content
+		.container.no-padding
+			if (data.posts.results.length)
+				.blog.col-12
+					each post in data.posts.results
+						+post(post)
+				.col-12
+					.pagination-center
+						if data.posts.totalPages > 1
+							ul.pagination.flex-wrap
+								if data.posts.previous
+									li: a(href='/blog/?page=' + data.posts.previous): span.glyphicon.glyphicon-chevron-left
+								else
+									li.disabled: a(href='/blog/?page=' + 1): span.glyphicon.glyphicon-chevron-left
+								each p, i in data.posts.pages
+									li(class=data.posts.currentPage == p ? 'active' : null)
+										a(href='/blog/?page=' + (p == '...' ? (i ? data.posts.totalPages : 1) : p ))= p
+								if data.posts.next
+									li: a(href='/blog/?page=' + data.posts.next): span.glyphicon.glyphicon-chevron-right
+								else
+									li.disabled: a(href='/blog/?page=' + data.posts.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
+				+course-feature

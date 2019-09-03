@@ -1,0 +1,339 @@
+extends ../layouts/course-layout
+
+//- INCLUDES
+
+include ../mixins/post-featured
+include ../mixins/teachers
+include ../mixins/review
+include ../mixins/partnership
+include ../mixins/mentor-company
+
+block content
+	section.jr-hero
+		.contain
+			.video__featured--bg.animated.fadeIn
+			.video__featured--overlay
+				.video__featured--content
+					h6.white.mb-half 匠人课程
+					h1.white iOS开发
+					p.legible.center.white.hidden-xs-down 涵盖完整的iOS职业开发中知识点，工具，框架
+					p.legible.center.white.hidden-xs-down ObjectiveC + Swift + AFNetworking + SQLite + Cocoapods + Xcode 
+					p.legible.center.white 布里斯班 + 线上直播
+					a.button--primary.lg.center.inline(href="/application?type="+data.slug)
+						strong 报名
+	section.jr-overview
+		.contain
+			ul.row.col-sm-12.col-md-12.col-12
+				li.col-md-3.col-sm-3.col-6
+					h6 难度
+					h5 初级
+					p.x-small 实习就业
+				li.col-md-3.col-sm-3.col-6
+					h6 学习时间
+					h5 5⽉19⽇开班
+					p.x-small 36⼩时
+				li.col-md-3.col-sm-3.col-12
+					h6 课程价格
+					p.x-small 早鸟价$2300（面授），原价$2500，早鸟价$1900（远程），原价$2100
+					p.x-small.x-mall *exclude GST
+				li.col-md-3.col-sm-3.col-12
+					h6 先修知识
+					h5 Web入门
+					p.x-small 对IT有基本概念的同学(⽐如知道HTML是什么)
+	+partnership
+	+mentor-company
+	section.jr-why
+		.contain.text-center.row
+			//- img(src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/image-laptop@1x-e0453c763ea5449882c8db6988b1bec11edcc93cca14c1ccdba29eb425727dbd.png", alt="Front-End Developer")
+			.jr-why__description.col-12.col-sm-12.col-md-9
+				h2 为什么选择IT匠人的iOS初级班?
+				p 匠人推出的iOS初级班旨在帮助学员在24小时的时间内从理论到实践全面提升能力，从0到1的学会怎么用iOS工具和框架，并且发布⾃⼰的iOS App在Apple App Store上面.
+				h4 课程目标
+				ul
+					li 了解iOS的行业背景，职业前景和职业发展方向 
+					li 学习iOS开发的基础知识，学会初步的使用其工具和框架 
+					li 跟着导师学习和实战，获得case经验和团队协作经验 
+					li 学⽣每人可以⾃行做出⼀个展示App
+			.jr-why__stat.col-12.col-sm-12.col-md-3
+				.card.card-border-top.hidden-md-down
+					p.text-left 匠人推出的iOS课程由澳洲顶级公司的移动开发⼯程师设计教学，能够有效帮助学员在24小时的时间内从理论到实践全面提升能力，为学员以后的自学提升及求职就业之路打下坚实基础。
+	section.features
+		.contain
+			div.row.margin-bottom-lg
+				.features__col-wide.col-sm.text-center
+					.features__content
+						ul.features__list
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 实战项目+项目经验
+									p 真实实战模拟项目经验，整个培训会deliver三个Applications，第一个是澳洲税率计算器，第二个是移民分数计算器，第三个是To-Do-List。
+							li.row
+								span
+									img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/icon-features-01-3a27b7ba9b143736e42c655a60d772b539025feb0f3584189ca321651279c1f8.svg", alt="")
+								div.col-sm
+									h4 动手Coding能力提升
+									p 培训课程不仅仅有项目，我们也会在每节课留下作业和任务，每节课都有自己的特色，任务也从易到难，适合各个层次的人做，多种工具和框架的运用，算法题，面试题等等。在上课中就已经在联系未来面试中遇到的问题。除此以外，导师也会做code review，帮助提升学生的代码质量。
+				.features__col-short.col-sm.text-center
+					img.lazyload(data-src="https://d125fmws0bore1.cloudfront.net/assets/pages/ndop/nd001/features-02@1x-8e9d672908d063cc0513ef55ffd7519eef7f5b889325d89efd9cadeb202dfdc1.png", alt="features__images")
+
+	section.jr-projects
+		.contain
+			h2 你将挑战的项目实例
+		section.jr-projects__cards
+			.cards_contain
+				.jr-projects__card
+					.jr-projects__header.row.no-margin
+						.jr-projects__header__content.col-12.col-sm-6
+							h6 Project
+							h3 To-Do-List
+							p.hidden-md-down 该项目将采用最流行的开发语言和框架，旨在帮助学员能够快速掌握和提升一个iOS developer所应该具备的能力，让学员能够尽快的找到相关工作。
+							.jr-projects__header__content__footer
+								.tag-container
+									.tag ObjectiveC
+									.tag Swift
+									.tag AFNetworking
+									.tag TableView
+									.tag Button
+						.jr-projects__header__image.jr-projects__project__ios_three.col-12.col-sm-6
+	section.jr-syllabus-term
+		.contain
+			h2 你将学到什么
+		section.jr-syllabus-term__cards
+			.cards_contain
+				.jr-syllabus-term__card
+					.jr-syllabus-term__header.row.no-margin
+						.jr-syllabus-term__header__content.col-sm-7
+							h6 Syllabus
+							h3 iOS初级班
+							p.hidden-md-down ObjectiveC + Swift + AFNetworking + SQLite + Cocoapods + Xcode
+							.jr-syllabus-term__header__content--details
+								p.jr-syllabus-term__toggle.collapsed(data-toggle="collapse" data-target="#course_detail" aria-expanded="false" aria-controls="course_detail")
+									span 显示全部课程表信息(点击展开)
+								p.gray-medium 24课时
+						.jr-syllabus-term__header__image.col-sm-5.hidden-xs-down
+					.jr-syllabus-term__main.row.no-margin
+						.jr-syllabus-term__main__content.col-sm-7.collapse#course_detail
+							h6 课程要求
+							p.margin-bottom-3 这是一门初级课程，你需要懂得最基本的HTML， CSS的概念。
+							section.jr-syllabus-term__main__content--parts
+								ul
+									li
+										.part
+											h5 Class 1 iOS introduction
+											p 课程介绍
+											p
+												span.lnr.lnr-chevron-right Scope
+											p
+												span.lnr.lnr-chevron-right Instructor Introduction
+											p
+												span.lnr.lnr-chevron-right iOS syntax
+																							
+									li
+										.part
+											h5 Class 2 Xcode基础，Mac基础，模拟器
+											p
+												span.lnr.lnr-chevron-right Spotlight/Alfred
+											p
+												span.lnr.lnr-chevron-right Mac 3点拖拽
+											p
+												span.lnr.lnr-chevron-right Mac 常⽤用编程快捷键
+											p
+												span.lnr.lnr-chevron-right Xcode⽂文件搜索和代码搜索
+											p
+												span.lnr.lnr-chevron-right Xcode 和GIT整合
+											p
+												span.lnr.lnr-chevron-right Device Organiser
+									
+									li
+										.part
+											h5 Class 3 第⼀个SingleView App (Local)
+											p
+												span.lnr.lnr-chevron-right Playground
+											p
+												span.lnr.lnr-chevron-right Object (Everything is an Object)
+											p 
+												span.lnr.lnr-chevron-right Build-in data types
+											p
+												span.lnr.lnr-chevron-right Interface Builder
+									li
+										.part
+											h5 Class 4 Cocoa Framework
+											p
+												span.lnr.lnr-chevron-right UIViewController(Inheritance vs composition)
+											p
+												span.lnr.lnr-chevron-right Debug (NSLog， redefine)
+											p
+												span.lnr.lnr-chevron-right Data Modeling
+											p
+												span.lnr.lnr-chevron-right NSString，NSURL
+									li
+										.part
+											h5 Class 5 其他Framework
+											p
+												span.lnr.lnr-chevron-right Backend Basics (sample API given)
+											p
+												span.lnr.lnr-chevron-right JSON
+											p
+												span.lnr.lnr-chevron-right AFNetworking
+											p
+												span.lnr.lnr-chevron-right Realm
+											p
+												span.lnr.lnr-chevron-right SQLite
+									li
+										.part
+											h5 Class 6 项⽬实战
+											p
+												span.lnr.lnr-chevron-right Build an app
+									li
+										.part
+											h5 Class 7 App发布流程
+											p
+												span.lnr.lnr-chevron-right Itunes connect
+											p
+												span.lnr.lnr-chevron-right Application Uploader
+											p
+												span.lnr.lnr-chevron-right iOS App 上线
+										
+						.jr-syllabus-term__main__content.col-sm-5
+	section.jr-instructors
+		.contain
+			h2.text-center Learn with the Best
+			+teachers
+	section.jr-reviews
+		.contain
+			header
+				h2.blue.inline Student Reviews
+			.jr-reviews__container.row
+				.col-sm-4
+					.jr-reviews__card.stats
+						.stats__average
+							span 4.9
+							.stats__container
+								.jr-stars
+									div(style="width:95%;")
+						.jr-reviews__overview
+							.wrapper
+								.h6.text-right 5 stars
+								.progress
+									div(style="width:87%;") 62
+							.wrapper
+								.h6.text-right 4 stars
+								.progress
+									div(style="width:13%;") 6
+							.wrapper
+								.h6.text-right 3 stars
+								.progress
+									div(style="width:0%;") 0
+							.wrapper
+								.h6.text-right 2 stars
+								.progress
+									div(style="width:0%;") 0
+							.wrapper
+								.h6.text-right 1 stars
+								.progress
+									div(style="width:0%;") 0
+				if(reviews)
+					each review in reviews
+						.col-sm-4
+							.jr-reviews__card.card
+								.row
+									.col-sm-6
+										h5.student__name= review.name
+									.col-sm-6
+										.student__stars
+											div(style="width:92%;")
+								p.student__review= review.content
+	section.jr-faq
+		.contain
+			.faq__content
+				h2 帮助与常见问题
+				.contain-center#accordion
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingOne(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree" class="collapsed" role="tab")
+									h4 
+										strong 问：本期课程适合什么程度的学生去学呢?
+									i.lnr.lnr-chevron-up
+							#collapseThree.collapse(role="tabpanel" aria-labelledby="headingThree")
+								.card-body
+									p 我们的iOS开发基础课程，是针对有基本相关IT知识的初级课程，如果你是刚刚毕业的学生正在找工作，或者有IT其他专业背景想要做iOS Developer，但不了解真正企业iOS开发的流程和技术，这门课程就是为你设计的。我们的导师具有多年经验，通过真实的商业实战项目，指导提升，加深理解。帮助学生找到Junior iOS Developer的⼯作。
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingTwo(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseTwo" class="collapsed" role="tab")
+									h4
+										strong 问：该培训有哪些技能以及该培训的形式是什么呢？
+									i.lnr.lnr-chevron-up
+							#collapseFour.collapse(role="tabpanel" aria-labelledby="headingFour")
+								.card-body
+									p 目前培训的技能有编程语言(如ObjectiveC, Swift)，框架(如AFNetworking， SQLite， Cocoapods)，Cocoa原⽣生框架(如Storyboar， ViewController， TextView， TableView， Button， Segue)， 发布流程(如Application Loade， iTunesConnect)。
+									p 培训的形式采用课堂授课与动手实践相结合，除此以外，也有IT的求职就业导向的培训，通过学生的实战，最后学⽣会deliver⼀个高标准的application，放到简历中，帮助求职。
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingThree(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseThree" class="collapsed" role="tab")
+									h4
+										strong 问：咱们的培训班与其他的线上培训和别的培训有什么不同吗？
+									i.lnr.lnr-chevron-up
+							#collapseFive.collapse(role="tabpanel" aria-labelledby="headingFive")
+								.card-body
+									p 本期培训班与别的培训最大的不同，是务实，接地⽓。本期培训是虽然是入⻔级培训，但是是⾯向工作培训，培训中所涉及的知识点和强化点，都是工作过程中遇到的，需要解决的。除此以外，学员也能在最后结课的时候，通过三个实战applications，也能增加学员的专业项目经验。
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingSix(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix" class="collapsed" role="tab")
+									h4
+										strong 问：培训的过程中是否有人指导，有没有一些项目可以参与？
+									i.lnr.lnr-chevron-up
+							#collapseSix.collapse(role="tabpanel" aria-labelledby="headingSix")
+								.card-body
+									p 在培训过程中，我们有多年经验的导师来做指导答疑，下课也有导师24/7在线回答同学问题，都是澳洲IT行业⾥的⼤牛。⼤牛求真，少走弯路。							
+									p 除了课程中需要完成的三个项目外，我们也会推荐真实的商业项⽬参与其中，获取更多的宝贵经验，让每个学员尽可能的做到，在培训过程中获得宝贵的商业经验，达到可以直接上⼿工作的目的。
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingSeven(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" class="collapsed" role="tab")
+									h4
+										strong 问：上课的课时有多少，一周的讲课时间多少，费用怎么样
+									i.lnr.lnr-chevron-up
+							#collapseSeven.collapse(role="tabpanel" aria-labelledby="headingSeven")
+								.card-body
+									p 此期培训的课时有24个⼩时，课时的安排我们也会尽⼒的与导师和学⽣的时间安排作出调整。
+									p 我们目前原价是$1900的课，但是Early Bird价格(现在价格)$1600(线下)和$1200（线上）, 原价要$1900，绝对超值。
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingNine(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine" class="collapsed" role="tab")
+									h4
+										strong 问：我是本科生，你觉得帮助大吗？
+									i.lnr.lnr-chevron-up
+							#collapseNine.collapse(role="tabpanel" aria-labelledby="headingNine")
+								.card-body
+									p 我们的课是面向工作的培训，所以培训的基本⽬的都是为了帮助学员找到工作。如何代码管理，⼯作的⽇常是什么样的。也根据当下比较流行的技术栈，帮助学员有更大的就业机会。 这些经验，都是在学校中学不到的，作为学生，如果能够在毕业之前就参加培训，增加实战经验，了解澳洲工作情况，毕业后找工作的时候更有把握。
+					.card-collapse(role="tablist" aria-multiselectable="true")
+						.card.card-plain
+							.card-header#headingNine(role="tab")
+								a(data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseNine" class="collapsed" role="tab")
+									h4
+										strong 问 : 我们不在布里斯班，如果想要参加课程，怎么办呢?
+									i.lnr.lnr-chevron-up
+							#collapseTen.collapse(role="tabpanel" aria-labelledby="headingTen")
+								.card-body
+									p 对于不在布⾥斯班的学员，我们采取线上授课的方式。
+									p 采⽤同步线上直播和课上录屏，课后回顾的形式，也就是与线下参与培训的同学⼀同上课。课上希望线上的同学和线下⽼师同学一起互动，跟⽼师一起完成开发练习。课后我们也留有recording，⽅便学员查看回顾。
+	+post-featured
+	script(type="application/ld+json").
+		{
+			"@context": "http://schema.org",
+			"@type": "Course",
+			"name": "iOS初级班",
+			"description": "王牌课程，就业利器：ObjectiveC + Swift + AFNetworking + SQLite + Cocoapods + Xcode",
+			"provider": {
+				"@type": "Organization",
+				"name": "澳洲IT匠人圈",
+				"sameAs": "https://jiangren.com.au"
+			}
+		}
